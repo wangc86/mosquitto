@@ -1,4 +1,4 @@
-Here is a modified version of Eclipse Mosquitto, for the teaching purpose for CSC0056 taught at National Taiwan Normal University: [https://wangc86.github.io/csc0056/](https://wangc86.github.io/csc0056/)
+NOTE: This is a modified version of Eclipse Mosquitto, for the teaching purpose for CSC0056 taught at National Taiwan Normal University: [https://wangc86.github.io/csc0056/](https://wangc86.github.io/csc0056/)
 
 Eclipse Mosquitto
 =================
