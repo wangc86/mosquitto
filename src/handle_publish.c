@@ -31,6 +31,8 @@ Contributors:
 #include "sys_tree.h"
 #include "util_mosq.h"
 
+#include <sys/time.h>
+static struct timeval arrival_time;
 
 int handle__publish(struct mosquitto_db *db, struct mosquitto *context)
 {
@@ -246,6 +248,9 @@ int handle__publish(struct mosquitto_db *db, struct mosquitto *context)
 		mosquitto__free(topic);
 		return 1;
 	}
+
+	gettimeofday(&arrival_time, NULL);
+	printf("%ld %ld\n", arrival_time.tv_sec, arrival_time.tv_usec);
 
 	payloadlen = context->in_packet.remaining_length - context->in_packet.pos;
 	G_PUB_BYTES_RECEIVED_INC(payloadlen);

@@ -15,6 +15,7 @@ Contributors:
 */
 
 #include "config.h"
+#include <sched.h>
 
 #ifndef WIN32
 /* For initgroups() */
@@ -199,6 +200,17 @@ void mosquitto__daemonise(void)
 
 int main(int argc, char *argv[])
 {
+	struct sched_param sched;
+	if (sched_getparam(0, &sched)) {
+	    perror("sched_getparam");
+	    exit(EXIT_FAILURE);
+	}
+	sched.sched_priority = 99;
+	if (sched_setscheduler(0, SCHED_FIFO, &sched)) {
+	    perror("sched_setscheduler");
+	    exit(EXIT_FAILURE);
+	}
+
 	mosq_sock_t *listensock = NULL;
 	int listensock_count = 0;
 	int listensock_index = 0;
