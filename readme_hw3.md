@@ -1,5 +1,7 @@
 # CSC0056 Homework 3, Part 2
 
+* Submit your answer to Moodle before 9PM, Nov 12th (**Thursday**).
+
 ### 1. Poisson process and exponential distribution (20%)
 
 In this part of Homework 3, we will empirically validate the claim we've made in class, that an aggregation of data traffics will often behave as a Poisson process. In particular, we will verify that in data communication, in the presence of many data publishers, the overall inter-arrival times seen at the data broker will follow an exponential distribution.
