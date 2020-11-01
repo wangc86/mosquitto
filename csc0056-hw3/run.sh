@@ -2,7 +2,7 @@
 
 topic=1
 period=1
-N=400
+N=1
 
 # Starting the Mosquitto broker
 ../src/mosquitto -c ./hw3.conf > arrival_time.out &
@@ -19,15 +19,12 @@ echo "Finished starting all publishers"
 sleep 120
 
 # Killing all publishers
-echo "Killing all publishers"
-killall periodic_pub.sh
-killall mosquitto_pub
+./kill_pubs.sh
 
-sleep 25
+sleep 5
 
 # Killing the broker
-echo "Killing the broker"
-killall mosquitto
+./kill_brokers.sh
 
 sleep 2
 

@@ -5,5 +5,7 @@ period=$2
 while true;
 do
     mosquitto_pub -t "$topic" -m "msg" -p 2005 -q 0 
-    sleep $period
+    #sleep $period
+    #sleep 0.5
+    sleep 0.$(( $RANDOM % 99 + 1 ))
 done

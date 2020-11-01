@@ -15,7 +15,7 @@ Contributors:
 */
 
 #include "config.h"
-#include <sched.h>
+//#include <sched.h>
 
 #ifndef WIN32
 /* For initgroups() */
@@ -200,6 +200,7 @@ void mosquitto__daemonise(void)
 
 int main(int argc, char *argv[])
 {
+/* Chao: It's fine not to use real-time scheduling for now
 	struct sched_param sched;
 	if (sched_getparam(0, &sched)) {
 	    perror("sched_getparam");
@@ -210,6 +211,7 @@ int main(int argc, char *argv[])
 	    perror("sched_setscheduler");
 	    exit(EXIT_FAILURE);
 	}
+*/
 
 	mosq_sock_t *listensock = NULL;
 	int listensock_count = 0;
