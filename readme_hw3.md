@@ -101,6 +101,10 @@ done
 
 Basically, we keep invoking the `mosquitto_pub` utility, which we have used in Homework 1. It is also possible to use a customized Mosquitto publisher for the same purpose, although we chose not to do so here.
 
+It might be helpful to observe that the inter-publish time of this kind of publisher follows the uniform distribution. Think about what should the p.d.f. and the c.d.f. look like for an uniform distribution. 
+
+Note that for this homework assignment, we do not use our home-made mosquitto_pub. We will use that in the future homework assignment.
+
 
 
 #### 1.3 Installing data visualization tools
@@ -158,11 +162,31 @@ The teaching assistant has prepared a great tutorial for cscope, along with some
 
 The last slide in cscope_tutorial.pdf is a great starting point. There you have an overview of the structure. **Now, you need to give the exact function names and their sequences in the calling path.** Organize your findings clearly, in a way that you yourself will appreciate and find helpful in understanding the code. Optionally, you may draw a flow chart like those examples in cscope_tutorial.pdf
 
+For example, you can organize your finding in a form similar to the following:
+
+```
+Document name: our code-tracing log
+
+main(...) in ./src/mosquitto.c,
+  at line XXX calls
+f1(...) in ./src/another_file.c,
+  where at line yyy it calls
+f2(...) in ./maybe_another_folder/yet_another_file.c,
+  where at line zzz it calls
+f3(...) in ...
+  ...
+  ...
+function handle__publish() in ./src/handle_publish.c,
+  where at lines 252 and 253 we have inserted our timestamping code.
+```
+
+
+
 ### 3. Conclusion, and things to submit to Moodle
 
 Please submit the following to Moodle:
 
-1. (20%) Five pairs of figures (c.d.f. and p.d.f.) for N=1,3,5,7, and 9. Also, based on your results, point out the smallest N where the empirical result  becomes similar to the exponential distribution;
+1. (20%) Five pairs of figures (**both** p.d.f. and c.d.f.) for N=1,3,5,7, and 9. **This means ten figures in total, with one p.d.f. plot and one c.d.f. plot for each value of N, and within each figure there is one subplot for your empirical result and one subplot for the corresponding theoretical curve of an exponential distribution.** Also, based on your results, point out the smallest N where the empirical result  becomes similar to the exponential distribution;
 2. (20%) Your result of code tracing, as described above.
 
 We have covered a lot of materials in this homework. Hope this will give you some ideas about how Poisson process appears in data communication. Plus, you've gained some experience in doing both computer systems experiments and code tracing :)
