@@ -101,7 +101,7 @@ done
 
 Basically, we keep invoking the `mosquitto_pub` utility, which we have used in Homework 1. It is also possible to use a customized Mosquitto publisher for the same purpose, although we chose not to do so here.
 
-It might be helpful to observe that the inter-publish time of this kind of publisher follows the uniform distribution. Think about what should the p.d.f. and the c.d.f. look like for an uniform distribution. 
+It might be helpful to observe that the inter-publish times of this kind of publisher follows the uniform distribution. Think about what should the p.d.f. and the c.d.f. look like for an uniform distribution. 
 
 Note that for this homework assignment, we do not use our home-made mosquitto_pub. We will use that in the future homework assignment.
 
