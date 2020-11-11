@@ -1,6 +1,7 @@
 # CSC0056 Homework 3, Part 2
 
-* Submit your answer to Moodle before 9PM, Nov 12th (**Thursday**).
+* ~~Submit your answer to Moodle before 9PM, Nov 12th (**Thursday**).~~
+* Submit your answer to Moodle before 11:59PM, Nov 13th (**Friday**)
 
 ### 1. Poisson process and exponential distribution (20%)
 
@@ -121,7 +122,7 @@ Use [this example](https://matplotlib.org/gallery/lines_bars_and_markers/psd_dem
 
 
 
-#### 1.4 Experimental steps
+#### 1.4 Experiment steps
 
 Finally, here are the steps you must do to complete this part of the homework:
 
@@ -132,9 +133,9 @@ Finally, here are the steps you must do to complete this part of the homework:
 5. Set N=7 and repeat Step 2;
 6. Set N=9 and repeat Step 2.
 
-Observe and note that up to which N the empirical result will start to look similar to the exponential distribution. 
+Observe and note that up to which N the empirical result will start to look similar to the exponential distribution.  Read the following to see how to generate a proper exponential distribution for comparison.
 
-Here are some example results. You may find more examples in folder "csc0056-hw3":
+You may use the python scripts in folder "csc0056-hw3/plots" to plot your results. Here are some example plots, and you can find more examples in the folder:
 
 <img src="./csc0056-hw3/plots/pdf-n-1.png" alt="pdf-n-1" style="zoom:72%;" />
 
@@ -147,6 +148,8 @@ The `size` parameter should be set equal to the number of measured inter-arrival
 Note that the plot of exponential distribution will change each time you run the script, because each time its random number generator will use a different seed.
 
 Also, make sure to choose the range of x-axis and/or y-axis to help clarify your comparison. For example, notice that in the c.d.f. figure above I purposefully set the x-axis the same across two results; otherwise, it may not be obvious that the two curves have similar trend. It is easy to set the range of either axis. See lines 14 and 15 in file cdf-n1.py for example.
+
+Finally, remember to update the caption of the figure by the correct N.
 
 
 
