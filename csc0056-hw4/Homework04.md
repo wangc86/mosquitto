@@ -87,4 +87,10 @@ Here is a helper script for you, named `sendImage.sh`. Run the script and a mosq
 
 ### 3.2 Evaluating Little's Theorem (20 points)
 
-Now we are ready to evaluate Little's Theorem using Mosquitto.
+Now we are ready to evaluate Little's Theorem using Mosquitto. Recall that Little's Theorem states the following relation for a system running in the *steady-state*:
+$$
+N=\lambda\cdot T
+$$
+where $N$ is the average number of customers (packets) in the system, $\lambda$ is the average arrival rate, and $T$ is the average time a customer (packet) spent in the system.
+
+I'm still figuring out how to query $N$ in Mosquitto. I will update this part soon. Please wait for my further notification on the Moodle bulletin. 

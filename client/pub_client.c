@@ -80,7 +80,7 @@ static void set_repeat_time(void)
 	next_publish_tv.tv_usec += cfg.repeat_delay.tv_usec;
         */
         long unsigned int x = (rand() % cfg.repeat_delay.tv_usec + 1);
-        printf("%ld\n", x);
+        //printf("%ld\n", x);
 	next_publish_tv.tv_usec += x;
 
 	next_publish_tv.tv_sec += next_publish_tv.tv_usec/1000000;

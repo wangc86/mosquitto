@@ -14,9 +14,10 @@ for i in $(seq 1 1 $N); do
     ../client/mosquitto_pub -i "pub$i" -t "t1" -p 2006 -q 0 --embed-timestamp --repeat 10000 --repeat-delay 0.001 &
     sleep 0.03
 done
+#TODO: Need to discard the latency measurements taken at the initialization phase,
+#      for they have relatively longer delay due to interference by new client connections..
 echo "Finished starting all publishers."
-echo "Now, keep running for 30 seconds..."
-
+echo "Now, keep running for 10 seconds..."
 
 # Keep collecting data
 sleep 10
