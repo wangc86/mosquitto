@@ -3,8 +3,6 @@
 * Submit your work to Moodle before **9PM, December 12th, Saturday**
 * A copy of this instruction can be found [here](https://github.com/wangc86/mosquitto/tree/master/csc0056-hw4).
 
-
-
 Table of Contents:
 
 [TOC]
@@ -13,7 +11,7 @@ This homework include three parts:
 
 1. Analysis of The Slotted Aloha Protocol (30 points);
 2. Literature Reading (30 points);
-3. Empirical Evaluation of Little's Theorem (40 points). 
+3. Empirical Study (40 points). 
 
 Things to submit to complete this homework assignment: all those questions/tasks marked in **boldface** in the following (which account for 100 points in total).
 
@@ -45,7 +43,7 @@ To learn recent findings in computer science and engineering, it is very importa
    
 3. (**10 points**) Write to let us know where you found it challenging in reading a research paper. Your opinion will help us identify what might help students the most, and they will help us shape materials regarding paper reading in the later part of this semester.
 
-## 3. Empirical Evaluation of Little's Theorem (40 points)
+## 3. Empirical Study (40 points)
 
 For this part, we will follow homework 3 and use Mosquitto as our sandbox for empirical valuation.
 
@@ -75,9 +73,7 @@ Save the change and close the file. Then type the following to have our update c
 
 `$ source ~/.bashrc`
 
-**(20 points) Now run the script named `test-run.sh`. Take a screenshot of the output and upload it to Moodle.** You should get an output similar to the following:
-
-
+**(20 points) Now run the script named `test-run.sh`. Take a screenshot of the output and upload it to Moodle.** You should see an output similar to file `Screenshot-example.png`.
 
 (The rest of this subsection is optional)
 
@@ -85,10 +81,10 @@ Interestingly, we may send an image using Mosquitto as a "message". For example,
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/St._Louis_Arch_%281984%29.jpg" style="zoom:20%;" />
 
-(The above image is from Wikimedia: https://commons.wikimedia.org/wiki/File:St._Louis_Arch_(1984).jpg. This is the landmark of the dear city where I've sojourned for seven years.)
+(This image is from Wikimedia: https://commons.wikimedia.org/wiki/File:St._Louis_Arch_(1984).jpg. The arch in the photo is the landmark of the dear city where I've sojourned for seven years.)
 
 There is a helper script named `sendImage.sh` for you to try it out. Run the script and a mosquitto subscriber will receive this image and dump it into a file named `output.jpg` :)
 
 ### 3.2 Evaluating Little's Theorem (20 points)
 
-Now we are ready to evaluate 
+Now we are ready to evaluate Little's Theorem using Mosquitto.

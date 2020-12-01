@@ -7,11 +7,11 @@ N=100
 sleep 2
 
 # Starting our customized subscriber
-../client/mosquitto_sub -t "topic1" -p 2006 > sub.out &
+../client/mosquitto_sub -i "sub1" -t "t1" -p 2006 > sub.out &
 
 # Starting our customized publishers
 for i in $(seq 1 1 $N); do
-    ../client/mosquitto_pub -t "topic1" -m "from pub$i" -p 2006 -q 0 --repeat 300 --repeat-delay 0.3 &
+    ../client/mosquitto_pub -i "pub$1" -t "t1" -m "from pub$i" -p 2006 -q 0 --repeat 300 --repeat-delay 0.3 &
     sleep 0.13
 done
 echo "Finished starting all publishers"
