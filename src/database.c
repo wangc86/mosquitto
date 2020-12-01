@@ -487,6 +487,7 @@ int db__message_insert(struct mosquitto_db *db, struct mosquitto *context, uint1
 	}else{
 		DL_APPEND(msg_data->inflight, msg);
 	}
+        printf("%d\n", msg_data->msg_count);
 	msg_data->msg_count++;
 	msg_data->msg_bytes+= msg->store->payloadlen;
 	if(qos > 0){

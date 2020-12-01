@@ -36,6 +36,8 @@ Contributors:
 #include <mqtt_protocol.h>
 #include "client_shared.h"
 
+#include <sys/time.h>
+
 #ifdef WITH_SOCKS
 static int mosquitto__parse_socks_url(struct mosq_config *cfg, char *url);
 #endif
@@ -743,6 +745,14 @@ int client_config_line_proc(struct mosq_config *cfg, int pub_or_sub, int argc, c
 				cfg->pub_mode = MSGMODE_CMD;
 			}
 			i++;
+		}else if(!strcmp(argv[i], "-et")){ // embedding timestamp as a message
+                        static struct timeval arrival_time;
+	                gettimeofday(&arrival_time, NULL);
+	                //printf("%ld %ld\n", arrival_time.tv_sec, arrival_time.tv_usec);
+			cfg->message = ;
+			szt = strlen(cfg->message);
+			cfg->msglen = (int )szt;
+			cfg->pub_mode = MSGMODE_CMD;
 		}else if(!strcmp(argv[i], "-M")){
 			if(i==argc-1){
 				fprintf(stderr, "Error: -M argument given but max_inflight not specified.\n\n");
