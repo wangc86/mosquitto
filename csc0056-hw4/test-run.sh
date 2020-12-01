@@ -3,7 +3,6 @@
 N=1
 
 # Starting the Mosquitto broker
-#../src/mosquitto -c ./hw4.conf > broker.log &
 ../src/mosquitto -c ./hw4-test-run.conf &
 sleep 2
 
@@ -12,8 +11,7 @@ sleep 2
 
 # Starting our customized publishers
 for i in $(seq 1 1 $N); do
-    #../client/mosquitto_pub -t "topic1" -m "from pub$i" -p 2006 -q 0 --repeat 10 --repeat-delay 1 &
-    ../client/mosquitto_pub -i "pub$i" -t "topic1" -m "from pub$i" -p 2006 -q 0 &
+    ../client/mosquitto_pub -i "pub$i" -t "topic1" -p 2006 -q 0 --embed-timestamp &
     sleep 1
 done
 

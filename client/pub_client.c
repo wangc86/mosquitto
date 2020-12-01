@@ -27,6 +27,7 @@ Contributors:
 #else
 #include <process.h>
 #include <winsock2.h>
+#include <time.h>
 #define snprintf sprintf_s
 #endif
 
@@ -74,8 +75,13 @@ static struct timeval next_publish_tv;
 static void set_repeat_time(void)
 {
 	gettimeofday(&next_publish_tv, NULL);
-	next_publish_tv.tv_sec += cfg.repeat_delay.tv_sec;
+	/*
+        next_publish_tv.tv_sec += cfg.repeat_delay.tv_sec;
 	next_publish_tv.tv_usec += cfg.repeat_delay.tv_usec;
+        */
+        long unsigned int x = (rand() % cfg.repeat_delay.tv_usec + 1);
+        printf("%ld\n", x);
+	next_publish_tv.tv_usec += x;
 
 	next_publish_tv.tv_sec += next_publish_tv.tv_usec/1000000;
 	next_publish_tv.tv_usec = next_publish_tv.tv_usec%1000000;
@@ -133,8 +139,15 @@ void my_connect_callback(struct mosquitto *mosq, void *obj, int result, int flag
 	connack_result = result;
 
 	if(!result){
+                struct timeval creation_time;
 		switch(cfg.pub_mode){
 			case MSGMODE_CMD:
+	                        gettimeofday(&creation_time, NULL);
+                                memcpy(&cfg.message[0], &creation_time.tv_sec, 8);
+                                memcpy(&cfg.message[8], &creation_time.tv_usec, 8);
+                                //str[16] = '\0';
+				rc = my_publish(mosq, &mid_sent, cfg.topic, cfg.msglen, cfg.message, cfg.qos, cfg.retain);
+				break;
 			case MSGMODE_FILE:
 			case MSGMODE_STDIN_FILE:
 				rc = my_publish(mosq, &mid_sent, cfg.topic, cfg.msglen, cfg.message, cfg.qos, cfg.retain);
@@ -334,8 +347,15 @@ int pub_other_loop(struct mosquitto *mosq)
 		rc = mosquitto_loop(mosq, loop_delay, 1);
 		if(ready_for_repeat && check_repeat_time()){
 			rc = MOSQ_ERR_SUCCESS;
+                        struct timeval creation_time;
 			switch(cfg.pub_mode){
 				case MSGMODE_CMD:
+	                                gettimeofday(&creation_time, NULL);
+                                        memcpy(&cfg.message[0], &creation_time.tv_sec, 8);
+                                        memcpy(&cfg.message[8], &creation_time.tv_usec, 8);
+                                        //str[16] = '\0';
+					rc = my_publish(mosq, &mid_sent, cfg.topic, cfg.msglen, cfg.message, cfg.qos, cfg.retain);
+                                        break;
 				case MSGMODE_FILE:
 				case MSGMODE_STDIN_FILE:
 					rc = my_publish(mosq, &mid_sent, cfg.topic, cfg.msglen, cfg.message, cfg.qos, cfg.retain);
@@ -438,6 +458,7 @@ void print_usage(void)
 	printf(" -V : specify the version of the MQTT protocol to use when connecting.\n");
 	printf("      Can be mqttv5, mqttv311 or mqttv31. Defaults to mqttv311.\n");
 	printf(" --help : display this message.\n");
+	printf(" --embed-timestamp : use the timestamp at data creation as a message (for course CSC0056).\n");
 	printf(" --repeat : if publish mode is -f, -m, or -s, then repeat the publish N times.\n");
 	printf(" --repeat-delay : if using --repeat, wait time seconds between publishes. Defaults to 0.\n");
 	printf(" --quiet : don't print error messages.\n");
@@ -481,6 +502,8 @@ int main(int argc, char *argv[])
 {
 	struct mosquitto *mosq = NULL;
 	int rc;
+
+        srand(time(NULL));
 
 	mosquitto_lib_init();
 

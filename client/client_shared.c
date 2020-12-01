@@ -745,13 +745,18 @@ int client_config_line_proc(struct mosq_config *cfg, int pub_or_sub, int argc, c
 				cfg->pub_mode = MSGMODE_CMD;
 			}
 			i++;
-		}else if(!strcmp(argv[i], "-et")){ // embedding timestamp as a message
-                        static struct timeval arrival_time;
-	                gettimeofday(&arrival_time, NULL);
-	                //printf("%ld %ld\n", arrival_time.tv_sec, arrival_time.tv_usec);
-			cfg->message = ;
-			szt = strlen(cfg->message);
-			cfg->msglen = (int )szt;
+		}else if(!strcmp(argv[i], "--embed-timestamp")){ // embedding timestamp as a message
+                        struct timeval creation_time;
+	                gettimeofday(&creation_time, NULL);
+                        //char str[17];
+                        char *str = malloc(17);
+                        memcpy(&str[0], &creation_time.tv_sec, 8);
+                        memcpy(&str[8], &creation_time.tv_usec, 8);
+                        str[16] = '\0';
+			cfg->message = str;
+			//szt = strlen(cfg->message);
+			//cfg->msglen = (int )szt;
+			cfg->msglen = 16;
 			cfg->pub_mode = MSGMODE_CMD;
 		}else if(!strcmp(argv[i], "-M")){
 			if(i==argc-1){

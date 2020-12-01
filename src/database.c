@@ -27,6 +27,8 @@ Contributors:
 #include "time_mosq.h"
 #include "util_mosq.h"
 
+#include <unistd.h>
+
 static unsigned long max_inflight_bytes = 0;
 static int max_queued = 100;
 static unsigned long max_queued_bytes = 0;
@@ -487,7 +489,7 @@ int db__message_insert(struct mosquitto_db *db, struct mosquitto *context, uint1
 	}else{
 		DL_APPEND(msg_data->inflight, msg);
 	}
-        printf("%d\n", msg_data->msg_count);
+        //printf("%d\n", msg_data->msg_count);
 	msg_data->msg_count++;
 	msg_data->msg_bytes+= msg->store->payloadlen;
 	if(qos > 0){
@@ -1057,6 +1059,7 @@ int db__message_write(struct mosquitto_db *db, struct mosquitto *context)
 
 		switch(tail->state){
 			case mosq_ms_publish_qos0:
+        //printf("%d\n", (context->msgs_in).msg_count + (context->msgs_out).msg_count);
 				rc = send__publish(context, mid, topic, payloadlen, payload, qos, retain, retries, cmsg_props, store_props, expiry_interval);
 				if(rc == MOSQ_ERR_SUCCESS || rc == MOSQ_ERR_OVERSIZE_PACKET){
 					db__message_remove(db, &context->msgs_out, tail);

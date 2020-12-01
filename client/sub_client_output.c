@@ -80,6 +80,13 @@ static int get_time(struct tm **ti, long *ns)
 
 static void write_payload(const unsigned char *payload, int payloadlen, int hex)
 {
+        static struct timeval creation_time;
+        memcpy(&creation_time.tv_sec, &payload[0], 8);
+        memcpy(&creation_time.tv_usec, &payload[8], 8);
+        static struct timeval arrival_time;
+        gettimeofday(&arrival_time, NULL);
+	fprintf(stdout, "%ld %ld", arrival_time.tv_sec-creation_time.tv_sec, arrival_time.tv_usec-creation_time.tv_usec);
+/*
 	int i;
 
 	if(hex == 0){
@@ -93,6 +100,7 @@ static void write_payload(const unsigned char *payload, int payloadlen, int hex)
 			fprintf(stdout, "%02X", payload[i]);
 		}
 	}
+*/
 }
 
 

@@ -73,17 +73,17 @@ Save the change and close the file. Then type the following to have our update c
 
 `$ source ~/.bashrc`
 
-**(20 points) Now run the script named `test-run.sh`. Take a screenshot of the output and upload it to Moodle.** You should see an output similar to file `Screenshot-example.png`.
+**(20 points) Now run the script named `test-run.sh`. Take a screenshot for the output and upload it to Moodle.** You should see an output similar to file `Screenshot-example.png`.
 
 (The rest of this subsection is optional)
 
-Interestingly, we may send an image using Mosquitto as a "message". For example, try sending the following image:
+Interestingly, we may send an image using Mosquitto as a "message". To learn more, type `../client/mosquitto_pub --help`  from the homework4 folder. For example, try sending the following image:
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/St._Louis_Arch_%281984%29.jpg" style="zoom:20%;" />
 
 (This image is from Wikimedia: https://commons.wikimedia.org/wiki/File:St._Louis_Arch_(1984).jpg. The arch in the photo is the landmark of the dear city where I've sojourned for seven years.)
 
-There is a helper script named `sendImage.sh` for you to try it out. Run the script and a mosquitto subscriber will receive this image and dump it into a file named `output.jpg` :)
+Here is a helper script for you, named `sendImage.sh`. Run the script and a mosquitto subscriber will receive this image and dump it into a file named `output.jpg` :)
 
 ### 3.2 Evaluating Little's Theorem (20 points)
 
