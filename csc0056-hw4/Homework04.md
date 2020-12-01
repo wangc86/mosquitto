@@ -1,9 +1,7 @@
 # CSC0056 Homework 4
 
-* Submit your work to Moodle before 9AM, December 7th (**Monday**)
-* A copy of this instruction can be found on
-  * https://github.com/wangc86/csc0056
-  * https://github.com/wangc86/mosquitto/tree/master/csc0056-hw4
+* Submit your work to Moodle before **9PM, December 12th, Saturday**
+* A copy of this instruction can be found [here](https://github.com/wangc86/mosquitto/tree/master/csc0056-hw4).
 
 
 
@@ -34,20 +32,18 @@ To learn recent findings in computer science and engineering, it is very importa
 
    > *S. Keshav. 2007. How to read a paper.* *SIGCOMM Comput. Commun. Rev.* *37, 3 (July 2007), 83–84. DOI:https://doi.org/10.1145/1273445.1273458*
 
-   From the link above, click the "eReader" or "PDF" to read it. Note that you may need to use the campus network to access this paper.
+   From the link above, click the "eReader" or "PDF" to read it. You may need to use the campus network to access this paper.
 
-2. Use the strategy from the above article and read the following paper. For this homework, you only need to read the abstract, the introduction, and the concluding remarks: 
+2. Use the strategy from the above article and read the following research paper. You only need to read the abstract, the introduction, and the concluding remarks: 
 
    > C. Wang, C. Gill and C. Lu, "Adaptive Data Replication in Real-Time Reliable Edge Computing for Internet of Things," 2020 IEEE/ACM Fifth International Conference on Internet-of-Things Design and Implementation (IoTDI), Sydney, Australia, 2020, pp. 128-134, doi: https://doi.org/10.1109/IoTDI49375.2020.00019.
 
-   Alternatively, you may download the author copy from [here](https://wangc86.github.io/publication/iotdi20/iotdi20.pdf).
+   Answer these two questions in your own words:
 
-   Now, answer these two questions:
-
-   1. (**10 points**) What are the challenge(s) that this paper trying to tackle?
-   2. (**10 points**) What are the contribution(s) that this paper claims to give?
-
-3. (**10 points**) Write to let us know where you found difficult in reading a research paper. Your opinion will help us identify what might help students the most, and they will help us shape materials regarding paper reading in the later part of this semester.
+   1. (**10 points**) Describe the research challenge(s) this paper trying to tackle.
+2. (**10 points**) Describe the research contribution(s) this paper claiming to give.
+   
+3. (**10 points**) Write to let us know where you found it challenging in reading a research paper. Your opinion will help us identify what might help students the most, and they will help us shape materials regarding paper reading in the later part of this semester.
 
 ## 3. Empirical Evaluation of Little's Theorem (40 points)
 
