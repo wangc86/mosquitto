@@ -58,6 +58,7 @@ extern bool flag_reload;
 extern bool flag_db_backup;
 #endif
 extern bool flag_tree_print;
+extern bool N_print;
 extern int run;
 
 #ifdef SIGHUP
@@ -94,6 +95,7 @@ void handle_sigusr2(int signal)
 	UNUSED(signal);
 
 	flag_tree_print = true;
+        N_print = true;
 }
 
 /*

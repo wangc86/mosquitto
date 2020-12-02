@@ -75,13 +75,13 @@ static struct timeval next_publish_tv;
 static void set_repeat_time(void)
 {
 	gettimeofday(&next_publish_tv, NULL);
-	/*
+//	/*
         next_publish_tv.tv_sec += cfg.repeat_delay.tv_sec;
 	next_publish_tv.tv_usec += cfg.repeat_delay.tv_usec;
-        */
-        long unsigned int x = (rand() % cfg.repeat_delay.tv_usec + 1);
+//        */
+//        long unsigned int x = (rand() % cfg.repeat_delay.tv_usec + 1);
         //printf("%ld\n", x);
-	next_publish_tv.tv_usec += x;
+//	next_publish_tv.tv_usec += x;
 
 	next_publish_tv.tv_sec += next_publish_tv.tv_usec/1000000;
 	next_publish_tv.tv_usec = next_publish_tv.tv_usec%1000000;

@@ -78,7 +78,7 @@ static int get_time(struct tm **ti, long *ns)
 }
 
 
-static void write_payload(const unsigned char *payload, int payloadlen, int hex)
+static void write_payload_timestamp(const unsigned char *payload, int payloadlen, int hex)
 {
         static struct timeval creation_time;
         memcpy(&creation_time.tv_sec, &payload[0], 8);
@@ -86,7 +86,10 @@ static void write_payload(const unsigned char *payload, int payloadlen, int hex)
         static struct timeval arrival_time;
         gettimeofday(&arrival_time, NULL);
 	fprintf(stdout, "%ld %ld", arrival_time.tv_sec-creation_time.tv_sec, arrival_time.tv_usec-creation_time.tv_usec);
-/*
+}
+
+static void write_payload(const unsigned char *payload, int payloadlen, int hex)
+{
 	int i;
 
 	if(hex == 0){
@@ -100,7 +103,6 @@ static void write_payload(const unsigned char *payload, int payloadlen, int hex)
 			fprintf(stdout, "%02X", payload[i]);
 		}
 	}
-*/
 }
 
 
@@ -319,6 +321,20 @@ void print_message(struct mosq_config *cfg, const struct mosquitto_message *mess
 	if(cfg->format){
 		formatted_print(cfg, message);
 	}else if(cfg->verbose){
+                // Chao: What I did here is a horrible hack, where I abused the semantics
+                //       of argument "verbose" for outputing timestamp information.
+                //       This rough hack is solely for the purpose of differentiating
+                //       the original write_payload(...) with write_payload_timestamp(...).
+                //       The original version is commented out as below.
+                //       The original version may be invoked if we disabled the verbose flag.
+		if(message->payloadlen){
+			write_payload_timestamp(message->payload, message->payloadlen, false);
+			if(cfg->eol){
+				printf("\n");
+			}
+			fflush(stdout);
+		}
+                /*
 		if(message->payloadlen){
 			printf("%s ", message->topic);
 			write_payload(message->payload, message->payloadlen, false);
@@ -331,6 +347,7 @@ void print_message(struct mosq_config *cfg, const struct mosquitto_message *mess
 			}
 		}
 		fflush(stdout);
+                */
 	}else{
 		if(message->payloadlen){
 			write_payload(message->payload, message->payloadlen, false);

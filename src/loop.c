@@ -575,7 +575,10 @@ int mosquitto_main_loop(struct mosquitto_db *db, mosq_sock_t *listensock, int li
 			flag_reload = false;
 		}
 		if(flag_tree_print){
-			sub__tree_print(db->subs, 0);
+                // Chao: we have disabled this feature - we use SIGUSR2 to print N instead;
+                //       see the instruction for csc0056 homework 4.
+                //       Also, see db__message_insert(...) in src/database.c
+			//sub__tree_print(db->subs, 0);
 			flag_tree_print = false;
 		}
 #ifdef WITH_WEBSOCKETS

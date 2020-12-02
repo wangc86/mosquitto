@@ -33,6 +33,8 @@ static unsigned long max_inflight_bytes = 0;
 static int max_queued = 100;
 static unsigned long max_queued_bytes = 0;
 
+extern bool N_print;
+
 /**
  * Is this context ready to take more in flight messages right now?
  * @param context the client context of interest
@@ -489,7 +491,16 @@ int db__message_insert(struct mosquitto_db *db, struct mosquitto *context, uint1
 	}else{
 		DL_APPEND(msg_data->inflight, msg);
 	}
-        //printf("%d\n", msg_data->msg_count);
+//        printf("%d\n", msg_data->msg_count);
+///*
+        if(N_print){
+                // Chao: Note that this seems to be non-ideal for our purpose because
+                //       it will still query at a somewhat scheduled period,
+                //       i.e., our sampling of # of packets is not random.
+                printf("%d\n", msg_data->msg_count);
+                N_print = false;
+        }
+//*/
 	msg_data->msg_count++;
 	msg_data->msg_bytes+= msg->store->payloadlen;
 	if(qos > 0){
