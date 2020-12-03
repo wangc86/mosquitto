@@ -279,9 +279,6 @@ static void db__message_remove(struct mosquitto_db *db, struct mosquitto_msg_dat
 
 	DL_DELETE(msg_data->inflight, item);
 	if(item->store){
-	        gettimeofday(&time_finish, NULL);
-	        fprintf(stderr, "%ld %ld\n", time_finish.tv_sec-time_start.tv_sec, time_finish.tv_usec-time_start.tv_usec);
-                
 		msg_data->msg_count--;
 		msg_data->msg_bytes -= item->store->payloadlen;
 		if(item->qos > 0){
@@ -289,6 +286,11 @@ static void db__message_remove(struct mosquitto_db *db, struct mosquitto_msg_dat
 			msg_data->msg_bytes12 -= item->store->payloadlen;
 		}
 		db__msg_store_ref_dec(db, &item->store);
+                // Chao: Sample what the arrival saw; N_print is toggled by SIGUSR2
+                if(N_print){
+	            gettimeofday(&time_finish, NULL);
+	            fprintf(stderr, "%ld %ld\n", time_finish.tv_sec-time_start.tv_sec, time_finish.tv_usec-time_start.tv_usec);
+                }
 	}
 
 	mosquitto_property_free_all(&item->properties);
@@ -498,16 +500,11 @@ int db__message_insert(struct mosquitto_db *db, struct mosquitto *context, uint1
 		DL_APPEND(msg_data->inflight, msg);
 	}
 
-        printf("%d\n", msg_data->msg_count);
-/*
+        //usleep(1000);
+        // Chao: Sample what the arrival saw; N_print is toggled by SIGUSR2
         if(N_print){
-                // Chao: Note that this seems to be non-ideal for our purpose because
-                //       it will still query at a somewhat scheduled period,
-                //       i.e., our sampling of # of packets is not random.
                 printf("%d\n", msg_data->msg_count);
-                N_print = false;
         }
-*/
 	gettimeofday(&time_start, NULL);
         // time_finish will be taken in db__message_remove()
         // This is used to measure the average time spent

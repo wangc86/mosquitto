@@ -1,15 +1,16 @@
 #!/bin/bash
 
-# In this version we take samples at every arrival to estimate N
-# To make this work, we need to modify ./src/database.c and recompile the code
-SEC=20
-#SEC=50
+if [[ "$#" -ne 2 ]]; then
+    echo "Error: need to give two parameters"
+    echo "Usage: $0 #-of-publishers #-of-seconds-to-sample"
+    exit 2
+fi
+# FYI, https://stackoverflow.com/questions/18568706/check-number-of-arguments-passed-to-a-bash-script
 
-#N_PUBS=100
-N_PUBS=100
+N_PUBS=$1
+SEC=$2
+echo "Number of publishers = $N_PUBS; sampling duration = $SEC seconds"
 
-# The unit of delay is in seconds.
-DELAY=0.4
 
 echo -n "Initializing the system..."
 # Starting the Mosquitto broker
@@ -20,28 +21,38 @@ for i in $(seq 1 4 1); do
 done
 
 # Starting our customized subscriber
-../client/mosquitto_sub -v -i "sub1" -t "t1" -p 2006 > sub.log &
+../client/mosquitto_sub -v -i "sub1" -t "t1" -p 2006 > e2e.log &
 echo -n "."
 
 # Starting our customized publishers
 # Note that we've changed the --repeat-delay semantics, and
 # now the delay follows an uniform distribution, with the specified value being the upper bound of the range.
+# The unit of the delay parameter is second.
+DELAY=0.99
 for i in $(seq 1 1 $N_PUBS); do
     ../client/mosquitto_pub -i "pub$i" -t "t1" -p 2006 -q 0 --embed-timestamp --repeat 50000 --repeat-delay $DELAY &
-    if [ $(( i % 10 )) -eq 0 ]; then
+    if [ $(( $i % 10 )) -eq 0 ]; then
         echo -n "."
     fi
     sleep 0.01
 done
-
 echo "Done!"
-echo -n "Collecting samples of N for $SEC seconds..."
 
-# Keep collecting data
-sleep $SEC
+# The following pkill command sends signal SIGUSR2 to toggle the sampling mechanism
+# Note that we take samples at every arrival to estimate N
+pkill -12 -f src/mosquitto
+for i in $(seq 1 1 $SEC); do
+    if [ $(( $i % 2 )) -eq 0 ]; then
+        echo -ne "\rSampling for N (should take $SEC seconds)....... $(echo "100*$i/$SEC"|bc)%"
+        #echo -n "."
+    fi
+    sleep 1
+done
+pkill -12 -f src/mosquitto
+echo -e "\rSampling for N (should take $SEC seconds)....... Done!"
 
-echo "Done!"
-echo -n "Start to parse the resulting data..."
+# Allow some time for the final sample before killed
+sleep 1
 
 # Killing all publishers, the subscriber, and the broker
 # The following manipulation on the file descriptors
@@ -53,26 +64,18 @@ pkill mosquitto_pub
 pkill -f src/mosquitto
 exec 2>&3
 
-# Now, parse the resulting data.
-# Note that we need to throw away some latency measurements taken during the initialization,
-# for they have relatively long delays due to interference by new client connections.
-# In the following, we throw away the first 300 samples, hoping to discount those interference
-# incurred by commands in lines 24-27 above.
-awk 'NR>300 {print $0}' sub.log > s1
-awk '{if ($2<0) printf "%.6f\n", (($1-1)+(1000000+$2)/1000000.0); else printf "%.6f\n", ($1+($2/1000000.0))}' s1 > e2e_latency.out
-awk 'NR>300 {print $0}' tmp.log > t1
-awk '{if ($2<0) printf "%.6f\n", (($1-1)+(1000000+$2)/1000000.0); else printf "%.6f\n", ($1+($2/1000000.0))}' t1 > T.log
-
-echo "Done!"
-echo "--------- Experimental Result ---------------"
+echo "  --------------- Experimental Result ------------------"
 # The following 2/$DELAY came from 1/($DELAY/2), since the delay follows an uniform distribution.
-LAMBDA=$(echo "2 / $DELAY * $N_PUBS" | bc)
+LAMBDA1=$(echo "scale=6; 2 / $DELAY * $N_PUBS" | bc)
+echo "    Lambda (in theory)   L1 = $LAMBDA1 pkts/sec"
+L=$(wc -l N.log | awk '{print $1}')
+LAMBDA2=$(echo "scale=6; $L / $SEC" | bc)
+echo "    Lambda (in practice) L2 = $LAMBDA2 pkts/sec"
+awk '{if ($2<0) printf "%.6f\n", (($1-1)+(1000000+$2)/1000000.0); else printf "%.6f\n", ($1+($2/1000000.0))}' tmp.log > T.log
 T=$(./avg.sh T.log)
-e2e=$(./avg.sh e2e_latency.out)
-echo "  Lambda = $LAMBDA packets/second"
-echo "  T = $T seconds"
-echo "  N (estimated by Little's Theorem) = $(echo "$LAMBDA * $T" | bc) packets"
-awk 'NR>300 {print $0}' N.log > n1
-echo "  N (from our empirical measurement) = $(./avg.sh n1) packets"
-echo "  End-to-end latency = $e2e seconds"
-echo "---------------------------------------------"
+awk '{if ($2<0) printf "%.6f\n", (($1-1)+(1000000+$2)/1000000.0); else printf "%.6f\n", ($1+($2/1000000.0))}' e2e.log > e2e.delay
+echo "    T (avg. time in structure 'inflight') = $T seconds"
+echo "    N (from L1*T) = $(echo "scale=6; $LAMBDA1 * $T" | bc) packets"
+echo "    N (from L2*T) = $(echo "scale=6; $LAMBDA2 * $T" | bc) packets"
+echo "    N (from our empirical measurement) = $(./avg.sh N.log) packets"
+echo "  ------------------------------------------------------"

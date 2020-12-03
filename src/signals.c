@@ -95,7 +95,12 @@ void handle_sigusr2(int signal)
 	UNUSED(signal);
 
 	flag_tree_print = true;
-        N_print = true;
+        if (N_print){
+            N_print = false;
+        }
+        else{
+            N_print = true;
+        }
 }
 
 /*
