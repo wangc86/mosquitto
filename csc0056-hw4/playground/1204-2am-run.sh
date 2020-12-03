@@ -21,7 +21,7 @@ for i in $(seq 1 4 1); do
 done
 
 # Starting our customized subscriber
-../client/mosquitto_sub -v -i "sub1" -t "t1" -p 2006 > sub.log &
+../client/mosquitto_sub -v -i "sub1" -t "t1" -p 2006 > e2e.log &
 echo -n "."
 
 # Starting our customized publishers
@@ -65,19 +65,17 @@ pkill -f src/mosquitto
 exec 2>&3
 
 echo "  --------------- Experimental Result ------------------"
+# The following 2/$DELAY came from 1/($DELAY/2), since the delay follows an uniform distribution.
+LAMBDA1=$(echo "scale=6; 2 / $DELAY * $N_PUBS" | bc)
+echo "    Lambda (in theory)   L1 = $LAMBDA1 pkts/sec"
 L=$(wc -l N.log | awk '{print $1}')
-P=$(wc -l sub.log | awk '{print $1}')
-# Prune the subscriber log, because the log includes those data generated before
-# we started taking samples in the broker.
-D=$(( $P - $L ))
-awk -v delta=$D 'NR>=delta {print $0}' sub.log > e2e.log
-THROUGHPUT=$(echo "scale=6; $P / $SEC" | bc)
-echo "    System throughput (denoted as U) = $THROUGHPUT pkts/sec"
+LAMBDA2=$(echo "scale=6; $L / $SEC" | bc)
+echo "    Lambda (in practice) L2 = $LAMBDA2 pkts/sec"
 awk '{if ($2<0) printf "%.6f\n", (($1-1)+(1000000+$2)/1000000.0); else printf "%.6f\n", ($1+($2/1000000.0))}' tmp.log > T.log
 T=$(./avg.sh T.log)
-echo "    T (avg. time in structure 'inflight') = $T seconds"
-echo "    N (from U*T) = $(echo "scale=6; $THROUGHPUT * $T" | bc) packets"
-echo "    N (from our empirical measurement) = $(./avg.sh N.log) packets"
 awk '{if ($2<0) printf "%.6f\n", (($1-1)+(1000000+$2)/1000000.0); else printf "%.6f\n", ($1+($2/1000000.0))}' e2e.log > e2e.delay
-echo "    Average end-to-end delay = $(./avg.sh e2e.delay) seconds"
+echo "    T (avg. time in structure 'inflight') = $T seconds"
+echo "    N (from L1*T) = $(echo "scale=6; $LAMBDA1 * $T" | bc) packets"
+echo "    N (from L2*T) = $(echo "scale=6; $LAMBDA2 * $T" | bc) packets"
+echo "    N (from our empirical measurement) = $(./avg.sh N.log) packets"
 echo "  ------------------------------------------------------"
