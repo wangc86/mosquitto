@@ -39,7 +39,7 @@ To learn recent findings in computer science and engineering, it is very importa
    Answer these two questions in your own words:
 
    1. (**10 points**) Describe the research challenge(s) this paper trying to tackle.
-2. (**10 points**) Describe the research contribution(s) this paper claiming to give.
+   2. (**10 points**) Describe the research contribution(s) this paper claiming to give.
    
 3. (**10 points**) Write to let us know where you found it challenging in reading a research paper. Your opinion will help us identify what might help students the most, and they will help us shape materials regarding paper reading in the later part of this semester.
 
