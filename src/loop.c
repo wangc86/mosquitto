@@ -203,6 +203,7 @@ int mosquitto_main_loop(struct mosquitto_db *db, mosq_sock_t *listensock, int li
 #endif
 
 	while(run){
+//usleep(300000); // might awake for some unknown reason..
 		context__free_disused(db);
 #ifdef WITH_SYS_TREE
 		if(db->config->sys_interval > 0){
@@ -470,7 +471,9 @@ int mosquitto_main_loop(struct mosquitto_db *db, mosq_sock_t *listensock, int li
 #ifndef WIN32
 		sigprocmask(SIG_SETMASK, &sigblock, &origsig);
 #ifdef WITH_EPOLL
+//sleep(3);
 		fdcount = epoll_wait(db->epollfd, events, MAX_EVENTS, 100);
+		//fdcount = epoll_wait(db->epollfd, events, MAX_EVENTS, 2100);
 #else
 		fdcount = poll(pollfds, pollfd_index, 100);
 #endif
@@ -486,13 +489,16 @@ int mosquitto_main_loop(struct mosquitto_db *db, mosq_sock_t *listensock, int li
 			}
 			break;
 		case 0:
+//    printf("received nothing\n");
 			break;
 		default:
+//    printf("received sth begin, fdcount=%d\n", fdcount);
 			for(i=0; i<fdcount; i++){
 				for(j=0; j<listensock_count; j++){
 					if (events[i].data.fd == listensock[j]) {
 						if (events[i].events & (EPOLLIN | EPOLLPRI)){
 							while((ev.data.fd = net__socket_accept(db, listensock[j])) != -1){
+    //printf("accept\n");
 								ev.events = EPOLLIN;
 								if (epoll_ctl(db->epollfd, EPOLL_CTL_ADD, ev.data.fd, &ev) == -1) {
 									log__printf(NULL, MOSQ_LOG_ERR, "Error in epoll accepting: %s", strerror(errno));
@@ -510,9 +516,11 @@ int mosquitto_main_loop(struct mosquitto_db *db, mosq_sock_t *listensock, int li
 					}
 				}
 				if (j == listensock_count) {
+//    printf("handle rw\n");
 					loop_handle_reads_writes(db, events[i].data.fd, events[i].events);
 				}
 			}
+//    printf("received sth end\n");
 		}
 #else
 		if(fdcount == -1){
@@ -575,10 +583,10 @@ int mosquitto_main_loop(struct mosquitto_db *db, mosq_sock_t *listensock, int li
 			flag_reload = false;
 		}
 		if(flag_tree_print){
-                // Chao: we have disabled this feature - we use SIGUSR2 to print N instead;
-                //       see the instruction for csc0056 homework 4.
-                //       Also, see db__message_insert(...) in src/database.c
-			//sub__tree_print(db->subs, 0);
+                // Chao: I disabled this feature since we overwrote the use of SIGUSR2;
+                // see the instruction for csc0056 homework 4.
+                // Also, see src/database.c
+			sub__tree_print(db->subs, 0);
 			flag_tree_print = false;
 		}
 #ifdef WITH_WEBSOCKETS
@@ -830,6 +838,7 @@ static void loop_handle_reads_writes(struct mosquitto_db *db, struct pollfd *pol
 #endif
 #endif
 			do{
+//printf("packet_read\n");
 				rc = packet__read(db, context);
 				if(rc){
 					do_disconnect(db, context, rc);

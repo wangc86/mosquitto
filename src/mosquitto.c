@@ -62,7 +62,7 @@ bool flag_reload = false;
 bool flag_db_backup = false;
 #endif
 bool flag_tree_print = false;
-bool N_print = false;
+bool flag_sample = false;
 int run;
 #ifdef WITH_WRAP
 #include <syslog.h>

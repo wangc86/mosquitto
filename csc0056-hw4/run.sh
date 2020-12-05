@@ -14,7 +14,7 @@ echo "Number of publishers = $N_PUBS; sampling duration = $SEC seconds"
 
 echo -n "Initializing the system..."
 # Starting the Mosquitto broker
-stdbuf -oL ../src/mosquitto -c ./hw4.conf > N.log 2> tmp.log &
+stdbuf -oL ../src/mosquitto -c ./hw4.conf > n.log 2> t.log &
 for i in $(seq 1 4 1); do
     sleep 0.5
     echo -n "."
@@ -27,7 +27,7 @@ echo -n "."
 # Starting our customized publishers
 # Note that we've changed the --repeat-delay semantics, and
 # now the delay follows an uniform distribution, with the specified value being the upper bound of the range.
-# The unit of the delay parameter is second.
+# The time unit of the delay parameter is in seconds.
 DELAY=0.99
 for i in $(seq 1 1 $N_PUBS); do
     ../client/mosquitto_pub -i "pub$i" -t "t1" -p 2006 -q 0 --embed-timestamp --repeat 50000 --repeat-delay $DELAY &
@@ -65,19 +65,23 @@ pkill -f src/mosquitto
 exec 2>&3
 
 echo "  --------------- Experimental Result ------------------"
-L=$(wc -l N.log | awk '{print $1}')
+# Prune the subscriber log, because the log includes those
+# data generated before we started taking samples in the broker.
+L=$(wc -l n.log | awk '{print $1}')
 P=$(wc -l sub.log | awk '{print $1}')
-# Prune the subscriber log, because the log includes those data generated before
-# we started taking samples in the broker.
 D=$(( $P - $L ))
-awk -v delta=$D 'NR>=delta {print $0}' sub.log > e2e.log
-THROUGHPUT=$(echo "scale=6; $P / $SEC" | bc)
-echo "    System throughput (denoted as U) = $THROUGHPUT pkts/sec"
-awk '{if ($2<0) printf "%.6f\n", (($1-1)+(1000000+$2)/1000000.0); else printf "%.6f\n", ($1+($2/1000000.0))}' tmp.log > T.log
-T=$(./avg.sh T.log)
-echo "    T (avg. time in structure 'inflight') = $T seconds"
-echo "    N (from U*T) = $(echo "scale=6; $THROUGHPUT * $T" | bc) packets"
-echo "    N (from our empirical measurement) = $(./avg.sh N.log) packets"
-awk '{if ($2<0) printf "%.6f\n", (($1-1)+(1000000+$2)/1000000.0); else printf "%.6f\n", ($1+($2/1000000.0))}' e2e.log > e2e.delay
-echo "    Average end-to-end delay = $(./avg.sh e2e.delay) seconds"
+awk -v delta=$D 'NR>=delta {print $0}' sub.log > sub.log.pruned
+THROUGHPUT=$(echo "scale=6; $(wc -l sub.log.pruned | awk '{print $1}') / $SEC" | bc)
+echo "    U (throughput) = $THROUGHPUT pkts/sec"
+awk '{if ($2<0) printf "%.6f\n", (($1-1)+(1000000+$2)/1000000.0); else printf "%.6f\n", ($1+($2/1000000.0))}' t.log > t1.log
+T1=$(./avg.sh t1.log)
+awk '{if ($2<0) printf "%.6f\n", (($1-1)+(1000000+$2)/1000000.0); else printf "%.6f\n", ($1+($2/1000000.0))}' sub.log.pruned > t2.log
+T2=$(./avg.sh t2.log)
+echo "    T1 (delay in the broker) = $T1 seconds"
+echo "    T2 (end-to-end delay)    = $T2 seconds"
+echo "    N1 (from U*T1) = $(echo "scale=6; $THROUGHPUT * $T1" | bc) packets"
+echo "    N2 (from U*T2) = $(echo "scale=6; $THROUGHPUT * $T2" | bc) packets"
 echo "  ------------------------------------------------------"
+FOLDER=$(date +%X)
+mkdir -p result/$FOLDER-$N_PUBS-$SEC
+cp *.log* result/$FOLDER-$N_PUBS-$SEC

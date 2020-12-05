@@ -58,7 +58,7 @@ extern bool flag_reload;
 extern bool flag_db_backup;
 #endif
 extern bool flag_tree_print;
-extern bool N_print;
+extern bool flag_sample;
 extern int run;
 
 #ifdef SIGHUP
@@ -93,14 +93,15 @@ void handle_sigusr1(int signal)
 void handle_sigusr2(int signal)
 {
 	UNUSED(signal);
-
-	flag_tree_print = true;
-        if (N_print){
-            N_print = false;
+        
+        if (flag_sample){
+            flag_sample = false;
         }
         else{
-            N_print = true;
+            flag_sample = true;
         }
+        // Chao: we disable the following since we changed the use of SIGUSR2
+	//flag_tree_print = true;
 }
 
 /*

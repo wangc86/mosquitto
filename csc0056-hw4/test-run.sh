@@ -16,11 +16,11 @@ for i in $(seq 1 1 $N); do
 done
 
 # Killing all publishers and the subscriber
-killall mosquitto_pub
-killall mosquitto_sub
+#killall mosquitto_pub
+#killall mosquitto_sub
 
-sleep 1
+#sleep 1
 
-# Killing the broker
-./kill_brokers.sh
+# Killing the broker and all publishers and subscribers.
+./kill_all.sh
 sleep 1

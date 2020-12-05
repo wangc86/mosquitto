@@ -36,26 +36,33 @@ int handle__packet(struct mosquitto_db *db, struct mosquitto *context)
 
 	switch((context->in_packet.command)&0xF0){
 		case CMD_PINGREQ:
+//printf("handle_pingreq\n");
 			return handle__pingreq(context);
 		case CMD_PINGRESP:
+//printf("handle_pingresp\n");
 			return handle__pingresp(context);
 		case CMD_PUBACK:
 			return handle__pubackcomp(db, context, "PUBACK");
 		case CMD_PUBCOMP:
 			return handle__pubackcomp(db, context, "PUBCOMP");
 		case CMD_PUBLISH:
+//printf("handle_publish\n");
 			return handle__publish(db, context);
 		case CMD_PUBREC:
 			return handle__pubrec(db, context);
 		case CMD_PUBREL:
 			return handle__pubrel(db, context);
 		case CMD_CONNECT:
+//printf("handle_connect\n");
 			return handle__connect(db, context);
 		case CMD_DISCONNECT:
+//printf("handle_disconnect\n");
 			return handle__disconnect(db, context);
 		case CMD_SUBSCRIBE:
+//printf("handle_subscribe\n");
 			return handle__subscribe(db, context);
 		case CMD_UNSUBSCRIBE:
+//printf("handle_unscribe\n");
 			return handle__unsubscribe(db, context);
 #ifdef WITH_BRIDGE
 		case CMD_CONNACK:

@@ -36,7 +36,7 @@ static unsigned long max_inflight_bytes = 0;
 static int max_queued = 100;
 static unsigned long max_queued_bytes = 0;
 
-extern bool N_print;
+extern bool flag_sample;
 
 /**
  * Is this context ready to take more in flight messages right now?
@@ -286,11 +286,13 @@ static void db__message_remove(struct mosquitto_db *db, struct mosquitto_msg_dat
 			msg_data->msg_bytes12 -= item->store->payloadlen;
 		}
 		db__msg_store_ref_dec(db, &item->store);
-                // Chao: Sample what the arrival saw; N_print is toggled by SIGUSR2
-                if(N_print){
+
+                if(flag_sample){  // Sampling is toggled by SIGUSR2
+                    // Chao: Record the sojourn time for each packet
 	            gettimeofday(&time_finish, NULL);
 	            fprintf(stderr, "%ld %ld\n", time_finish.tv_sec-time_start.tv_sec, time_finish.tv_usec-time_start.tv_usec);
                 }
+
 	}
 
 	mosquitto_property_free_all(&item->properties);
@@ -500,15 +502,14 @@ int db__message_insert(struct mosquitto_db *db, struct mosquitto *context, uint1
 		DL_APPEND(msg_data->inflight, msg);
 	}
 
-        //usleep(1000);
-        // Chao: Sample what the arrival saw; N_print is toggled by SIGUSR2
-        if(N_print){
-                printf("%d\n", msg_data->msg_count);
+        // Chao: Record what the arrival saw
+        if(flag_sample){  // Sampling is toggled by SIGUSR2
+            printf("%d\n", msg_data->msg_count);
+	    gettimeofday(&time_start, NULL);
+            // time_finish will be taken in db__message_remove()
+            // This is used to measure the time a packet spent
+            // in the msgs_out->inflight structure.
         }
-	gettimeofday(&time_start, NULL);
-        // time_finish will be taken in db__message_remove()
-        // This is used to measure the average time spent
-        // in the msgs_out->inflight structure.
 
 	msg_data->msg_count++;
 	msg_data->msg_bytes+= msg->store->payloadlen;
