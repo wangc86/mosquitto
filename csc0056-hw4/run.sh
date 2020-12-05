@@ -70,13 +70,14 @@ echo "  --------------- Experimental Result ------------------"
 L=$(wc -l n.log | awk '{print $1}')
 P=$(wc -l sub.log | awk '{print $1}')
 D=$(( $P - $L ))
-awk -v delta=$D 'NR>=delta {print $0}' sub.log > sub.log.pruned
+awk -v delta=$D 'NR>delta {print $0}' sub.log > sub.log.pruned
 THROUGHPUT=$(echo "scale=6; $(wc -l sub.log.pruned | awk '{print $1}') / $SEC" | bc)
 echo "    U (throughput) = $THROUGHPUT pkts/sec"
 awk '{if ($2<0) printf "%.6f\n", (($1-1)+(1000000+$2)/1000000.0); else printf "%.6f\n", ($1+($2/1000000.0))}' t.log > t1.log
 T1=$(./avg.sh t1.log)
 awk '{if ($2<0) printf "%.6f\n", (($1-1)+(1000000+$2)/1000000.0); else printf "%.6f\n", ($1+($2/1000000.0))}' sub.log.pruned > t2.log
 T2=$(./avg.sh t2.log)
+awk '{if ($2<0) printf "%.6f\n", (($1-1)+(1000000+$2)/1000000.0); else printf "%.6f\n", ($1+($2/1000000.0))}' sub.log > e2e.delay.misleading
 echo "    T1 (delay in the broker) = $T1 seconds"
 echo "    T2 (end-to-end delay)    = $T2 seconds"
 echo "    N1 (from U*T1) = $(echo "scale=6; $THROUGHPUT * $T1" | bc) packets"
