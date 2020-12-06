@@ -65,6 +65,7 @@ pkill -f src/mosquitto
 exec 2>&3
 
 echo "  --------------- Experimental Result ------------------"
+awk '{if ($2<0) printf "%.6f\n", (($1-1)+(1000000+$2)/1000000.0); else printf "%.6f\n", ($1+($2/1000000.0))}' sub.log > e2e.delay.misleading
 # Prune the subscriber log, because the log includes those
 # data generated before we started taking samples in the broker.
 L=$(wc -l n.log | awk '{print $1}')
@@ -77,7 +78,6 @@ awk '{if ($2<0) printf "%.6f\n", (($1-1)+(1000000+$2)/1000000.0); else printf "%
 T1=$(./avg.sh t1.log)
 awk '{if ($2<0) printf "%.6f\n", (($1-1)+(1000000+$2)/1000000.0); else printf "%.6f\n", ($1+($2/1000000.0))}' sub.log.pruned > t2.log
 T2=$(./avg.sh t2.log)
-awk '{if ($2<0) printf "%.6f\n", (($1-1)+(1000000+$2)/1000000.0); else printf "%.6f\n", ($1+($2/1000000.0))}' sub.log > e2e.delay.misleading
 echo "    T1 (delay in the broker) = $T1 seconds"
 echo "    T2 (end-to-end delay)    = $T2 seconds"
 echo "    N1 (from U*T1) = $(echo "scale=6; $THROUGHPUT * $T1" | bc) packets"
