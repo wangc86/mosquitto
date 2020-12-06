@@ -1,3 +1,7 @@
+---
+typora-copy-images-to: ./
+---
+
 # CSC0056 Homework 4
 
 * Submit your work to Moodle before **9PM, December 12th, Saturday**
@@ -79,18 +83,61 @@ Save the change and close the file. Then type the following to have our update c
 
 Interestingly, we may send an image using Mosquitto as a "message". To learn more, type `../client/mosquitto_pub --help`  from the homework4 folder. For example, try sending the following image:
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/St._Louis_Arch_%281984%29.jpg" style="zoom:20%;" />
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/St._Louis_Arch_%281984%29.jpg" style="zoom:15%;" />
 
 (This image is from Wikimedia: https://commons.wikimedia.org/wiki/File:St._Louis_Arch_(1984).jpg. The arch in the photo is the landmark of the dear city where I've sojourned for seven years.)
 
 Here is a helper script for you, named `sendImage.sh`. Run the script and a mosquitto subscriber will receive this image and dump it into a file named `output.jpg` :)
 
-### 3.2 Evaluating Little's Theorem (20 points)
+### 3.2 Working with Little's Theorem (20 points)
 
-Now we are ready to evaluate Little's Theorem using Mosquitto. Recall that Little's Theorem states the following relation for a system running in the *steady-state*:
+In this section, we will work with Little's Theorem using Mosquitto. Recall that Little's Theorem states the following relation for a system running in the *steady-state*:
 $$
 N=\lambda\cdot T
 $$
 where $N$ is the average number of customers (packets) in the system, $\lambda$ is the average arrival rate, and $T$ is the average time a customer (packet) spent in the system.
 
-I'm still figuring out how to query $N$ in Mosquitto. I will update this part soon. Please wait for my further notification on the Moodle bulletin. 
+In Mosquitto, if we use QoS 0, then we may refer to the following figure as a high-level architecture of the Mosquitto broker:
+
+![broker architecture](hw4.png)
+
+The broker is single-threaded. Once started, it will keep running a big loop forever (the blue one).
+
+**(TODO: add some more detail here)** 
+
+* Delay in the broker: the time interval between point 2 and point 3
+
+* End-to-end delay: the time interval between point 1 and point 4
+
+If the delay is bound, then the throughput is approximately equal to the arrival rate (assuming that the system does not drop packets), because otherwise the delay will grow as time goes by. Therefore, we may use the throughput along with the delay to estimate the average number of messages in the system.
+
+**(TODO: add some more detail here)** 
+
+Here we wrote a helper script, called `run.sh`, for you to do data communication experiments with Mosquitto. A typical output of the script is as follows. Try it yourself with different number of publishers and sampling duration and see how those might change the result.
+
+![example-output-of-runsh](./example-output-of-runsh.png)
+
+Now answer the following questions:
+
+1. **(10 points)** Run script `run.sh` with each of the following configurations:
+
+   1. Number of publishers = 5; sampling duration = 5 seconds
+   2. Number of publishers = 5; sampling duration = 30 seconds
+
+   For each case, after the execution, type the following to compute the end-to-end delay :
+
+   `./avg.sh e2e.delay.misleading`
+
+   The output is the average of the end-to-end delay in each case. **Why do we have a longer end-to-end delay when the sampling duration is smaller? In other word, why is the delay dependent with the sampling duration? What lesson(s) did you learn about the experiment design and the parsing of the resulting experimental data?**
+
+   Here are some hints:
+
+   * Observe the content of e2e.delay.misleading;
+   * Review the above description of script `run.sh` and think about how would the procedure in the script impact the content of e2e.delay.misleading;
+   * There's no need to understand the detail of `run.sh` in order to answer this question;
+   * The correct end-to-end delay is shown as T2 in the output of `run.sh`.
+
+2. **(10 points)** For each of the following configuration, **take a screenshot** *and* **plot the result of the N observed by data arrivals**:
+
+   1. Number of publishers = 10; sampling duration = 30 seconds
+   2. Number of publishers = 1000; sampling duration = 30 seconds
