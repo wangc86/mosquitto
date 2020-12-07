@@ -37,6 +37,7 @@ static int max_queued = 100;
 static unsigned long max_queued_bytes = 0;
 
 extern bool flag_sample;
+extern bool print_delay;
 
 /**
  * Is this context ready to take more in flight messages right now?
@@ -287,7 +288,7 @@ static void db__message_remove(struct mosquitto_db *db, struct mosquitto_msg_dat
 		}
 		db__msg_store_ref_dec(db, &item->store);
 
-                if(flag_sample){  // Sampling is toggled by SIGUSR2
+                if(flag_sample && print_delay){  // Sampling is toggled by SIGUSR2
                     // Chao: Record the sojourn time for each packet
 	            gettimeofday(&time_finish, NULL);
 	            fprintf(stderr, "%ld %ld\n", time_finish.tv_sec-time_start.tv_sec, time_finish.tv_usec-time_start.tv_usec);
@@ -509,6 +510,11 @@ int db__message_insert(struct mosquitto_db *db, struct mosquitto *context, uint1
             // time_finish will be taken in db__message_remove()
             // This is used to measure the time a packet spent
             // in the msgs_out->inflight structure.
+            print_delay = true;
+            // The above statement is to ensure that we do not
+            // prematurely take time_finish and print out the delay;
+            // we need this because flag_sample is toggled by
+            // signal SIGUSR2 that could happen at any time.
         }
 
 	msg_data->msg_count++;

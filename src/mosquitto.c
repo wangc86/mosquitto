@@ -63,6 +63,7 @@ bool flag_db_backup = false;
 #endif
 bool flag_tree_print = false;
 bool flag_sample = false;
+bool print_delay = false;
 int run;
 #ifdef WITH_WRAP
 #include <syslog.h>

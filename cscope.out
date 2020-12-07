@@ -1,4 +1,4 @@
-cscope 15 $HOME/repos/mosquitto               0002372387
+cscope 15 $HOME/repos/mosquitto               0002372594
 	@/home/cw2/repos/mosquitto/client/client_props.c
 
 17 
@@ -7767,7 +7767,7 @@ timev®
 NULL
 );
 
-82 
+83 
 x
  = (
 	`¿nd
@@ -7779,7 +7779,7 @@ cfg
 tv_u£c
  + 1);
 
-84 
+85 
 Ãxt_publish_tv
 .
 tv_u£c
@@ -7787,7 +7787,7 @@ tv_u£c
 x
 ;
 
-86 
+87 
 Ãxt_publish_tv
 .
 tv_£c
@@ -7795,27 +7795,27 @@ tv_£c
 tv_u£c
 /1000000;
 
-87 
+88 
 Ãxt_publish_tv
 .
 tv_u£c
  =‚ext_publish_tv.tv_usec%1000000;
 
-88 
+89 
 	}
 }
 
-90 
+91 
 	$check_»³©_time
 ()
 
-92 
+93 
 timev®
  
 tv
 ;
 
-94 
+95 
 	`g‘timeofday
 (&
 tv
@@ -7823,7 +7823,7 @@ tv
 NULL
 );
 
-96 if(
+97 if(
 tv
 .
 tv_£c
@@ -7831,7 +7831,7 @@ tv_£c
 Ãxt_publish_tv
 .tv_sec){
 
-98 }if(
+99 }if(
 tv
 .
 tv_£c
@@ -7839,7 +7839,7 @@ tv_£c
 Ãxt_publish_tv
 .tv_sec
 
-99 && 
+100 && 
 tv
 .
 tv_u£c
@@ -7847,11 +7847,11 @@ tv_u£c
 Ãxt_publish_tv
 .tv_usec){
 
-104 
+105 
 	}
 }
 
-107 
+108 
 	$my_discÚÃù_ÿÎback
 (
 mosqu™to
@@ -7867,45 +7867,45 @@ mosqu™to_´Ý”ty
 ´Ý”t›s
 )
 
-109 
+110 
 	`UNUSED
 (
 mosq
 );
 
-110 
+111 
 	`UNUSED
 (
 obj
 );
 
-111 
+112 
 	`UNUSED
 (
 rc
 );
 
-112 
+113 
 	`UNUSED
 (
 ´Ý”t›s
 );
 
-114 if(
+115 if(
 rc
  == 0){
 
-115 
+116 
 ¡©us
  = 
 STATUS_DISCONNECTED
 ;
 
-117 
+118 
 	}
 }
 
-119 
+120 
 	$my_publish
 (
 mosqu™to
@@ -7927,13 +7927,13 @@ boÞ
 »š
 )
 
-121 
+122 
 »ady_fÜ_»³©
  = 
 çl£
 ;
 
-122 if(
+123 if(
 cfg
 .
 ´ÙocÞ_v”siÚ
@@ -7947,7 +7947,7 @@ fœ¡_publish
 çl£
 ){
 
-123  
+124  
 	`mosqu™to_publish_v5
 (
 mosq
@@ -7969,13 +7969,13 @@ cfg
 publish_´Ýs
 );
 
-125 
+126 
 fœ¡_publish
  = 
 çl£
 ;
 
-126  
+127  
 	`mosqu™to_publish_v5
 (
 mosq
@@ -7997,11 +7997,11 @@ cfg
 publish_´Ýs
 );
 
-128 
+129 
 	}
 }
 
-131 
+132 
 	$my_cÚÃù_ÿÎback
 (
 mosqu™to
@@ -8019,57 +8019,57 @@ mosqu™to_´Ý”ty
 ´Ý”t›s
 )
 
-133 
+134 
 rc
  = 
 MOSQ_ERR_SUCCESS
 ;
 
-135 
+136 
 	`UNUSED
 (
 obj
 );
 
-136 
+137 
 	`UNUSED
 (
 æags
 );
 
-137 
+138 
 	`UNUSED
 (
 ´Ý”t›s
 );
 
-139 
+140 
 cÚÇck_»suÉ
  = 
 »suÉ
 ;
 
-141 if(!
+142 if(!
 »suÉ
 ){
 
-142 
+143 
 timev®
  
 ü—tiÚ_time
 ;
 
-143 
+144 
 cfg
 .
 pub_mode
 ){
 
-144 
+145 
 MSGMODE_CMD
 :
 
-145 
+146 
 	`g‘timeofday
 (&
 ü—tiÚ_time
@@ -8077,7 +8077,7 @@ MSGMODE_CMD
 NULL
 );
 
-146 
+147 
 	`memýy
 (&
 cfg
@@ -8089,7 +8089,7 @@ mes§ge
 tv_£c
 , 8);
 
-147 
+148 
 	`memýy
 (&
 cfg
@@ -8101,7 +8101,7 @@ mes§ge
 tv_u£c
 , 8);
 
-149 
+150 
 rc
  = 
 	`my_publish
@@ -8123,15 +8123,15 @@ qos
 »š
 );
 
-151 
+152 
 MSGMODE_FILE
 :
 
-152 
+153 
 MSGMODE_STDIN_FILE
 :
 
-153 
+154 
 rc
  = 
 	`my_publish
@@ -8153,11 +8153,11 @@ qos
 »š
 );
 
-155 
+156 
 MSGMODE_NULL
 :
 
-156 
+157 
 rc
  = 
 	`my_publish
@@ -8177,85 +8177,85 @@ qos
 »š
 );
 
-158 
+159 
 MSGMODE_STDIN_LINE
 :
 
-159 
+160 
 ¡©us
  = 
 STATUS_CONNACK_RECVD
 ;
 
-162 if(
+163 if(
 rc
 ){
 
-163 
+164 
 rc
 ){
 
-164 
+165 
 MOSQ_ERR_INVAL
 :
 
-165 
+166 
 	`”r_´štf
 (&
 cfg
 , "Error: Invalid input. Does youropic contain '+' or '#'?\n");
 
-167 
+168 
 MOSQ_ERR_NOMEM
 :
 
-168 
+169 
 	`”r_´štf
 (&
 cfg
 , "Error: Out of memory whenryingo…ublish message.\n");
 
-170 
+171 
 MOSQ_ERR_NO_CONN
 :
 
-171 
+172 
 	`”r_´štf
 (&
 cfg
 , "Error: Client‚ot connected whenryingo…ublish.\n");
 
-173 
+174 
 MOSQ_ERR_PROTOCOL
 :
 
-174 
+175 
 	`”r_´štf
 (&
 cfg
 , "Error: Protocolƒrror when communicating with broker.\n");
 
-176 
+177 
 MOSQ_ERR_PAYLOAD_SIZE
 :
 
-177 
+178 
 	`”r_´štf
 (&
 cfg
 , "Error: Message…ayload isoo†arge.\n");
 
-179 
+180 
 MOSQ_ERR_QOS_NOT_SUPPORTED
 :
 
-180 
+181 
 	`”r_´štf
 (&
 cfg
 , "Error: Message QoS‚ot supported on broker,ry‡†ower QoS.\n");
 
-183 
+184 
 	`mosqu™to_discÚÃù_v5
 (
 mosq
@@ -8265,11 +8265,11 @@ cfg
 discÚÃù_´Ýs
 );
 
-186 if(
+187 if(
 »suÉ
 ){
 
-187 if(
+188 if(
 cfg
 .
 ´ÙocÞ_v”siÚ
@@ -8277,13 +8277,13 @@ cfg
 MQTT_PROTOCOL_V5
 ){
 
-188 if(
+189 if(
 »suÉ
  =ð
 MQTT_RC_UNSUPPORTED_PROTOCOL_VERSION
 ){
 
-189 
+190 
 	`”r_´štf
 (&
 cfg
@@ -8293,7 +8293,7 @@ cfg
 »suÉ
 ));
 
-191 
+192 
 	`”r_´štf
 (&
 cfg
@@ -8303,7 +8303,7 @@ cfg
 »suÉ
 ));
 
-194 
+195 
 	`”r_´štf
 (&
 cfg
@@ -8313,7 +8313,7 @@ cfg
 »suÉ
 ));
 
-196 
+197 
 	`mosqu™to_discÚÃù_v5
 (
 mosq
@@ -8323,11 +8323,11 @@ cfg
 discÚÃù_´Ýs
 );
 
-199 
+200 
 	}
 }
 
-202 
+203 
 	$my_publish_ÿÎback
 (
 mosqu™to
@@ -8345,29 +8345,29 @@ mosqu™to_´Ý”ty
 ´Ý”t›s
 )
 
-204 
+205 
 	`UNUSED
 (
 obj
 );
 
-205 
+206 
 	`UNUSED
 (
 ´Ý”t›s
 );
 
-207 
+208 
 Ï¡_mid_£Á
  = 
 mid
 ;
 
-208 if(
+209 if(
 »asÚ_code
  > 127){
 
-209 
+210 
 	`”r_´štf
 (&
 cfg
@@ -8379,11 +8379,11 @@ mid
 »asÚ_code
 ));
 
-211 
+212 
 publish_couÁ
 ++;
 
-213 if(
+214 if(
 cfg
 .
 pub_mode
@@ -8391,13 +8391,13 @@ pub_mode
 MSGMODE_STDIN_LINE
 ){
 
-214 if(
+215 if(
 mid
  =ð
 Ï¡_mid
 ){
 
-215 
+216 
 	`mosqu™to_discÚÃù_v5
 (
 mosq
@@ -8407,13 +8407,13 @@ cfg
 discÚÃù_´Ýs
 );
 
-216 
+217 
 discÚÃù_£Á
  = 
 Œue
 ;
 
-218 }if(
+219 }if(
 publish_couÁ
  < 
 cfg
@@ -8421,23 +8421,23 @@ cfg
 »³©_couÁ
 ){
 
-219 
+220 
 »ady_fÜ_»³©
  = 
 Œue
 ;
 
-220 
+221 
 	`£t_»³©_time
 ();
 
-221 }if(
+222 }if(
 discÚÃù_£Á
  =ð
 çl£
 ){
 
-222 
+223 
 	`mosqu™to_discÚÃù_v5
 (
 mosq
@@ -8447,21 +8447,21 @@ cfg
 discÚÃù_´Ýs
 );
 
-223 
+224 
 discÚÃù_£Á
  = 
 Œue
 ;
 
-225 
+226 
 	}
 }
 
-228 
+229 
 	$pub_sh¬ed_š™
 ()
 
-230 
+231 
 lše_buf
  = 
 	`m®loc
@@ -8471,21 +8471,21 @@ size_t
 lše_buf_Ën
 );
 
-231 if(!
+232 if(!
 lše_buf
 ){
 
-232 
+233 
 	`”r_´štf
 (&
 cfg
 , "Error: Out of memory.\n");
 
-236 
+237 
 	}
 }
 
-239 
+240 
 	$pub_¡dš_lše_loÝ
 (
 mosqu™to
@@ -8493,29 +8493,29 @@ mosqu™to
 mosq
 )
 
-241 *
+242 *
 buf2
 ;
 
-242 
+243 
 buf_Ën_aùu®
  = 0;
 
-243 
+244 
 pos
 ;
 
-244 
+245 
 rc
  = 
 MOSQ_ERR_SUCCESS
 ;
 
-245 
+246 
 »ad_Ën
 ;
 
-246 
+247 
 boÞ
  
 ¡dš_fšished
@@ -8523,51 +8523,51 @@ boÞ
 çl£
 ;
 
-248 
+249 
 	`mosqu™to_loÝ_¡¬t
 (
 mosq
 );
 
-249 
+250 
 ¡dš_fšished
  = 
 çl£
 ;
 
-251 if(
+252 if(
 ¡©us
  =ð
 STATUS_CONNECTING
 ){
 
-252 #ifdeà
+253 #ifdeà
 WIN32
 
 
-253 
+254 
 	`SË•
 (100);
 
-255 
+256 
 time¥ec
  
 ts
 ;
 
-256 
+257 
 ts
 .
 tv_£c
  = 0;
 
-257 
+258 
 ts
 .
 tv_n£c
  = 100000000;
 
-258 
+259 
 	`Çno¦“p
 (&
 ts
@@ -8575,23 +8575,23 @@ ts
 NULL
 );
 
-262 if(
+263 if(
 ¡©us
  =ð
 STATUS_CONNACK_RECVD
 ){
 
-263 
+264 
 pos
  = 0;
 
-264 
+265 
 »ad_Ën
  = 
 lše_buf_Ën
 ;
 
-265 
+266 
 ¡©us
  =ð
 STATUS_CONNACK_RECVD
@@ -8607,7 +8607,7 @@ pos
 ¡dš
 )){
 
-266 
+267 
 buf_Ën_aùu®
  = ()
 	`¡¾’
@@ -8615,19 +8615,19 @@ buf_Ën_aùu®
 lše_buf
 );
 
-267 if(
+268 if(
 lše_buf
 [
 buf_Ën_aùu®
 -1] == '\n'){
 
-268 
+269 
 lše_buf
 [
 buf_Ën_aùu®
 -1] = '\0';
 
-269 
+270 
 rc
  = 
 	`my_publish
@@ -8649,15 +8649,15 @@ qos
 »š
 );
 
-270 
+271 
 pos
  = 0;
 
-271 if(
+272 if(
 rc
 ){
 
-272 
+273 
 	`”r_´štf
 (&
 cfg
@@ -8665,7 +8665,7 @@ cfg
 rc
 );
 
-273 
+274 
 	`mosqu™to_discÚÃù_v5
 (
 mosq
@@ -8677,19 +8677,19 @@ cfg
 discÚÃù_´Ýs
 );
 
-277 
+278 
 lše_buf_Ën
  += 1024;
 
-278 
+279 
 pos
  += 1023;
 
-279 
+280 
 »ad_Ën
  = 1024;
 
-280 
+281 
 buf2
  = 
 	`»®loc
@@ -8701,31 +8701,31 @@ size_t
 lše_buf_Ën
 );
 
-281 if(!
+282 if(!
 buf2
 ){
 
-282 
+283 
 	`”r_´štf
 (&
 cfg
 , "Error: Out of memory.\n");
 
-283  
+284  
 MOSQ_ERR_NOMEM
 ;
 
-285 
+286 
 lše_buf
  = 
 buf2
 ;
 
-288 if(
+289 if(
 pos
  != 0){
 
-289 
+290 
 rc
  = 
 	`my_publish
@@ -8747,11 +8747,11 @@ qos
 »š
 );
 
-290 if(
+291 if(
 rc
 ){
 
-291 
+292 
 	`”r_´štf
 (&
 cfg
@@ -8759,7 +8759,7 @@ cfg
 rc
 );
 
-292 
+293 
 	`mosqu™to_discÚÃù_v5
 (
 mosq
@@ -8771,17 +8771,17 @@ cfg
 discÚÃù_´Ýs
 );
 
-295 if(
+296 if(
 	`ãof
 (
 ¡dš
 )){
 
-296 if(
+297 if(
 mid_£Á
  == -1){
 
-298 
+299 
 	`mosqu™to_discÚÃù_v5
 (
 mosq
@@ -8791,49 +8791,49 @@ cfg
 discÚÃù_´Ýs
 );
 
-299 
+300 
 discÚÃù_£Á
  = 
 Œue
 ;
 
-300 
+301 
 ¡©us
  = 
 STATUS_DISCONNECTING
 ;
 
-302 
+303 
 Ï¡_mid
  = 
 mid_£Á
 ;
 
-303 
+304 
 ¡©us
  = 
 STATUS_WAITING
 ;
 
-305 
+306 
 ¡dš_fšished
  = 
 Œue
 ;
 
-306 }if(
+307 }if(
 ¡©us
  =ð
 STATUS_DISCONNECTED
 ){
 
-312 if(
+313 if(
 ¡©us
  =ð
 STATUS_WAITING
 ){
 
-313 if(
+314 if(
 Ï¡_mid_£Á
  =ð
 Ï¡_mid
@@ -8843,7 +8843,7 @@ discÚÃù_£Á
 çl£
 ){
 
-314 
+315 
 	`mosqu™to_discÚÃù_v5
 (
 mosq
@@ -8853,39 +8853,39 @@ cfg
 discÚÃù_´Ýs
 );
 
-315 
+316 
 discÚÃù_£Á
  = 
 Œue
 ;
 
-317 #ifdeà
+318 #ifdeà
 WIN32
 
 
-318 
+319 
 	`SË•
 (100);
 
-320 
+321 
 time¥ec
  
 ts
 ;
 
-321 
+322 
 ts
 .
 tv_£c
  = 0;
 
-322 
+323 
 ts
 .
 tv_n£c
  = 100000000;
 
-323 
+324 
 	`Çno¦“p
 (&
 ts
@@ -8893,13 +8893,13 @@ ts
 NULL
 );
 
-326 }
+327 }
 ¡dš_fšished
  =ð
 çl£
 );
 
-327 
+328 
 	`mosqu™to_loÝ_¡Ý
 (
 mosq
@@ -8907,25 +8907,25 @@ mosq
 çl£
 );
 
-329 if(
+330 if(
 ¡©us
  =ð
 STATUS_DISCONNECTED
 ){
 
-330  
+331  
 MOSQ_ERR_SUCCESS
 ;
 
-332  
+333  
 rc
 ;
 
-334 
+335 
 	}
 }
 
-337 
+338 
 	$pub_Ùh”_loÝ
 (
 mosqu™to
@@ -8933,15 +8933,15 @@ mosqu™to
 mosq
 )
 
-339 
+340 
 rc
 ;
 
-340 
+341 
 loÝ_d–ay
  = 1000;
 
-342 if(
+343 if(
 cfg
 .
 »³©_couÁ
@@ -8953,7 +8953,7 @@ tv_£c
 tv_u£c
  != 0)){
 
-343 
+344 
 loÝ_d–ay
  = ()
 cfg
@@ -8963,7 +8963,7 @@ cfg
 tv_u£c
  / 2000;
 
-347 
+348 
 rc
  = 
 	`mosqu™to_loÝ
@@ -8973,35 +8973,35 @@ mosq
 loÝ_d–ay
 , 1);
 
-348 if(
+349 if(
 »ady_fÜ_»³©
  && 
 	`check_»³©_time
 ()){
 
-349 
+350 
 rc
  = 
 MOSQ_ERR_SUCCESS
 ;
 
-350 
+351 
 timev®
  
 ü—tiÚ_time
 ;
 
-351 
+352 
 cfg
 .
 pub_mode
 ){
 
-352 
+353 
 MSGMODE_CMD
 :
 
-353 
+354 
 	`g‘timeofday
 (&
 ü—tiÚ_time
@@ -9009,7 +9009,7 @@ MSGMODE_CMD
 NULL
 );
 
-354 
+355 
 	`memýy
 (&
 cfg
@@ -9021,7 +9021,7 @@ mes§ge
 tv_£c
 , 8);
 
-355 
+356 
 	`memýy
 (&
 cfg
@@ -9033,7 +9033,7 @@ mes§ge
 tv_u£c
 , 8);
 
-357 
+358 
 rc
  = 
 	`my_publish
@@ -9055,15 +9055,15 @@ qos
 »š
 );
 
-359 
+360 
 MSGMODE_FILE
 :
 
-360 
+361 
 MSGMODE_STDIN_FILE
 :
 
-361 
+362 
 rc
  = 
 	`my_publish
@@ -9085,11 +9085,11 @@ qos
 »š
 );
 
-363 
+364 
 MSGMODE_NULL
 :
 
-364 
+365 
 rc
  = 
 	`my_publish
@@ -9109,11 +9109,11 @@ qos
 »š
 );
 
-367 if(
+368 if(
 rc
 ){
 
-368 
+369 
 	`”r_´štf
 (&
 cfg
@@ -9123,31 +9123,31 @@ cfg
 rc
 ));
 
-371 }
+372 }
 rc
  =ð
 MOSQ_ERR_SUCCESS
 );
 
-373 if(
+374 if(
 ¡©us
  =ð
 STATUS_DISCONNECTED
 ){
 
-374  
+375  
 MOSQ_ERR_SUCCESS
 ;
 
-376  
+377  
 rc
 ;
 
-378 
+379 
 	}
 }
 
-381 
+382 
 	$pub_sh¬ed_loÝ
 (
 mosqu™to
@@ -9155,7 +9155,7 @@ mosqu™to
 mosq
 )
 
-383 if(
+384 if(
 cfg
 .
 pub_mode
@@ -9163,41 +9163,41 @@ pub_mode
 MSGMODE_STDIN_LINE
 ){
 
-384  
+385  
 	`pub_¡dš_lše_loÝ
 (
 mosq
 );
 
-386  
+387  
 	`pub_Ùh”_loÝ
 (
 mosq
 );
 
-388 
+389 
 	}
 }
 
-391 
+392 
 	$pub_sh¬ed_þ—nup
 ()
 
-393 
+394 
 	`ä“
 (
 lše_buf
 );
 
-394 
+395 
 	}
 }
 
-397 
+398 
 	$´št_u§ge
 ()
 
-399 
+400 
 majÜ
 , 
 mšÜ
@@ -9205,7 +9205,7 @@ mšÜ
 »visiÚ
 ;
 
-401 
+402 
 	`mosqu™to_lib_v”siÚ
 (&
 majÜ
@@ -9215,11 +9215,11 @@ mšÜ
 »visiÚ
 );
 
-402 
+403 
 	`´štf
 ("mosquitto_pub is‡ simple mqtt clienthat will…ublish‡ message on‡ singleopic‡ndƒxit.\n");
 
-403 
+404 
 	`´štf
 ("mosqu™to_pub v”siÚ % ruÂšg oÀlibmosqu™tØ%d.%d.%d.\n\n", 
 VERSION
@@ -9231,355 +9231,355 @@ mšÜ
 »visiÚ
 );
 
-404 
+405 
 	`´štf
 ("Usage: mosquitto_pub {[-h host] [-p…ort] [-u username] [-P…assword] -topic | -L URL}\n");
 
-405 
+406 
 	`´štf
 (" {-f file | -l | -n | -m message}\n");
 
-406 
+407 
 	`´štf
 (" [-c] [-k keepalive] [-q qos] [-r] [--repeat N] [--repeat-delayime]\n");
 
-407 #ifdeà
+408 #ifdeà
 WITH_SRV
 
 
-408 
+409 
 	`´štf
 (" [-A bind_address] [-S]\n");
 
-410 
+411 
 	`´štf
 (" [-A bind_address]\n");
 
-412 
+413 
 	`´štf
 (" [-i id] [-I id_prefix]\n");
 
-413 
+414 
 	`´štf
 (" [-d] [--quiet]\n");
 
-414 
+415 
 	`´štf
 (" [-M max_inflight]\n");
 
-415 
+416 
 	`´štf
 (" [-u username [-P…assword]]\n");
 
-416 
+417 
 	`´štf
 (" [--will-topic [--will-payload…ayload] [--will-qos qos] [--will-retain]]\n");
 
-417 #ifdeà
+418 #ifdeà
 WITH_TLS
 
-
-418 
-	`´štf
-(" [{--cafile file | --capath dir} [--cert file] [--key file]\n");
 
 419 
 	`´štf
-(" [--ciphers ciphers] [--insecure]\n");
+(" [{--cafile file | --capath dir} [--cert file] [--key file]\n");
 
 420 
 	`´štf
-(" [--tls-alpn…rotocol]\n");
+(" [--ciphers ciphers] [--insecure]\n");
 
 421 
 	`´štf
+(" [--tls-alpn…rotocol]\n");
+
+422 
+	`´štf
 (" [--tls-engineƒngine] [--keyform keyform] [--tls-engine-kpass-sha1]]\n");
 
-422 #ifdeà
+423 #ifdeà
 FINAL_WITH_TLS_PSK
 
 
-423 
+424 
 	`´štf
 (" [--psk hex-key --psk-identity identity [--ciphers ciphers]]\n");
 
-426 #ifdeà
+427 #ifdeà
 WITH_SOCKS
 
 
-427 
+428 
 	`´štf
 (" [--proxy socks-url]\n");
 
-429 
+430 
 	`´štf
 (" [--property command identifier value]\n");
 
-430 
+431 
 	`´štf
 (" [-D command identifier value]\n");
 
-431 
+432 
 	`´štf
 (" mosquitto_pub --help\n\n");
 
-432 
+433 
 	`´štf
 (" -A : bindhe outgoing socketohis host/ip‡ddress. Useo control which interface\n");
 
-433 
+434 
 	`´štf
 ("he client communicates over.\n");
 
-434 
+435 
 	`´štf
 (" -d :ƒnable debug messages.\n");
 
-435 
+436 
 	`´štf
 (" -D : Define MQTT v5…roperties. Seehe documentation for more details.\n");
 
-436 
+437 
 	`´štf
 (" -f : sendhe contents of‡ file‡she message.\n");
 
-437 
+438 
 	`´štf
 (" -h : mqtt hosto connecto. Defaultso†ocalhost.\n");
 
-438 
+439 
 	`´štf
 (" -i : ido use forhis client. Defaultso mosquitto_pub_‡ppended withhe…rocess id.\n");
 
-439 
+440 
 	`´štf
 (" -I : definehe client id‡s id_prefix‡ppended withhe…rocess id. Useful for whenhe\n");
 
-440 
+441 
 	`´štf
 (" broker is usinghe clientid_prefixes option.\n");
 
-441 
+442 
 	`´štf
 (" -k : keep‡live in seconds forhis client. Defaultso 60.\n");
 
-442 
+443 
 	`´štf
 (" -L : specify user,…assword, hostname,…ort‡ndopic‡s‡ URL inhe form:\n");
 
-443 
+444 
 	`´štf
 (" mqtt(s)://[username[:password]@]host[:port]/topic\n");
 
-444 
+445 
 	`´štf
 (" -l :„ead messages from stdin, sending‡ separate message forƒach†ine.\n");
 
-445 
+446 
 	`´štf
 (" -m : message…ayloado send.\n");
 
-446 
+447 
 	`´štf
 (" -M :he maximum inflight messages for QoS 1/2..\n");
 
-447 
+448 
 	`´štf
 (" -n : send‡‚ull (zero†ength) message.\n");
 
-448 
+449 
 	`´štf
 (" -p :‚etwork…orto connecto. Defaultso 1883 for…lain MQTT‡nd 8883 for MQTT over TLS.\n");
 
-449 
+450 
 	`´štf
 (" -P :…rovide‡…assword\n");
 
-450 
+451 
 	`´štf
 (" -q : quality of service†evelo use for‡ll messages. Defaultso 0.\n");
 
-451 
+452 
 	`´štf
 (" -r : message should be„etained.\n");
 
-452 
+453 
 	`´štf
 (" -s :„ead message from stdin, sendingheƒntire input‡s‡ message.\n");
 
-453 #ifdeà
+454 #ifdeà
 WITH_SRV
 
 
-454 
+455 
 	`´štf
 (" -S : use SRV†ookupso determine which hosto connecto.\n");
 
-456 
+457 
 	`´štf
 (" -t : mqttopico…ublisho.\n");
 
-457 
+458 
 	`´štf
 (" -u :…rovide‡ username\n");
 
-458 
+459 
 	`´štf
 (" -V : specifyhe version ofhe MQTT…rotocolo use when connecting.\n");
 
-459 
+460 
 	`´štf
 (" Can be mqttv5, mqttv311 or mqttv31. Defaultso mqttv311.\n");
 
-460 
+461 
 	`´štf
 (" --help : displayhis message.\n");
 
-461 
+462 
 	`´štf
 (" --embed-timestamp : useheimestamp‡t data creation‡s‡ message (for course CSC0056).\n");
 
-462 
+463 
 	`´štf
 (" --repeat : if…ublish mode is -f, -m, or -s,hen„epeathe…ublish Nimes.\n");
 
-463 
+464 
 	`´štf
 (" --repeat-delay : if using --repeat, waitime seconds between…ublishes. Defaultso 0.\n");
 
-464 
+465 
 	`´štf
 (" --quiet : don't…rintƒrror messages.\n");
 
-465 
+466 
 	`´štf
 (" --will-payload :…ayload forhe client Will, which is sent byhe broker in case of\n");
 
-466 
+467 
 	`´štf
 (" unexpected disconnection. If‚ot given‡nd will-topic is set,‡ zero\n");
 
-467 
+468 
 	`´štf
 ("†ength message will be sent.\n");
 
-468 
+469 
 	`´štf
 (" --will-qos : QoS†evel forhe client Will.\n");
 
-469 
+470 
 	`´štf
 (" --will-retain : if given, makehe client Will„etained.\n");
 
-470 
+471 
 	`´štf
 (" --will-topic :heopic on whicho…ublishhe client Will.\n");
 
-471 #ifdeà
+472 #ifdeà
 WITH_TLS
 
 
-472 
+473 
 	`´štf
 (" --cafile :…atho‡ file containingrusted CA certificatesoƒnableƒncrypted\n");
 
-473 
-	`´štf
-(" communication.\n");
-
 474 
 	`´štf
-(" --capath :…atho‡ directory containingrusted CA certificatesoƒnableƒncrypted\n");
+(" communication.\n");
 
 475 
 	`´štf
-(" communication.\n");
+(" --capath :…atho‡ directory containingrusted CA certificatesoƒnableƒncrypted\n");
 
 476 
 	`´štf
-(" --cert : client certificate for‡uthentication, if„equired by server.\n");
+(" communication.\n");
 
 477 
 	`´štf
-(" --key : client…rivate key for‡uthentication, if„equired by server.\n");
+(" --cert : client certificate for‡uthentication, if„equired by server.\n");
 
 478 
 	`´štf
-(" --keyform : keyfileype, can beƒither \"pem\" or \"engine\".\n");
+(" --key : client…rivate key for‡uthentication, if„equired by server.\n");
 
 479 
 	`´štf
-(" --ciphers : openssl compatible†ist of TLS cipherso support.\n");
+(" --keyform : keyfileype, can beƒither \"pem\" or \"engine\".\n");
 
 480 
 	`´štf
-(" --tls-version : TLS…rotocol version, can be one oflsv1.3lsv1.2 orlsv1.1.\n");
+(" --ciphers : openssl compatible†ist of TLS cipherso support.\n");
 
 481 
 	`´štf
-(" Defaultsolsv1.2 if‡vailable.\n");
+(" --tls-version : TLS…rotocol version, can be one oflsv1.3lsv1.2 orlsv1.1.\n");
 
 482 
 	`´štf
-(" --insecure : do‚ot checkhathe server certificate hostname matcheshe„emote\n");
+(" Defaultsolsv1.2 if‡vailable.\n");
 
 483 
 	`´štf
-(" hostname. Usinghis option meanshat you cannot be surehathe\n");
+(" --insecure : do‚ot checkhathe server certificate hostname matcheshe„emote\n");
 
 484 
 	`´štf
-("„emote host ishe server you wisho connecto‡nd so is insecure.\n");
+(" hostname. Usinghis option meanshat you cannot be surehathe\n");
 
 485 
 	`´štf
-(" Do‚ot usehis option in‡…roductionƒnvironment.\n");
+("„emote host ishe server you wisho connecto‡nd so is insecure.\n");
 
 486 
 	`´štf
-(" --tls-engine : If set,ƒnableshe use of‡ TLSƒngine device.\n");
+(" Do‚ot usehis option in‡…roductionƒnvironment.\n");
 
 487 
 	`´štf
+(" --tls-engine : If set,ƒnableshe use of‡ TLSƒngine device.\n");
+
+488 
+	`´štf
 (" --tls-engine-kpass-sha1 : SHA1 ofhe key…asswordo be used withhe selected SSLƒngine.\n");
 
-488 #ifdeà
+489 #ifdeà
 FINAL_WITH_TLS_PSK
 
 
-489 
+490 
 	`´štf
 (" --psk :…re-shared-key in hexadecimal (no†eading 0x)oƒnable TLS-PSK mode.\n");
 
-490 
+491 
 	`´štf
 (" --psk-identity : client identity string for TLS-PSK mode.\n");
 
-493 #ifdeà
+494 #ifdeà
 WITH_SOCKS
 
 
-494 
+495 
 	`´štf
 (" --proxy : SOCKS5…roxy URL ofhe form:\n");
 
-495 
+496 
 	`´štf
 (" socks5h://[username[:password]@]hostname[:port]\n");
 
-496 
+497 
 	`´štf
 (" Only \"none\"‡nd \"username\"‡uthentication is supported.\n");
 
-498 
+499 
 	`´štf
 ("\nSee https://mosquitto.org/ for more information.\n\n");
 
-499 
+500 
 	}
 }
 
-501 
+502 
 	$maš
 (
 ¬gc
@@ -9587,7 +9587,7 @@ WITH_SOCKS
 ¬gv
 [])
 
-503 
+504 
 mosqu™to
  *
 mosq
@@ -9595,11 +9595,11 @@ mosq
 NULL
 ;
 
-504 
+505 
 rc
 ;
 
-506 
+507 
 	`¤ªd
 (
 	`time
@@ -9607,15 +9607,15 @@ rc
 NULL
 ));
 
-508 
+509 
 	`mosqu™to_lib_š™
 ();
 
-510 if(
+511 if(
 	`pub_sh¬ed_š™
 ())  1;
 
-512 
+513 
 rc
  = 
 	`þ›Á_cÚfig_lßd
@@ -9629,33 +9629,33 @@ CLIENT_PUB
 ¬gv
 );
 
-513 if(
+514 if(
 rc
 ){
 
-514 if(
+515 if(
 rc
  == 2){
 
-516 
+517 
 	`´št_u§ge
 ();
 
-518 
+519 
 	`årštf
 (
 ¡d”r
 , "\nUse 'mosquitto_pub --help'o see usage.\n");
 
-520 
+521 
 þ—nup
 ;
 
-523 #iâdeà
+524 #iâdeà
 WITH_THREADING
 
 
-524 if(
+525 if(
 cfg
 .
 pub_mode
@@ -9663,17 +9663,17 @@ pub_mode
 MSGMODE_STDIN_LINE
 ){
 
-525 
+526 
 	`årštf
 (
 ¡d”r
 , "Error: '-l' mode‚ot‡vailable,hreading support has‚ot been compiled in.\n");
 
-526 
+527 
 þ—nup
 ;
 
-530 if(
+531 if(
 cfg
 .
 pub_mode
@@ -9681,27 +9681,27 @@ pub_mode
 MSGMODE_STDIN_FILE
 ){
 
-531 if(
+532 if(
 	`lßd_¡dš
 ()){
 
-532 
+533 
 	`”r_´štf
 (&
 cfg
 , "Error†oading input from stdin.\n");
 
-533 
+534 
 þ—nup
 ;
 
-535 }if(
+536 }if(
 cfg
 .
 fže_šput
 ){
 
-536 if(
+537 if(
 	`lßd_fže
 (
 cfg
@@ -9709,7 +9709,7 @@ cfg
 fže_šput
 )){
 
-537 
+538 
 	`”r_´štf
 (&
 cfg
@@ -9717,11 +9717,11 @@ cfg
 fže_šput
 );
 
-538 
+539 
 þ—nup
 ;
 
-542 if(!
+543 if(!
 cfg
 .
 tÝic
@@ -9731,31 +9731,31 @@ pub_mode
 MSGMODE_NONE
 ){
 
-543 
+544 
 	`årštf
 (
 ¡d”r
 , "Error: Bothopic‡nd message must be supplied.\n");
 
-544 
+545 
 	`´št_u§ge
 ();
 
-545 
+546 
 þ—nup
 ;
 
-549 if(
+550 if(
 	`þ›Á_id_g’”©e
 (&
 cfg
 )){
 
-550 
+551 
 þ—nup
 ;
 
-553 
+554 
 mosq
  = 
 	`mosqu™to_Ãw
@@ -9769,45 +9769,45 @@ id
 NULL
 );
 
-554 if(!
+555 if(!
 mosq
 ){
 
-555 
+556 
 ”ºo
 ){
 
-556 
+557 
 ENOMEM
 :
 
-557 
+558 
 	`”r_´štf
 (&
 cfg
 , "Error: Out of memory.\n");
 
-559 
+560 
 EINVAL
 :
 
-560 
+561 
 	`”r_´štf
 (&
 cfg
 , "Error: Invalid id.\n");
 
-563 
+564 
 þ—nup
 ;
 
-565 if(
+566 if(
 cfg
 .
 debug
 ){
 
-566 
+567 
 	`mosqu™to_log_ÿÎback_£t
 (
 mosq
@@ -9815,7 +9815,7 @@ mosq
 my_log_ÿÎback
 );
 
-568 
+569 
 	`mosqu™to_cÚÃù_v5_ÿÎback_£t
 (
 mosq
@@ -9823,7 +9823,7 @@ mosq
 my_cÚÃù_ÿÎback
 );
 
-569 
+570 
 	`mosqu™to_discÚÃù_v5_ÿÎback_£t
 (
 mosq
@@ -9831,7 +9831,7 @@ mosq
 my_discÚÃù_ÿÎback
 );
 
-570 
+571 
 	`mosqu™to_publish_v5_ÿÎback_£t
 (
 mosq
@@ -9839,7 +9839,7 @@ mosq
 my_publish_ÿÎback
 );
 
-572 if(
+573 if(
 	`þ›Á_Ýts_£t
 (
 mosq
@@ -9847,11 +9847,11 @@ mosq
 cfg
 )){
 
-573 
+574 
 þ—nup
 ;
 
-576 
+577 
 rc
  = 
 	`þ›Á_cÚÃù
@@ -9861,15 +9861,15 @@ mosq
 cfg
 );
 
-577 if(
+578 if(
 rc
 ){
 
-578 
+579 
 þ—nup
 ;
 
-581 
+582 
 rc
  = 
 	`pub_sh¬ed_loÝ
@@ -9877,7 +9877,7 @@ rc
 mosq
 );
 
-583 if(
+584 if(
 cfg
 .
 mes§ge
@@ -9887,7 +9887,7 @@ pub_mode
 MSGMODE_FILE
 ){
 
-584 
+585 
 	`ä“
 (
 cfg
@@ -9895,7 +9895,7 @@ cfg
 mes§ge
 );
 
-585 
+586 
 cfg
 .
 mes§ge
@@ -9903,31 +9903,31 @@ mes§ge
 NULL
 ;
 
-587 
+588 
 	`mosqu™to_de¡roy
 (
 mosq
 );
 
-588 
+589 
 	`mosqu™to_lib_þ—nup
 ();
 
-589 
+590 
 	`þ›Á_cÚfig_þ—nup
 (&
 cfg
 );
 
-590 
+591 
 	`pub_sh¬ed_þ—nup
 ();
 
-592 if(
+593 if(
 rc
 ){
 
-593 
+594 
 	`”r_´štf
 (&
 cfg
@@ -9937,37 +9937,37 @@ cfg
 rc
 ));
 
-595 if(
+596 if(
 cÚÇck_»suÉ
 ){
 
-596  
+597  
 cÚÇck_»suÉ
 ;
 
-598  
+599  
 rc
 ;
 
-601 
+602 
 þ—nup
 :
 
-602 
+603 
 	`mosqu™to_lib_þ—nup
 ();
 
-603 
+604 
 	`þ›Á_cÚfig_þ—nup
 (&
 cfg
 );
 
-604 
+605 
 	`pub_sh¬ed_þ—nup
 ();
 
-606 
+607 
 	}
 }
 
@@ -46877,7 +46877,7 @@ CMD_PUBLISH
 	`G_PUB_MSGS_RECEIVED_INC
 (1);
 
-486 
+487 
 rc
  = 
 	`hªdË__·ck‘
@@ -46887,7 +46887,7 @@ db
 mosq
 );
 
-488 
+489 
 rc
  = 
 	`hªdË__·ck‘
@@ -46895,7 +46895,7 @@ rc
 mosq
 );
 
-492 
+493 
 	`·ck‘__þ—nup
 (&
 mosq
@@ -46903,7 +46903,7 @@ mosq
 š_·ck‘
 );
 
-494 
+495 
 	`±h»ad_mu‹x_lock
 (&
 mosq
@@ -46911,7 +46911,7 @@ mosq
 msgtime_mu‹x
 );
 
-495 
+496 
 mosq
 ->
 Ï¡_msg_š
@@ -46919,7 +46919,7 @@ mosq
 	`mosqu™to_time
 ();
 
-496 
+497 
 	`±h»ad_mu‹x_uÆock
 (&
 mosq
@@ -46927,11 +46927,11 @@ mosq
 msgtime_mu‹x
 );
 
-497  
+498  
 rc
 ;
 
-498 
+499 
 	}
 }
 
@@ -80894,10 +80894,16 @@ timev®
 39 
 boÞ
  
-N_´št
+æag_§m¶e
 ;
 
-47 
+40 
+boÞ
+ 
+´št_d–ay
+;
+
+48 
 boÞ
  
 	$db__»ady_fÜ_æight
@@ -80909,19 +80915,19 @@ msgs
 qos
 )
 
-49 
+50 
 boÞ
  
 v®id_by‹s
 ;
 
-50 
+51 
 boÞ
  
 v®id_couÁ
 ;
 
-52 if(
+53 if(
 qos
  =ð0 || (
 msgs
@@ -80931,11 +80937,11 @@ msgs
 max_šæight_by‹s
  == 0)){
 
-53  
+54  
 Œue
 ;
 
-56 
+57 
 v®id_by‹s
  = 
 msgs
@@ -80945,7 +80951,7 @@ msg_by‹s12
 max_šæight_by‹s
 ;
 
-57 
+58 
 v®id_couÁ
  = 
 msgs
@@ -80953,35 +80959,35 @@ msgs
 šæight_quÙa
  > 0;
 
-59 if(
+60 if(
 msgs
 ->
 šæight_maximum
  == 0){
 
-60  
+61  
 v®id_by‹s
 ;
 
-62 if(
+63 if(
 max_šæight_by‹s
  == 0){
 
-63  
+64  
 v®id_couÁ
 ;
 
-66  
+67  
 v®id_by‹s
  && 
 v®id_couÁ
 ;
 
-67 
+68 
 	}
 }
 
-78 
+79 
 boÞ
  
 	$db__»ady_fÜ_queue
@@ -80997,51 +81003,51 @@ mosqu™to_msg_d©a
 msg_d©a
 )
 
-80 
+81 
 sourû_couÁ
 ;
 
-81 
+82 
 adju¡_couÁ
 ;
 
-82 
+83 
 sourû_by‹s
 ;
 
-83 
+84 
 adju¡_by‹s
  = 
 max_šæight_by‹s
 ;
 
-84 
+85 
 boÞ
  
 v®id_by‹s
 ;
 
-85 
+86 
 boÞ
  
 v®id_couÁ
 ;
 
-87 if(
+88 if(
 max_queued
  =ð0 && 
 max_queued_by‹s
  == 0){
 
-88  
+89  
 Œue
 ;
 
-91 if(
+92 if(
 qos
  == 0){
 
-92 
+93 
 sourû_by‹s
  = 
 msg_d©a
@@ -81049,7 +81055,7 @@ msg_d©a
 msg_by‹s
 ;
 
-93 
+94 
 sourû_couÁ
  = 
 msg_d©a
@@ -81057,7 +81063,7 @@ msg_d©a
 msg_couÁ
 ;
 
-95 
+96 
 sourû_by‹s
  = 
 msg_d©a
@@ -81065,7 +81071,7 @@ msg_d©a
 msg_by‹s12
 ;
 
-96 
+97 
 sourû_couÁ
  = 
 msg_d©a
@@ -81073,7 +81079,7 @@ msg_d©a
 msg_couÁ12
 ;
 
-98 
+99 
 adju¡_couÁ
  = 
 msg_d©a
@@ -81081,7 +81087,7 @@ msg_d©a
 šæight_maximum
 ;
 
-101 if(
+102 if(
 cÚ‹xt
 ->
 sock
@@ -81089,15 +81095,15 @@ sock
 INVALID_SOCKET
 ){
 
-102 
+103 
 adju¡_by‹s
  = 0;
 
-103 
+104 
 adju¡_couÁ
  = 0;
 
-106 
+107 
 v®id_by‹s
  = 
 sourû_by‹s
@@ -81107,7 +81113,7 @@ adju¡_by‹s
 max_queued_by‹s
 ;
 
-107 
+108 
 v®id_couÁ
  = 
 sourû_couÁ
@@ -81117,33 +81123,33 @@ adju¡_couÁ
 max_queued
 ;
 
-109 if(
+110 if(
 max_queued_by‹s
  == 0){
 
-110  
+111  
 v®id_couÁ
 ;
 
-112 if(
+113 if(
 max_queued
  == 0){
 
-113  
+114  
 v®id_by‹s
 ;
 
-116  
+117  
 v®id_by‹s
  && 
 v®id_couÁ
 ;
 
-117 
+118 
 	}
 }
 
-120 
+121 
 	$db__Ý’
 (
 mosqu™to__cÚfig
@@ -81155,13 +81161,13 @@ mosqu™to_db
 db
 )
 
-122 
+123 
 mosqu™to__subh›r
  *
 subh›r
 ;
 
-124 if(!
+125 if(!
 cÚfig
  || !
 db
@@ -81169,13 +81175,13 @@ db
 MOSQ_ERR_INVAL
 ;
 
-126 
+127 
 db
 ->
 Ï¡_db_id
  = 0;
 
-128 
+129 
 db
 ->
 cÚ‹xts_by_id
@@ -81183,7 +81189,7 @@ cÚ‹xts_by_id
 NULL
 ;
 
-129 
+130 
 db
 ->
 cÚ‹xts_by_sock
@@ -81191,7 +81197,7 @@ cÚ‹xts_by_sock
 NULL
 ;
 
-130 
+131 
 db
 ->
 cÚ‹xts_fÜ_ä“
@@ -81199,11 +81205,11 @@ cÚ‹xts_fÜ_ä“
 NULL
 ;
 
-131 #ifdeà
+132 #ifdeà
 WITH_BRIDGE
 
 
-132 
+133 
 db
 ->
 bridges
@@ -81211,13 +81217,13 @@ bridges
 NULL
 ;
 
-133 
+134 
 db
 ->
 bridge_couÁ
  = 0;
 
-137 
+138 
 db
 ->
 þ›Áid_šdex_hash
@@ -81225,7 +81231,7 @@ db
 NULL
 ;
 
-139 
+140 
 db
 ->
 subs
@@ -81233,7 +81239,7 @@ subs
 NULL
 ;
 
-141 
+142 
 subh›r
  = 
 	`sub__add_h›r_’Œy
@@ -81247,13 +81253,13 @@ subs
 	`¡¾’
 (""));
 
-142 if(!
+143 if(!
 subh›r
 è 
 MOSQ_ERR_NOMEM
 ;
 
-144 
+145 
 subh›r
  = 
 	`sub__add_h›r_’Œy
@@ -81267,13 +81273,13 @@ subs
 	`¡¾’
 ("$SYS"));
 
-145 if(!
+146 if(!
 subh›r
 è 
 MOSQ_ERR_NOMEM
 ;
 
-147 
+148 
 db
 ->
 uÅwd
@@ -81281,25 +81287,25 @@ uÅwd
 NULL
 ;
 
-149 #ifdeà
+150 #ifdeà
 WITH_PERSISTENCE
 
 
-150 if(
+151 if(
 	`³rsi¡__»¡Üe
 (
 db
 ))  1;
 
-153  
+154  
 MOSQ_ERR_SUCCESS
 ;
 
-154 
+155 
 	}
 }
 
-156 
+157 
 	$subh›r_þ—n
 (
 mosqu™to_db
@@ -81311,7 +81317,7 @@ mosqu™to__subh›r
 subh›r
 )
 
-158 
+159 
 mosqu™to__subh›r
  *
 ³”
@@ -81319,7 +81325,7 @@ mosqu™to__subh›r
 subh›r_tmp
 ;
 
-159 
+160 
 mosqu™to__subËaf
  *
 Ëaf
@@ -81327,7 +81333,7 @@ mosqu™to__subËaf
 ÃxŽ—f
 ;
 
-161 
+162 
 	`HASH_ITER
 (
 hh
@@ -81339,7 +81345,7 @@ subh›r
 subh›r_tmp
 ){
 
-162 
+163 
 Ëaf
  = 
 ³”
@@ -81347,11 +81353,11 @@ subh›r_tmp
 subs
 ;
 
-163 
+164 
 Ëaf
 ){
 
-164 
+165 
 ÃxŽ—f
  = 
 Ëaf
@@ -81359,25 +81365,25 @@ subs
 Ãxt
 ;
 
-165 
+166 
 	`mosqu™to__ä“
 (
 Ëaf
 );
 
-166 
+167 
 Ëaf
  = 
 ÃxŽ—f
 ;
 
-168 if(
+169 if(
 ³”
 ->
 »šed
 ){
 
-169 
+170 
 	`db__msg_¡Üe_»f_dec
 (
 db
@@ -81387,7 +81393,7 @@ db
 »šed
 );
 
-171 
+172 
 	`subh›r_þ—n
 (
 db
@@ -81397,7 +81403,7 @@ db
 chžd»n
 );
 
-172 
+173 
 	`mosqu™to__ä“
 (
 ³”
@@ -81405,7 +81411,7 @@ chžd»n
 tÝic
 );
 
-174 
+175 
 	`HASH_DELETE
 (
 hh
@@ -81415,17 +81421,17 @@ subh›r
 ³”
 );
 
-175 
+176 
 	`mosqu™to__ä“
 (
 ³”
 );
 
-177 
+178 
 	}
 }
 
-179 
+180 
 	$db__þo£
 (
 mosqu™to_db
@@ -81433,7 +81439,7 @@ mosqu™to_db
 db
 )
 
-181 
+182 
 	`subh›r_þ—n
 (
 db
@@ -81441,21 +81447,21 @@ db
 subs
 );
 
-182 
+183 
 	`db__msg_¡Üe_þ—n
 (
 db
 );
 
-184  
+185  
 MOSQ_ERR_SUCCESS
 ;
 
-185 
+186 
 	}
 }
 
-188 
+189 
 	$db__msg_¡Üe_add
 (
 mosqu™to_db
@@ -81467,7 +81473,7 @@ mosqu™to_msg_¡Üe
 ¡Üe
 )
 
-190 
+191 
 ¡Üe
 ->
 Ãxt
@@ -81477,7 +81483,7 @@ db
 msg_¡Üe
 ;
 
-191 
+192 
 ¡Üe
 ->
 ´ev
@@ -81485,13 +81491,13 @@ msg_¡Üe
 NULL
 ;
 
-192 if(
+193 if(
 db
 ->
 msg_¡Üe
 ){
 
-193 
+194 
 db
 ->
 msg_¡Üe
@@ -81501,7 +81507,7 @@ msg_¡Üe
 ¡Üe
 ;
 
-195 
+196 
 db
 ->
 msg_¡Üe
@@ -81509,11 +81515,11 @@ msg_¡Üe
 ¡Üe
 ;
 
-196 
+197 
 	}
 }
 
-199 
+200 
 	$db__msg_¡Üe_»move
 (
 mosqu™to_db
@@ -81525,17 +81531,17 @@ mosqu™to_msg_¡Üe
 ¡Üe
 )
 
-201 
+202 
 i
 ;
 
-203 if(
+204 if(
 ¡Üe
 ->
 ´ev
 ){
 
-204 
+205 
 ¡Üe
 ->
 ´ev
@@ -81543,13 +81549,13 @@ i
 Ãxt
  = store->next;
 
-205 if(
+206 if(
 ¡Üe
 ->
 Ãxt
 ){
 
-206 
+207 
 ¡Üe
 ->
 Ãxt
@@ -81557,7 +81563,7 @@ i
 ´ev
  = store->prev;
 
-209 
+210 
 db
 ->
 msg_¡Üe
@@ -81567,13 +81573,13 @@ msg_¡Üe
 Ãxt
 ;
 
-210 if(
+211 if(
 ¡Üe
 ->
 Ãxt
 ){
 
-211 
+212 
 ¡Üe
 ->
 Ãxt
@@ -81583,13 +81589,13 @@ msg_¡Üe
 NULL
 ;
 
-214 
+215 
 db
 ->
 msg_¡Üe_couÁ
 --;
 
-215 
+216 
 db
 ->
 msg_¡Üe_by‹s
@@ -81599,7 +81605,7 @@ msg_¡Üe_by‹s
 ·ylßdËn
 ;
 
-217 
+218 
 	`mosqu™to__ä“
 (
 ¡Üe
@@ -81607,7 +81613,7 @@ msg_¡Üe_by‹s
 sourû_id
 );
 
-218 
+219 
 	`mosqu™to__ä“
 (
 ¡Üe
@@ -81615,13 +81621,13 @@ sourû_id
 sourû_u£ºame
 );
 
-219 if(
+220 if(
 ¡Üe
 ->
 de¡_ids
 ){
 
-220 
+221 
 i
 =0; i<
 ¡Üe
@@ -81629,7 +81635,7 @@ i
 de¡_id_couÁ
 ; i++){
 
-221 
+222 
 	`mosqu™to__ä“
 (
 ¡Üe
@@ -81639,7 +81645,7 @@ de¡_ids
 i
 ]);
 
-223 
+224 
 	`mosqu™to__ä“
 (
 ¡Üe
@@ -81647,7 +81653,7 @@ i
 de¡_ids
 );
 
-225 
+226 
 	`mosqu™to__ä“
 (
 ¡Üe
@@ -81655,7 +81661,7 @@ de¡_ids
 tÝic
 );
 
-226 
+227 
 	`mosqu™to_´Ý”ty_ä“_®l
 (&
 ¡Üe
@@ -81663,23 +81669,23 @@ tÝic
 ´Ý”t›s
 );
 
-227 
+228 
 	`UHPA_FREE_PAYLOAD
 (
 ¡Üe
 );
 
-228 
+229 
 	`mosqu™to__ä“
 (
 ¡Üe
 );
 
-229 
+230 
 	}
 }
 
-232 
+233 
 	$db__msg_¡Üe_þ—n
 (
 mosqu™to_db
@@ -81687,7 +81693,7 @@ mosqu™to_db
 db
 )
 
-234 
+235 
 mosqu™to_msg_¡Üe
  *
 ¡Üe
@@ -81695,7 +81701,7 @@ mosqu™to_msg_¡Üe
 Ãxt
 ;;
 
-236 
+237 
 ¡Üe
  = 
 db
@@ -81703,17 +81709,17 @@ db
 msg_¡Üe
 ;
 
-237 
+238 
 ¡Üe
 ){
 
-238 
+239 
 Ãxt
  = 
 ¡Üe
 ->next;
 
-239 
+240 
 	`db__msg_¡Üe_»move
 (
 db
@@ -81721,17 +81727,17 @@ db
 ¡Üe
 );
 
-240 
+241 
 ¡Üe
  = 
 Ãxt
 ;
 
-242 
+243 
 	}
 }
 
-244 
+245 
 	$db__msg_¡Üe_»f_šc
 (
 mosqu™to_msg_¡Üe
@@ -81739,17 +81745,17 @@ mosqu™to_msg_¡Üe
 ¡Üe
 )
 
-246 
+247 
 ¡Üe
 ->
 »f_couÁ
 ++;
 
-247 
+248 
 	}
 }
 
-249 
+250 
 	$db__msg_¡Üe_»f_dec
 (
 mosqu™to_db
@@ -81761,19 +81767,19 @@ mosqu™to_msg_¡Üe
 ¡Üe
 )
 
-251 (*
+252 (*
 ¡Üe
 )->
 »f_couÁ
 --;
 
-252 if((*
+253 if((*
 ¡Üe
 )->
 »f_couÁ
  == 0){
 
-253 
+254 
 	`db__msg_¡Üe_»move
 (
 db
@@ -81781,17 +81787,17 @@ db
 ¡Üe
 );
 
-254 *
+255 *
 ¡Üe
  = 
 NULL
 ;
 
-256 
+257 
 	}
 }
 
-259 
+260 
 	$db__msg_¡Üe_com·ù
 (
 mosqu™to_db
@@ -81799,7 +81805,7 @@ mosqu™to_db
 db
 )
 
-261 
+262 
 mosqu™to_msg_¡Üe
  *
 ¡Üe
@@ -81807,7 +81813,7 @@ mosqu™to_msg_¡Üe
 Ãxt
 ;
 
-263 
+264 
 ¡Üe
  = 
 db
@@ -81815,23 +81821,23 @@ db
 msg_¡Üe
 ;
 
-264 
+265 
 ¡Üe
 ){
 
-265 
+266 
 Ãxt
  = 
 ¡Üe
 ->next;
 
-266 if(
+267 if(
 ¡Üe
 ->
 »f_couÁ
  < 1){
 
-267 
+268 
 	`db__msg_¡Üe_»move
 (
 db
@@ -81839,17 +81845,17 @@ db
 ¡Üe
 );
 
-269 
+270 
 ¡Üe
  = 
 Ãxt
 ;
 
-271 
+272 
 	}
 }
 
-274 
+275 
 	$db__mes§ge_»move
 (
 mosqu™to_db
@@ -81865,13 +81871,13 @@ mosqu™to_þ›Á_msg
 ™em
 )
 
-276 if(!
+277 if(!
 msg_d©a
  || !
 ™em
 ){
 
-280 
+281 
 	`DL_DELETE
 (
 msg_d©a
@@ -81881,13 +81887,71 @@ msg_d©a
 ™em
 );
 
-281 if(
+282 if(
 ™em
 ->
 ¡Üe
 ){
 
-282 
+283 
+msg_d©a
+->
+msg_couÁ
+--;
+
+284 
+msg_d©a
+->
+msg_by‹s
+ -ð
+™em
+->
+¡Üe
+->
+·ylßdËn
+;
+
+285 if(
+™em
+->
+qos
+ > 0){
+
+286 
+msg_d©a
+->
+msg_couÁ12
+--;
+
+287 
+msg_d©a
+->
+msg_by‹s12
+ -ð
+™em
+->
+¡Üe
+->
+·ylßdËn
+;
+
+289 
+	`db__msg_¡Üe_»f_dec
+(
+db
+, &
+™em
+->
+¡Üe
+);
+
+291 if(
+æag_§m¶e
+ && 
+´št_d–ay
+){
+
+293 
 	`g‘timeofday
 (&
 time_fšish
@@ -81895,7 +81959,7 @@ time_fšish
 NULL
 );
 
-283 
+294 
 	`årštf
 (
 ¡d”r
@@ -81909,59 +81973,7 @@ time_¡¬t
 tv_u£c
 -time_start.tv_usec);
 
-285 
-msg_d©a
-->
-msg_couÁ
---;
-
-286 
-msg_d©a
-->
-msg_by‹s
- -ð
-™em
-->
-¡Üe
-->
-·ylßdËn
-;
-
-287 if(
-™em
-->
-qos
- > 0){
-
-288 
-msg_d©a
-->
-msg_couÁ12
---;
-
-289 
-msg_d©a
-->
-msg_by‹s12
- -ð
-™em
-->
-¡Üe
-->
-·ylßdËn
-;
-
-291 
-	`db__msg_¡Üe_»f_dec
-(
-db
-, &
-™em
-->
-¡Üe
-);
-
-294 
+299 
 	`mosqu™to_´Ý”ty_ä“_®l
 (&
 ™em
@@ -81969,17 +81981,17 @@ db
 ´Ý”t›s
 );
 
-295 
+300 
 	`mosqu™to__ä“
 (
 ™em
 );
 
-296 
+301 
 	}
 }
 
-299 
+304 
 	$db__mes§ge_dequeue_fœ¡
 (
 mosqu™to
@@ -81991,13 +82003,13 @@ mosqu™to_msg_d©a
 msg_d©a
 )
 
-301 
+306 
 mosqu™to_þ›Á_msg
  *
 msg
 ;
 
-303 
+308 
 msg
  = 
 msg_d©a
@@ -82005,7 +82017,7 @@ msg_d©a
 queued
 ;
 
-304 
+309 
 	`DL_DELETE
 (
 msg_d©a
@@ -82015,7 +82027,7 @@ queued
 msg
 );
 
-305 
+310 
 	`DL_APPEND
 (
 msg_d©a
@@ -82025,23 +82037,23 @@ msg_d©a
 msg
 );
 
-306 if(
+311 if(
 msg_d©a
 ->
 šæight_quÙa
  > 0){
 
-307 
+312 
 msg_d©a
 ->
 šæight_quÙa
 --;
 
-309 
+314 
 	}
 }
 
-312 
+317 
 	$db__mes§ge_d–‘e_outgošg
 (
 mosqu™to_db
@@ -82063,7 +82075,7 @@ ex³ù_¡©e
 qos
 )
 
-314 
+319 
 mosqu™to_þ›Á_msg
  *
 ž
@@ -82071,17 +82083,17 @@ mosqu™to_þ›Á_msg
 tmp
 ;
 
-315 
+320 
 msg_šdex
  = 0;
 
-317 if(!
+322 if(!
 cÚ‹xt
 è 
 MOSQ_ERR_INVAL
 ;
 
-319 
+324 
 	`DL_FOREACH_SAFE
 (
 cÚ‹xt
@@ -82095,27 +82107,27 @@ msgs_out
 tmp
 ){
 
-320 
+325 
 msg_šdex
 ++;
 
-321 if(
+326 if(
 ž
 ->
 mid
  == mid){
 
-322 if(
+327 if(
 ž
 ->
 qos
  != qos){
 
-323  
+328  
 MOSQ_ERR_PROTOCOL
 ;
 
-324 }if(
+329 }if(
 qos
  =ð2 && 
 ž
@@ -82125,15 +82137,15 @@ qos
 ex³ù_¡©e
 ){
 
-325  
+330  
 MOSQ_ERR_PROTOCOL
 ;
 
-327 
+332 
 msg_šdex
 --;
 
-328 
+333 
 	`db__mes§ge_»move
 (
 db
@@ -82145,7 +82157,7 @@ msgs_out
 ž
 );
 
-332 
+337 
 	`DL_FOREACH_SAFE
 (
 cÚ‹xt
@@ -82159,7 +82171,7 @@ queued
 tmp
 ){
 
-333 if(
+338 if(
 cÚ‹xt
 ->
 msgs_out
@@ -82169,11 +82181,11 @@ msgs_out
 msg_šdex
  >= context->msgs_out.inflight_maximum){
 
-337 
+342 
 msg_šdex
 ++;
 
-338 
+343 
 ž
 ->
 time¡amp
@@ -82181,13 +82193,13 @@ time¡amp
 	`mosqu™to_time
 ();
 
-339 
+344 
 ž
 ->
 qos
 ){
 
-341 
+346 
 ž
 ->
 ¡©e
@@ -82195,7 +82207,7 @@ qos
 mosq_ms_publish_qos0
 ;
 
-344 
+349 
 ž
 ->
 ¡©e
@@ -82203,7 +82215,7 @@ mosq_ms_publish_qos0
 mosq_ms_publish_qos1
 ;
 
-347 
+352 
 ž
 ->
 ¡©e
@@ -82211,7 +82223,7 @@ mosq_ms_publish_qos1
 mosq_ms_publish_qos2
 ;
 
-350 
+355 
 	`db__mes§ge_dequeue_fœ¡
 (
 cÚ‹xt
@@ -82219,25 +82231,25 @@ cÚ‹xt
 msgs_out
 );
 
-352 #ifdeà
+357 #ifdeà
 WITH_PERSISTENCE
 
 
-353 
+358 
 db
 ->
 ³rsi¡’û_chªges
 ++;
 
-356  
+361  
 MOSQ_ERR_SUCCESS
 ;
 
-357 
+362 
 	}
 }
 
-359 
+364 
 	$db__mes§ge_š£¹
 (
 mosqu™to_db
@@ -82271,19 +82283,19 @@ mosqu™to_´Ý”ty
 ´Ý”t›s
 )
 
-361 
+366 
 mosqu™to_þ›Á_msg
  *
 msg
 ;
 
-362 
+367 
 mosqu™to_msg_d©a
  *
 msg_d©a
 ;
 
-363 
+368 
 mosqu™to_msg_¡©e
  
 ¡©e
@@ -82291,31 +82303,31 @@ mosqu™to_msg_¡©e
 mosq_ms_šv®id
 ;
 
-364 
+369 
 rc
  = 0;
 
-365 
+370 
 i
 ;
 
-366 **
+371 **
 de¡_ids
 ;
 
-368 
+373 
 	`as£¹
 (
 ¡Üed
 );
 
-369 if(!
+374 if(!
 cÚ‹xt
 è 
 MOSQ_ERR_INVAL
 ;
 
-370 if(!
+375 if(!
 cÚ‹xt
 ->
 id
@@ -82323,13 +82335,13 @@ id
 MOSQ_ERR_SUCCESS
 ;
 
-372 if(
+377 if(
 dœ
  =ð
 mosq_md_out
 ){
 
-373 
+378 
 msg_d©a
  = &
 cÚ‹xt
@@ -82337,7 +82349,7 @@ cÚ‹xt
 msgs_out
 ;
 
-375 
+380 
 msg_d©a
  = &
 cÚ‹xt
@@ -82345,7 +82357,7 @@ cÚ‹xt
 msgs_š
 ;
 
-385 if(
+390 if(
 cÚ‹xt
 ->
 ´ÙocÞ
@@ -82353,7 +82365,7 @@ cÚ‹xt
 mosq_p_mq‰5
 
 
-386 && 
+391 && 
 db
 ->
 cÚfig
@@ -82363,7 +82375,7 @@ cÚfig
 çl£
 
 
-387 && 
+392 && 
 dœ
  =ð
 mosq_md_out
@@ -82377,7 +82389,7 @@ mosq_md_out
 de¡_ids
 ){
 
-389 
+394 
 i
 =0; i<
 ¡Üed
@@ -82385,7 +82397,7 @@ i
 de¡_id_couÁ
 ; i++){
 
-390 if(!
+395 if(!
 	`¡rcmp
 (
 ¡Üed
@@ -82399,17 +82411,17 @@ cÚ‹xt
 id
 )){
 
-392 
+397 
 	`mosqu™to_´Ý”ty_ä“_®l
 (&
 ´Ý”t›s
 );
 
-393  
+398  
 MOSQ_ERR_SUCCESS
 ;
 
-397 if(
+402 if(
 cÚ‹xt
 ->
 sock
@@ -82417,7 +82429,7 @@ sock
 INVALID_SOCKET
 ){
 
-399 if(
+404 if(
 qos
  =ð0 && !
 db
@@ -82427,19 +82439,19 @@ cÚfig
 queue_qos0_mes§ges
 ){
 
-400 if(!
+405 if(!
 cÚ‹xt
 ->
 bridge
 ){
 
-401 
+406 
 	`mosqu™to_´Ý”ty_ä“_®l
 (&
 ´Ý”t›s
 );
 
-404 if(
+409 if(
 cÚ‹xt
 ->
 bridge
@@ -82449,13 +82461,13 @@ bridge
 b¡_Ïzy
 ){
 
-405 
+410 
 	`mosqu™to_´Ý”ty_ä“_®l
 (&
 ´Ý”t›s
 );
 
-410 if(
+415 if(
 cÚ‹xt
 ->
 bridge
@@ -82465,13 +82477,13 @@ bridge
 Œue
 ){
 
-411 
+416 
 	`mosqu™to_´Ý”ty_ä“_®l
 (&
 ´Ý”t›s
 );
 
-416 if(
+421 if(
 cÚ‹xt
 ->
 sock
@@ -82479,7 +82491,7 @@ sock
 INVALID_SOCKET
 ){
 
-417 if(
+422 if(
 	`db__»ady_fÜ_æight
 (
 msg_d©a
@@ -82487,51 +82499,51 @@ msg_d©a
 qos
 )){
 
-418 if(
+423 if(
 dœ
  =ð
 mosq_md_out
 ){
 
-419 
+424 
 qos
 ){
 
-421 
+426 
 ¡©e
  = 
 mosq_ms_publish_qos0
 ;
 
-424 
+429 
 ¡©e
  = 
 mosq_ms_publish_qos1
 ;
 
-427 
+432 
 ¡©e
  = 
 mosq_ms_publish_qos2
 ;
 
-431 if(
+436 if(
 qos
  == 2){
 
-432 
+437 
 ¡©e
  = 
 mosq_ms_wa™_fÜ_pub»l
 ;
 
-434 
+439 
 	`mosqu™to_´Ý”ty_ä“_®l
 (&
 ´Ý”t›s
 );
 
-438 }if(
+443 }if(
 	`db__»ady_fÜ_queue
 (
 cÚ‹xt
@@ -82541,33 +82553,33 @@ qos
 msg_d©a
 )){
 
-439 
+444 
 ¡©e
  = 
 mosq_ms_queued
-;
-
-440 
-rc
- = 2;
-
-443 if(
-cÚ‹xt
-->
-is_drÝpšg
- =ð
-çl£
-){
-
-444 
-cÚ‹xt
-->
-is_drÝpšg
- = 
-Œue
 ;
 
 445 
+rc
+ = 2;
+
+448 if(
+cÚ‹xt
+->
+is_drÝpšg
+ =ð
+çl£
+){
+
+449 
+cÚ‹xt
+->
+is_drÝpšg
+ = 
+Œue
+;
+
+450 
 	`log__´štf
 (
 NULL
@@ -82575,23 +82587,23 @@ NULL
 MOSQ_LOG_NOTICE
 ,
 
-447 
+452 
 cÚ‹xt
 ->
 id
 );
 
-449 
+454 
 	`G_MSGS_DROPPED_INC
 ();
 
-450 
+455 
 	`mosqu™to_´Ý”ty_ä“_®l
 (&
 ´Ý”t›s
 );
 
-454 ià(
+459 ià(
 	`db__»ady_fÜ_queue
 (
 cÚ‹xt
@@ -82601,17 +82613,17 @@ qos
 msg_d©a
 )){
 
-455 
+460 
 ¡©e
  = 
 mosq_ms_queued
 ;
 
-457 
+462 
 	`G_MSGS_DROPPED_INC
 ();
 
-458 if(
+463 if(
 cÚ‹xt
 ->
 is_drÝpšg
@@ -82619,7 +82631,7 @@ is_drÝpšg
 çl£
 ){
 
-459 
+464 
 cÚ‹xt
 ->
 is_drÝpšg
@@ -82627,7 +82639,7 @@ is_drÝpšg
 Œue
 ;
 
-460 
+465 
 	`log__´štf
 (
 NULL
@@ -82635,19 +82647,19 @@ NULL
 MOSQ_LOG_NOTICE
 ,
 
-462 
+467 
 cÚ‹xt
 ->
 id
 );
 
-464 
+469 
 	`mosqu™to_´Ý”ty_ä“_®l
 (&
 ´Ý”t›s
 );
 
-468 
+473 
 	`as£¹
 (
 ¡©e
@@ -82655,23 +82667,23 @@ id
 mosq_ms_šv®id
 );
 
-470 #ifdeà
+475 #ifdeà
 WITH_PERSISTENCE
 
 
-471 if(
+476 if(
 ¡©e
  =ð
 mosq_ms_queued
 ){
 
-472 
+477 
 db
 ->
 ³rsi¡’û_chªges
 ++;
 
-476 
+481 
 msg
  = 
 	`mosqu™to__m®loc
@@ -82679,13 +82691,13 @@ msg
 mosqu™to_þ›Á_msg
 ));
 
-477 if(!
+482 if(!
 msg
 è 
 MOSQ_ERR_NOMEM
 ;
 
-478 
+483 
 msg
 ->
 ´ev
@@ -82693,7 +82705,7 @@ msg
 NULL
 ;
 
-479 
+484 
 msg
 ->
 Ãxt
@@ -82701,7 +82713,7 @@ msg
 NULL
 ;
 
-480 
+485 
 msg
 ->
 ¡Üe
@@ -82709,7 +82721,7 @@ msg
 ¡Üed
 ;
 
-481 
+486 
 	`db__msg_¡Üe_»f_šc
 (
 msg
@@ -82717,13 +82729,13 @@ msg
 ¡Üe
 );
 
-482 
+487 
 msg
 ->
 mid
  = mid;
 
-483 
+488 
 msg
 ->
 time¡amp
@@ -82731,7 +82743,7 @@ time¡amp
 	`mosqu™to_time
 ();
 
-484 
+489 
 msg
 ->
 dœeùiÚ
@@ -82739,13 +82751,13 @@ dœeùiÚ
 dœ
 ;
 
-485 
+490 
 msg
 ->
 ¡©e
  = state;
 
-486 
+491 
 msg
 ->
 dup
@@ -82753,7 +82765,7 @@ dup
 çl£
 ;
 
-487 if(
+492 if(
 qos
  > 
 cÚ‹xt
@@ -82761,7 +82773,7 @@ cÚ‹xt
 maximum_qos
 ){
 
-488 
+493 
 msg
 ->
 qos
@@ -82771,31 +82783,31 @@ cÚ‹xt
 maximum_qos
 ;
 
-490 
+495 
 msg
 ->
 qos
  = qos;
 
-492 
+497 
 msg
 ->
 »š
  =„etain;
 
-493 
+498 
 msg
 ->
 ´Ý”t›s
  =…roperties;
 
-495 if(
+500 if(
 ¡©e
  =ð
 mosq_ms_queued
 ){
 
-496 
+501 
 	`DL_APPEND
 (
 msg_d©a
@@ -82805,7 +82817,7 @@ queued
 msg
 );
 
-498 
+503 
 	`DL_APPEND
 (
 msg_d©a
@@ -82815,7 +82827,11 @@ msg_d©a
 msg
 );
 
-501 
+507 if(
+æag_§m¶e
+){
+
+508 
 	`´štf
 ("%d\n", 
 msg_d©a
@@ -82823,7 +82839,7 @@ msg_d©a
 msg_couÁ
 );
 
-511 
+509 
 	`g‘timeofday
 (&
 time_¡¬t
@@ -82831,13 +82847,19 @@ time_¡¬t
 NULL
 );
 
-516 
+513 
+´št_d–ay
+ = 
+Œue
+;
+
+520 
 msg_d©a
 ->
 msg_couÁ
 ++;
 
-517 
+521 
 msg_d©a
 ->
 msg_by‹s
@@ -82849,17 +82871,17 @@ msg
 ·ylßdËn
 ;
 
-518 if(
+522 if(
 qos
  > 0){
 
-519 
+523 
 msg_d©a
 ->
 msg_couÁ12
 ++;
 
-520 
+524 
 msg_d©a
 ->
 msg_by‹s12
@@ -82871,7 +82893,7 @@ msg
 ·ylßdËn
 ;
 
-524 if(
+528 if(
 db
 ->
 cÚfig
@@ -82887,7 +82909,7 @@ mosq_md_out
 »š
  == false){
 
-532 
+536 
 de¡_ids
  = 
 	`mosqu™to__»®loc
@@ -82897,23 +82919,23 @@ de¡_ids
 de¡_id_couÁ
 +1));
 
-533 if(
+537 if(
 de¡_ids
 ){
 
-534 
+538 
 ¡Üed
 ->
 de¡_ids
  = dest_ids;
 
-535 
+539 
 ¡Üed
 ->
 de¡_id_couÁ
 ++;
 
-536 
+540 
 ¡Üed
 ->
 de¡_ids
@@ -82927,7 +82949,7 @@ cÚ‹xt
 id
 );
 
-537 if(!
+541 if(!
 ¡Üed
 ->
 de¡_ids
@@ -82935,19 +82957,19 @@ de¡_ids
 de¡_id_couÁ
 -1]){
 
-538  
+542  
 MOSQ_ERR_NOMEM
 ;
 
-541  
+545  
 MOSQ_ERR_NOMEM
 ;
 
-544 #ifdeà
+548 #ifdeà
 WITH_BRIDGE
 
 
-545 if(
+549 if(
 cÚ‹xt
 ->
 bridge
@@ -82957,7 +82979,7 @@ bridge
 b¡_Ïzy
 
 
-546 && 
+550 && 
 cÚ‹xt
 ->
 sock
@@ -82965,7 +82987,7 @@ sock
 INVALID_SOCKET
 
 
-547 && 
+551 && 
 cÚ‹xt
 ->
 msgs_out
@@ -82977,7 +82999,7 @@ bridge
 th»shÞd
 ){
 
-549 
+553 
 cÚ‹xt
 ->
 bridge
@@ -82987,7 +83009,7 @@ bridge
 Œue
 ;
 
-553 if(
+557 if(
 dœ
  =ð
 mosq_md_out
@@ -82997,17 +83019,17 @@ msg
 qos
  > 0){
 
-554 
+558 
 	`utž__deüem’t_£nd_quÙa
 (
 cÚ‹xt
 );
 
-556 #ifdeà
+560 #ifdeà
 WITH_WEBSOCKETS
 
 
-557 if(
+561 if(
 cÚ‹xt
 ->
 wsi
@@ -83015,7 +83037,7 @@ wsi
 rc
  == 0){
 
-558  
+562  
 	`db__mes§ge_wr™e
 (
 db
@@ -83023,19 +83045,19 @@ db
 cÚ‹xt
 );
 
-560  
+564  
 rc
 ;
 
-563  
+567  
 rc
 ;
 
-565 
+569 
 	}
 }
 
-567 
+571 
 	$db__mes§ge_upd©e_outgošg
 (
 mosqu™to
@@ -83053,13 +83075,13 @@ mosqu™to_msg_¡©e
 qos
 )
 
-569 
+573 
 mosqu™to_þ›Á_msg
  *
 ž
 ;
 
-571 
+575 
 	`DL_FOREACH
 (
 cÚ‹xt
@@ -83071,29 +83093,29 @@ msgs_out
 ž
 ){
 
-572 if(
+576 if(
 ž
 ->
 mid
  == mid){
 
-573 if(
+577 if(
 ž
 ->
 qos
  != qos){
 
-574  
+578  
 MOSQ_ERR_PROTOCOL
 ;
 
-576 
+580 
 ž
 ->
 ¡©e
  = state;
 
-577 
+581 
 ž
 ->
 time¡amp
@@ -83101,19 +83123,19 @@ time¡amp
 	`mosqu™to_time
 ();
 
-578  
+582  
 MOSQ_ERR_SUCCESS
 ;
 
-581  
+585  
 MOSQ_ERR_NOT_FOUND
 ;
 
-582 
+586 
 	}
 }
 
-585 
+589 
 	$db__mes§ges_d–‘e_li¡
 (
 mosqu™to_db
@@ -83125,7 +83147,7 @@ mosqu™to_þ›Á_msg
 h—d
 )
 
-587 
+591 
 mosqu™to_þ›Á_msg
  *
 ž
@@ -83133,7 +83155,7 @@ mosqu™to_þ›Á_msg
 tmp
 ;
 
-589 
+593 
 	`DL_FOREACH_SAFE
 (*
 h—d
@@ -83143,7 +83165,7 @@ h—d
 tmp
 ){
 
-590 
+594 
 	`DL_DELETE
 (*
 h—d
@@ -83151,7 +83173,7 @@ h—d
 ž
 );
 
-591 
+595 
 	`db__msg_¡Üe_»f_dec
 (
 db
@@ -83161,7 +83183,7 @@ db
 ¡Üe
 );
 
-592 
+596 
 	`mosqu™to_´Ý”ty_ä“_®l
 (&
 ž
@@ -83169,23 +83191,23 @@ db
 ´Ý”t›s
 );
 
-593 
+597 
 	`mosqu™to__ä“
 (
 ž
 );
 
-595 *
+599 *
 h—d
  = 
 NULL
 ;
 
-596 
+600 
 	}
 }
 
-599 
+603 
 	$db__mes§ges_d–‘e
 (
 mosqu™to_db
@@ -83197,13 +83219,13 @@ mosqu™to
 cÚ‹xt
 )
 
-601 if(!
+605 if(!
 cÚ‹xt
 è 
 MOSQ_ERR_INVAL
 ;
 
-603 
+607 
 	`db__mes§ges_d–‘e_li¡
 (
 db
@@ -83213,85 +83235,85 @@ cÚ‹xt
 msgs_š
 .
 šæight
-);
-
-604 
-	`db__mes§ges_d–‘e_li¡
-(
-db
-, &
-cÚ‹xt
-->
-msgs_š
-.
-queued
-);
-
-605 
-	`db__mes§ges_d–‘e_li¡
-(
-db
-, &
-cÚ‹xt
-->
-msgs_out
-.
-šæight
-);
-
-606 
-	`db__mes§ges_d–‘e_li¡
-(
-db
-, &
-cÚ‹xt
-->
-msgs_out
-.
-queued
 );
 
 608 
+	`db__mes§ges_d–‘e_li¡
+(
+db
+, &
+cÚ‹xt
+->
+msgs_š
+.
+queued
+);
+
+609 
+	`db__mes§ges_d–‘e_li¡
+(
+db
+, &
+cÚ‹xt
+->
+msgs_out
+.
+šæight
+);
+
+610 
+	`db__mes§ges_d–‘e_li¡
+(
+db
+, &
+cÚ‹xt
+->
+msgs_out
+.
+queued
+);
+
+612 
 cÚ‹xt
 ->
 msgs_š
 .
 msg_by‹s
- = 0;
-
-609 
-cÚ‹xt
-->
-msgs_š
-.
-msg_by‹s12
- = 0;
-
-610 
-cÚ‹xt
-->
-msgs_š
-.
-msg_couÁ
- = 0;
-
-611 
-cÚ‹xt
-->
-msgs_š
-.
-msg_couÁ12
  = 0;
 
 613 
 cÚ‹xt
 ->
+msgs_š
+.
+msg_by‹s12
+ = 0;
+
+614 
+cÚ‹xt
+->
+msgs_š
+.
+msg_couÁ
+ = 0;
+
+615 
+cÚ‹xt
+->
+msgs_š
+.
+msg_couÁ12
+ = 0;
+
+617 
+cÚ‹xt
+->
 msgs_out
 .
 msg_by‹s
  = 0;
 
-614 
+618 
 cÚ‹xt
 ->
 msgs_out
@@ -83299,7 +83321,7 @@ msgs_out
 msg_by‹s12
  = 0;
 
-615 
+619 
 cÚ‹xt
 ->
 msgs_out
@@ -83307,7 +83329,7 @@ msgs_out
 msg_couÁ
  = 0;
 
-616 
+620 
 cÚ‹xt
 ->
 msgs_out
@@ -83315,15 +83337,15 @@ msgs_out
 msg_couÁ12
  = 0;
 
-618  
+622  
 MOSQ_ERR_SUCCESS
 ;
 
-619 
+623 
 	}
 }
 
-621 
+625 
 	$db__mes§ges_—sy_queue
 (
 mosqu™to_db
@@ -83353,27 +83375,27 @@ mosqu™to_´Ý”ty
 ´Ý”t›s
 )
 
-623 
+627 
 mosqu™to_msg_¡Üe
  *
 ¡Üed
 ;
 
-624 *
+628 *
 sourû_id
 ;
 
-625 *
+629 *
 tÝic_h—p
 ;
 
-626 
+630 
 mosqu™to__·ylßd_uh·
  
 ·ylßd_uh·
 ;
 
-627 
+631 
 mosqu™to_´Ý”ty
  *
 loÿl_´Ý”t›s
@@ -83381,19 +83403,19 @@ loÿl_´Ý”t›s
 NULL
 ;
 
-628 
+632 
 mosqu™to_msg_Üigš
  
 Üigš
 ;
 
-630 
+634 
 	`as£¹
 (
 db
 );
 
-632 
+636 
 ·ylßd_uh·
 .
 ±r
@@ -83401,13 +83423,13 @@ db
 NULL
 ;
 
-634 if(!
+638 if(!
 tÝic
 è 
 MOSQ_ERR_INVAL
 ;
 
-635 
+639 
 tÝic_h—p
  = 
 	`mosqu™to__¡rdup
@@ -83415,13 +83437,13 @@ tÝic_h—p
 tÝic
 );
 
-636 if(!
+640 if(!
 tÝic_h—p
 è 
 MOSQ_ERR_INVAL
 ;
 
-638 if(
+642 if(
 db
 ->
 cÚfig
@@ -83431,11 +83453,11 @@ cÚfig
 çl£
 ){
 
-639 
+643 
 »š
  = 0;
 
-642 if(
+646 if(
 	`UHPA_ALLOC
 (
 ·ylßd_uh·
@@ -83443,17 +83465,17 @@ cÚfig
 ·ylßdËn
 ) == 0){
 
-643 
+647 
 	`mosqu™to__ä“
 (
 tÝic_h—p
 );
 
-644  
+648  
 MOSQ_ERR_NOMEM
 ;
 
-646 
+650 
 	`memýy
 (
 	`UHPA_ACCESS
@@ -83465,13 +83487,13 @@ MOSQ_ERR_NOMEM
 ·ylßd
 ,…ayloadlen);
 
-648 if(
+652 if(
 cÚ‹xt
  && cÚ‹xt->
 id
 ){
 
-649 
+653 
 sourû_id
  = 
 cÚ‹xt
@@ -83479,43 +83501,43 @@ cÚ‹xt
 id
 ;
 
-651 
+655 
 sourû_id
  = "";
 
-653 if(
+657 if(
 ´Ý”t›s
 ){
 
-654 
+658 
 loÿl_´Ý”t›s
  = *
 ´Ý”t›s
 ;
 
-655 *
+659 *
 ´Ý”t›s
  = 
 NULL
 ;
 
-658 if(
+662 if(
 cÚ‹xt
 ){
 
-659 
+663 
 Üigš
  = 
 mosq_mo_þ›Á
 ;
 
-661 
+665 
 Üigš
  = 
 mosq_mo_brok”
 ;
 
-663 if(
+667 if(
 	`db__mes§ge_¡Üe
 (
 db
@@ -83541,7 +83563,7 @@ loÿl_´Ý”t›s
 Üigš
 ))  1;
 
-665  
+669  
 	`sub__mes§ges_queue
 (
 db
@@ -83557,11 +83579,11 @@ qos
 ¡Üed
 );
 
-666 
+670 
 	}
 }
 
-669 
+673 
 	$db__mes§ge_¡Üe
 (
 mosqu™to_db
@@ -83609,7 +83631,7 @@ mosqu™to_msg_Üigš
 Üigš
 )
 
-671 
+675 
 mosqu™to_msg_¡Üe
  *
 ‹mp
@@ -83617,25 +83639,25 @@ mosqu™to_msg_¡Üe
 NULL
 ;
 
-672 
+676 
 rc
  = 
 MOSQ_ERR_SUCCESS
 ;
 
-674 
+678 
 	`as£¹
 (
 db
 );
 
-675 
+679 
 	`as£¹
 (
 ¡Üed
 );
 
-677 
+681 
 ‹mp
  = 
 	`mosqu™to__ÿÎoc
@@ -83643,11 +83665,11 @@ db
 mosqu™to_msg_¡Üe
 ));
 
-678 if(!
+682 if(!
 ‹mp
 ){
 
-679 
+683 
 	`log__´štf
 (
 NULL
@@ -83655,17 +83677,17 @@ NULL
 MOSQ_LOG_ERR
 , "Error: Out of memory.");
 
-680 
+684 
 rc
  = 
 MOSQ_ERR_NOMEM
 ;
 
-681 
+685 
 ”rÜ
 ;
 
-684 
+688 
 ‹mp
 ->
 tÝic
@@ -83673,7 +83695,7 @@ tÝic
 NULL
 ;
 
-685 
+689 
 ‹mp
 ->
 ·ylßd
@@ -83683,19 +83705,19 @@ NULL
 NULL
 ;
 
-687 
+691 
 ‹mp
 ->
 »f_couÁ
  = 0;
 
-688 if(
+692 if(
 sourû
  && sourû->
 id
 ){
 
-689 
+693 
 ‹mp
 ->
 sourû_id
@@ -83707,7 +83729,7 @@ sourû
 id
 );
 
-691 
+695 
 ‹mp
 ->
 sourû_id
@@ -83715,13 +83737,13 @@ sourû_id
 	`mosqu™to__¡rdup
 ("");
 
-693 if(!
+697 if(!
 ‹mp
 ->
 sourû_id
 ){
 
-694 
+698 
 	`log__´štf
 (
 NULL
@@ -83729,23 +83751,23 @@ NULL
 MOSQ_LOG_ERR
 , "Error: Out of memory.");
 
-695 
+699 
 rc
  = 
 MOSQ_ERR_NOMEM
 ;
 
-696 
+700 
 ”rÜ
 ;
 
-699 if(
+703 if(
 sourû
  && sourû->
 u£ºame
 ){
 
-700 
+704 
 ‹mp
 ->
 sourû_u£ºame
@@ -83757,27 +83779,27 @@ sourû
 u£ºame
 );
 
-701 if(!
+705 if(!
 ‹mp
 ->
 sourû_u£ºame
 ){
 
-702 
+706 
 rc
  = 
 MOSQ_ERR_NOMEM
 ;
 
-703 
+707 
 ”rÜ
 ;
 
-706 if(
+710 if(
 sourû
 ){
 
-707 
+711 
 ‹mp
 ->
 sourû_li¡’”
@@ -83787,65 +83809,65 @@ sourû
 li¡’”
 ;
 
-709 
+713 
 ‹mp
 ->
 sourû_mid
  = source_mid;
 
-710 
+714 
 ‹mp
 ->
 mid
  = 0;
 
-711 
+715 
 ‹mp
 ->
 qos
  = qos;
 
-712 
+716 
 ‹mp
 ->
 »š
  =„etain;
 
-713 
+717 
 ‹mp
 ->
 tÝic
  =opic;
 
-714 
+718 
 tÝic
  = 
 NULL
 ;
 
-715 
+719 
 ‹mp
 ->
 ·ylßdËn
  =…ayloadlen;
 
-716 
+720 
 ‹mp
 ->
 ´Ý”t›s
  =…roperties;
 
-717 
+721 
 ‹mp
 ->
 Üigš
  = origin;
 
-718 if(
+722 if(
 ·ylßdËn
 ){
 
-719 
+723 
 	`UHPA_MOVE
 (
 ‹mp
@@ -83855,7 +83877,7 @@ NULL
 ·ylßdËn
 );
 
-721 
+725 
 ‹mp
 ->
 ·ylßd
@@ -83865,11 +83887,11 @@ NULL
 NULL
 ;
 
-723 if(
+727 if(
 mes§ge_expœy_š‹rv®
  > 0){
 
-724 
+728 
 ‹mp
 ->
 mes§ge_expœy_time
@@ -83881,13 +83903,13 @@ NULL
 mes§ge_expœy_š‹rv®
 ;
 
-726 
+730 
 ‹mp
 ->
 mes§ge_expœy_time
  = 0;
 
-729 
+733 
 ‹mp
 ->
 de¡_ids
@@ -83895,19 +83917,19 @@ de¡_ids
 NULL
 ;
 
-730 
+734 
 ‹mp
 ->
 de¡_id_couÁ
  = 0;
 
-731 
+735 
 db
 ->
 msg_¡Üe_couÁ
 ++;
 
-732 
+736 
 db
 ->
 msg_¡Üe_by‹s
@@ -83915,17 +83937,17 @@ msg_¡Üe_by‹s
 ·ylßdËn
 ;
 
-733 (*
+737 (*
 ¡Üed
 èð
 ‹mp
 ;
 
-735 if(!
+739 if(!
 ¡Üe_id
 ){
 
-736 
+740 
 ‹mp
 ->
 db_id
@@ -83935,7 +83957,7 @@ db
 Ï¡_db_id
 ;
 
-738 
+742 
 ‹mp
 ->
 db_id
@@ -83943,7 +83965,7 @@ db_id
 ¡Üe_id
 ;
 
-741 
+745 
 	`db__msg_¡Üe_add
 (
 db
@@ -83951,25 +83973,25 @@ db
 ‹mp
 );
 
-743  
+747  
 MOSQ_ERR_SUCCESS
 ;
 
-744 
+748 
 ”rÜ
 :
 
-745 
+749 
 	`mosqu™to__ä“
 (
 tÝic
 );
 
-746 if(
+750 if(
 ‹mp
 ){
 
-747 
+751 
 	`mosqu™to__ä“
 (
 ‹mp
@@ -83977,7 +83999,7 @@ tÝic
 sourû_id
 );
 
-748 
+752 
 	`mosqu™to__ä“
 (
 ‹mp
@@ -83985,7 +84007,7 @@ sourû_id
 sourû_u£ºame
 );
 
-749 
+753 
 	`mosqu™to__ä“
 (
 ‹mp
@@ -83993,19 +84015,19 @@ sourû_u£ºame
 tÝic
 );
 
-750 
+754 
 	`mosqu™to__ä“
 (
 ‹mp
 );
 
-752 
+756 
 	`mosqu™to_´Ý”ty_ä“_®l
 (&
 ´Ý”t›s
 );
 
-753 
+757 
 	`UHPA_FREE
 (*
 ·ylßd
@@ -84013,15 +84035,15 @@ tÝic
 ·ylßdËn
 );
 
-754  
+758  
 rc
 ;
 
-755 
+759 
 	}
 }
 
-757 
+761 
 	$db__mes§ge_¡Üe_fšd
 (
 mosqu™to
@@ -84037,25 +84059,25 @@ mosqu™to_msg_¡Üe
 ¡Üed
 )
 
-759 
+763 
 mosqu™to_þ›Á_msg
  *
 ž
 ;
 
-761 if(!
+765 if(!
 cÚ‹xt
 è 
 MOSQ_ERR_INVAL
 ;
 
-763 *
+767 *
 ¡Üed
  = 
 NULL
 ;
 
-764 
+768 
 	`DL_FOREACH
 (
 cÚ‹xt
@@ -84067,7 +84089,7 @@ msgs_š
 ž
 ){
 
-765 if(
+769 if(
 ž
 ->
 ¡Üe
@@ -84077,7 +84099,7 @@ sourû_mid
 mid
 ){
 
-766 *
+770 *
 ¡Üed
  = 
 ž
@@ -84085,11 +84107,11 @@ mid
 ¡Üe
 ;
 
-767  
+771  
 MOSQ_ERR_SUCCESS
 ;
 
-771 
+775 
 	`DL_FOREACH
 (
 cÚ‹xt
@@ -84101,7 +84123,7 @@ queued
 ž
 ){
 
-772 if(
+776 if(
 ž
 ->
 ¡Üe
@@ -84111,7 +84133,7 @@ sourû_mid
 mid
 ){
 
-773 *
+777 *
 ¡Üed
  = 
 ž
@@ -84119,15 +84141,15 @@ mid
 ¡Üe
 ;
 
-774  
+778  
 MOSQ_ERR_SUCCESS
 ;
 
-779 
+783 
 	}
 }
 
-783 
+787 
 	$db__mes§ge_»cÚÃù_»£t_outgošg
 (
 mosqu™to_db
@@ -84139,7 +84161,7 @@ mosqu™to
 cÚ‹xt
 )
 
-785 
+789 
 mosqu™to_þ›Á_msg
  *
 msg
@@ -84147,7 +84169,7 @@ msg
 tmp
 ;
 
-787 
+791 
 cÚ‹xt
 ->
 msgs_out
@@ -84155,7 +84177,7 @@ msgs_out
 msg_by‹s
  = 0;
 
-788 
+792 
 cÚ‹xt
 ->
 msgs_out
@@ -84163,7 +84185,7 @@ msgs_out
 msg_by‹s12
  = 0;
 
-789 
+793 
 cÚ‹xt
 ->
 msgs_out
@@ -84171,7 +84193,7 @@ msgs_out
 msg_couÁ
  = 0;
 
-790 
+794 
 cÚ‹xt
 ->
 msgs_out
@@ -84179,7 +84201,7 @@ msgs_out
 msg_couÁ12
  = 0;
 
-791 
+795 
 cÚ‹xt
 ->
 msgs_out
@@ -84189,7 +84211,7 @@ msgs_out
 šæight_maximum
 ;
 
-793 
+797 
 	`DL_FOREACH_SAFE
 (
 cÚ‹xt
@@ -84203,7 +84225,7 @@ msg
 tmp
 ){
 
-794 
+798 
 cÚ‹xt
 ->
 msgs_out
@@ -84211,7 +84233,7 @@ msgs_out
 msg_couÁ
 ++;
 
-795 
+799 
 cÚ‹xt
 ->
 msgs_out
@@ -84225,13 +84247,13 @@ msg
 ·ylßdËn
 ;
 
-796 if(
+800 if(
 msg
 ->
 qos
  > 0){
 
-797 
+801 
 cÚ‹xt
 ->
 msgs_out
@@ -84239,7 +84261,7 @@ msgs_out
 msg_couÁ12
 ++;
 
-798 
+802 
 cÚ‹xt
 ->
 msgs_out
@@ -84253,19 +84275,19 @@ msg
 ·ylßdËn
 ;
 
-799 
+803 
 	`utž__deüem’t_»ûive_quÙa
 (
 cÚ‹xt
 );
 
-802 
+806 
 msg
 ->
 qos
 ){
 
-804 
+808 
 msg
 ->
 ¡©e
@@ -84273,7 +84295,7 @@ msg
 mosq_ms_publish_qos0
 ;
 
-807 
+811 
 msg
 ->
 ¡©e
@@ -84281,7 +84303,7 @@ msg
 mosq_ms_publish_qos1
 ;
 
-810 if(
+814 if(
 msg
 ->
 ¡©e
@@ -84289,7 +84311,7 @@ msg
 mosq_ms_wa™_fÜ_pubcomp
 ){
 
-811 
+815 
 msg
 ->
 ¡©e
@@ -84297,7 +84319,7 @@ msg
 mosq_ms_»£nd_pub»l
 ;
 
-813 
+817 
 msg
 ->
 ¡©e
@@ -84305,7 +84327,7 @@ msg
 mosq_ms_publish_qos2
 ;
 
-824 
+828 
 	`DL_FOREACH_SAFE
 (
 cÚ‹xt
@@ -84319,7 +84341,7 @@ msg
 tmp
 ){
 
-825 
+829 
 cÚ‹xt
 ->
 msgs_out
@@ -84327,7 +84349,7 @@ msgs_out
 msg_couÁ
 ++;
 
-826 
+830 
 cÚ‹xt
 ->
 msgs_out
@@ -84341,13 +84363,13 @@ msg
 ·ylßdËn
 ;
 
-827 if(
+831 if(
 msg
 ->
 qos
  > 0){
 
-828 
+832 
 cÚ‹xt
 ->
 msgs_out
@@ -84355,7 +84377,7 @@ msgs_out
 msg_couÁ12
 ++;
 
-829 
+833 
 cÚ‹xt
 ->
 msgs_out
@@ -84369,7 +84391,7 @@ msg
 ·ylßdËn
 ;
 
-831 if(
+835 if(
 	`db__»ady_fÜ_æight
 (&
 cÚ‹xt
@@ -84381,13 +84403,13 @@ msg
 qos
 )){
 
-832 
+836 
 msg
 ->
 qos
 ){
 
-834 
+838 
 msg
 ->
 ¡©e
@@ -84395,7 +84417,7 @@ msg
 mosq_ms_publish_qos0
 ;
 
-837 
+841 
 msg
 ->
 ¡©e
@@ -84403,7 +84425,7 @@ msg
 mosq_ms_publish_qos1
 ;
 
-840 
+844 
 msg
 ->
 ¡©e
@@ -84411,7 +84433,7 @@ msg
 mosq_ms_publish_qos2
 ;
 
-843 
+847 
 	`db__mes§ge_dequeue_fœ¡
 (
 cÚ‹xt
@@ -84419,15 +84441,15 @@ cÚ‹xt
 msgs_out
 );
 
-847  
+851  
 MOSQ_ERR_SUCCESS
 ;
 
-848 
+852 
 	}
 }
 
-852 
+856 
 	$db__mes§ge_»cÚÃù_»£t_šcomšg
 (
 mosqu™to_db
@@ -84439,7 +84461,7 @@ mosqu™to
 cÚ‹xt
 )
 
-854 
+858 
 mosqu™to_þ›Á_msg
  *
 msg
@@ -84447,7 +84469,7 @@ msg
 tmp
 ;
 
-856 
+860 
 cÚ‹xt
 ->
 msgs_š
@@ -84455,7 +84477,7 @@ msgs_š
 msg_by‹s
  = 0;
 
-857 
+861 
 cÚ‹xt
 ->
 msgs_š
@@ -84463,7 +84485,7 @@ msgs_š
 msg_by‹s12
  = 0;
 
-858 
+862 
 cÚ‹xt
 ->
 msgs_š
@@ -84471,7 +84493,7 @@ msgs_š
 msg_couÁ
  = 0;
 
-859 
+863 
 cÚ‹xt
 ->
 msgs_š
@@ -84479,7 +84501,7 @@ msgs_š
 msg_couÁ12
  = 0;
 
-860 
+864 
 cÚ‹xt
 ->
 msgs_š
@@ -84489,7 +84511,7 @@ msgs_š
 šæight_maximum
 ;
 
-862 
+866 
 	`DL_FOREACH_SAFE
 (
 cÚ‹xt
@@ -84503,7 +84525,7 @@ msg
 tmp
 ){
 
-863 
+867 
 cÚ‹xt
 ->
 msgs_š
@@ -84511,7 +84533,7 @@ msgs_š
 msg_couÁ
 ++;
 
-864 
+868 
 cÚ‹xt
 ->
 msgs_š
@@ -84525,13 +84547,13 @@ msg
 ·ylßdËn
 ;
 
-865 if(
+869 if(
 msg
 ->
 qos
  > 0){
 
-866 
+870 
 cÚ‹xt
 ->
 msgs_š
@@ -84539,7 +84561,7 @@ msgs_š
 msg_couÁ12
 ++;
 
-867 
+871 
 cÚ‹xt
 ->
 msgs_š
@@ -84553,19 +84575,19 @@ msg
 ·ylßdËn
 ;
 
-868 
+872 
 	`utž__deüem’t_»ûive_quÙa
 (
 cÚ‹xt
 );
 
-871 if(
+875 if(
 msg
 ->
 qos
  != 2){
 
-874 
+878 
 	`db__mes§ge_»move
 (
 db
@@ -84577,7 +84599,7 @@ msgs_š
 msg
 );
 
-887 
+891 
 	`DL_FOREACH_SAFE
 (
 cÚ‹xt
@@ -84591,7 +84613,7 @@ msg
 tmp
 ){
 
-888 
+892 
 cÚ‹xt
 ->
 msgs_š
@@ -84599,7 +84621,7 @@ msgs_š
 msg_couÁ
 ++;
 
-889 
+893 
 cÚ‹xt
 ->
 msgs_š
@@ -84613,13 +84635,13 @@ msg
 ·ylßdËn
 ;
 
-890 if(
+894 if(
 msg
 ->
 qos
  > 0){
 
-891 
+895 
 cÚ‹xt
 ->
 msgs_š
@@ -84627,7 +84649,7 @@ msgs_š
 msg_couÁ12
 ++;
 
-892 
+896 
 cÚ‹xt
 ->
 msgs_š
@@ -84641,7 +84663,7 @@ msg
 ·ylßdËn
 ;
 
-894 if(
+898 if(
 	`db__»ady_fÜ_æight
 (&
 cÚ‹xt
@@ -84653,13 +84675,13 @@ msg
 qos
 )){
 
-895 
+899 
 msg
 ->
 qos
 ){
 
-897 
+901 
 msg
 ->
 ¡©e
@@ -84667,7 +84689,7 @@ msg
 mosq_ms_publish_qos0
 ;
 
-900 
+904 
 msg
 ->
 ¡©e
@@ -84675,7 +84697,7 @@ msg
 mosq_ms_publish_qos1
 ;
 
-903 
+907 
 msg
 ->
 ¡©e
@@ -84683,7 +84705,7 @@ msg
 mosq_ms_publish_qos2
 ;
 
-906 
+910 
 	`db__mes§ge_dequeue_fœ¡
 (
 cÚ‹xt
@@ -84691,15 +84713,15 @@ cÚ‹xt
 msgs_š
 );
 
-910  
+914  
 MOSQ_ERR_SUCCESS
 ;
 
-911 
+915 
 	}
 }
 
-914 
+918 
 	$db__mes§ge_»cÚÃù_»£t
 (
 mosqu™to_db
@@ -84711,11 +84733,11 @@ mosqu™to
 cÚ‹xt
 )
 
-916 
+920 
 rc
 ;
 
-918 
+922 
 rc
  = 
 	`db__mes§ge_»cÚÃù_»£t_outgošg
@@ -84725,11 +84747,11 @@ db
 cÚ‹xt
 );
 
-919 if(
+923 if(
 rc
 ) „c;
 
-920  
+924  
 	`db__mes§ge_»cÚÃù_»£t_šcomšg
 (
 db
@@ -84737,11 +84759,11 @@ db
 cÚ‹xt
 );
 
-921 
+925 
 	}
 }
 
-924 
+928 
 	$db__mes§ge_»Ëa£_šcomšg
 (
 mosqu™to_db
@@ -84757,7 +84779,7 @@ ušt16_t
 mid
 )
 
-926 
+930 
 mosqu™to_þ›Á_msg
  *
 ž
@@ -84765,23 +84787,23 @@ mosqu™to_þ›Á_msg
 tmp
 ;
 
-927 
+931 
 »š
 ;
 
-928 *
+932 *
 tÝic
 ;
 
-929 *
+933 *
 sourû_id
 ;
 
-930 
+934 
 msg_šdex
  = 0;
 
-931 
+935 
 boÞ
  
 d–‘ed
@@ -84789,17 +84811,17 @@ d–‘ed
 çl£
 ;
 
-932 
+936 
 rc
 ;
 
-934 if(!
+938 if(!
 cÚ‹xt
 è 
 MOSQ_ERR_INVAL
 ;
 
-936 
+940 
 	`DL_FOREACH_SAFE
 (
 cÚ‹xt
@@ -84813,17 +84835,17 @@ msgs_š
 tmp
 ){
 
-937 
+941 
 msg_šdex
 ++;
 
-938 if(
+942 if(
 ž
 ->
 mid
  == mid){
 
-939 if(
+943 if(
 ž
 ->
 ¡Üe
@@ -84831,11 +84853,11 @@ mid
 qos
  != 2){
 
-940  
+944  
 MOSQ_ERR_PROTOCOL
 ;
 
-942 
+946 
 tÝic
  = 
 ž
@@ -84843,13 +84865,13 @@ tÝic
 ¡Üe
 ->topic;
 
-943 
+947 
 »š
  = 
 ž
 ->retain;
 
-944 
+948 
 sourû_id
  = 
 ž
@@ -84857,11 +84879,11 @@ sourû_id
 ¡Üe
 ->source_id;
 
-950 if(!
+954 if(!
 tÝic
 ){
 
-951 
+955 
 	`db__mes§ge_»move
 (
 db
@@ -84873,13 +84895,13 @@ msgs_š
 ž
 );
 
-952 
+956 
 d–‘ed
  = 
 Œue
 ;
 
-954 
+958 
 rc
  = 
 	`sub__mes§ges_queue
@@ -84897,7 +84919,7 @@ tÝic
 ¡Üe
 );
 
-955 if(
+959 if(
 rc
  =ð
 MOSQ_ERR_SUCCESS
@@ -84905,7 +84927,7 @@ MOSQ_ERR_SUCCESS
 MOSQ_ERR_NO_SUBSCRIBERS
 ){
 
-956 
+960 
 	`db__mes§ge_»move
 (
 db
@@ -84917,13 +84939,13 @@ msgs_š
 ž
 );
 
-957 
+961 
 d–‘ed
  = 
 Œue
 ;
 
-965 
+969 
 	`DL_FOREACH_SAFE
 (
 cÚ‹xt
@@ -84937,7 +84959,7 @@ queued
 tmp
 ){
 
-966 if(
+970 if(
 cÚ‹xt
 ->
 msgs_š
@@ -84947,11 +84969,11 @@ msgs_š
 msg_šdex
  >= context->msgs_in.inflight_maximum){
 
-970 
+974 
 msg_šdex
 ++;
 
-971 
+975 
 ž
 ->
 time¡amp
@@ -84959,13 +84981,13 @@ time¡amp
 	`mosqu™to_time
 ();
 
-973 if(
+977 if(
 ž
 ->
 qos
  == 2){
 
-974 
+978 
 	`£nd__pub»c
 (
 cÚ‹xt
@@ -84975,7 +84997,7 @@ cÚ‹xt
 mid
 , 0);
 
-975 
+979 
 ž
 ->
 ¡©e
@@ -84983,7 +85005,7 @@ mid
 mosq_ms_wa™_fÜ_pub»l
 ;
 
-976 
+980 
 	`db__mes§ge_dequeue_fœ¡
 (
 cÚ‹xt
@@ -84991,23 +85013,23 @@ cÚ‹xt
 msgs_š
 );
 
-979 if(
+983 if(
 d–‘ed
 ){
 
-980  
+984  
 MOSQ_ERR_SUCCESS
 ;
 
-982  
+986  
 MOSQ_ERR_NOT_FOUND
 ;
 
-984 
+988 
 	}
 }
 
-986 
+990 
 	$db__mes§ge_wr™e
 (
 mosqu™to_db
@@ -85019,11 +85041,11 @@ mosqu™to
 cÚ‹xt
 )
 
-988 
+992 
 rc
 ;
 
-989 
+993 
 mosqu™to_þ›Á_msg
  *
 ž
@@ -85031,43 +85053,43 @@ mosqu™to_þ›Á_msg
 tmp
 ;
 
-990 
+994 
 ušt16_t
  
 mid
 ;
 
-991 
+995 
 »Œ›s
 ;
 
-992 
+996 
 »š
 ;
 
-993 cÚ¡ *
+997 cÚ¡ *
 tÝic
 ;
 
-994 
+998 
 qos
 ;
 
-995 
+999 
 ušt32_t
  
 ·ylßdËn
 ;
 
-996 cÚ¡ *
+1000 cÚ¡ *
 ·ylßd
 ;
 
-997 
+1001 
 msg_couÁ
  = 0;
 
-998 
+1002 
 mosqu™to_´Ý”ty
  *
 cmsg_´Ýs
@@ -85077,19 +85099,19 @@ NULL
 ¡Üe_´Ýs
  = NULL;
 
-999 
+1003 
 time_t
  
 now
  = 0;
 
-1000 
+1004 
 ušt32_t
  
 expœy_š‹rv®
 ;
 
-1002 if(!
+1006 if(!
 cÚ‹xt
  || cÚ‹xt->
 sock
@@ -85097,7 +85119,7 @@ sock
 INVALID_SOCKET
 
 
-1003 || (
+1007 || (
 cÚ‹xt
 ->
 ¡©e
@@ -85107,11 +85129,11 @@ mosq_cs_aùive
 id
 )){
 
-1004  
+1008  
 MOSQ_ERR_INVAL
 ;
 
-1007 if(
+1011 if(
 cÚ‹xt
 ->
 ¡©e
@@ -85119,11 +85141,11 @@ cÚ‹xt
 mosq_cs_aùive
 ){
 
-1008  
+1012  
 MOSQ_ERR_SUCCESS
 ;
 
-1011 
+1015 
 	`DL_FOREACH_SAFE
 (
 cÚ‹xt
@@ -85137,11 +85159,11 @@ msgs_š
 tmp
 ){
 
-1012 
+1016 
 msg_couÁ
 ++;
 
-1013 if(
+1017 if(
 ž
 ->
 ¡Üe
@@ -85149,11 +85171,11 @@ msg_couÁ
 mes§ge_expœy_time
 ){
 
-1014 if(
+1018 if(
 now
  == 0){
 
-1015 
+1019 
 now
  = 
 	`time
@@ -85161,7 +85183,7 @@ now
 NULL
 );
 
-1017 if(
+1021 if(
 now
  > 
 ž
@@ -85171,7 +85193,7 @@ now
 mes§ge_expœy_time
 ){
 
-1019 
+1023 
 	`db__mes§ge_»move
 (
 db
@@ -85183,23 +85205,23 @@ msgs_š
 ž
 );
 
-1023 
+1027 
 mid
  = 
 ž
 ->mid;
 
-1025 
+1029 
 ž
 ->
 ¡©e
 ){
 
-1026 
+1030 
 mosq_ms_£nd_pub»c
 :
 
-1027 
+1031 
 rc
  = 
 	`£nd__pub»c
@@ -85209,11 +85231,11 @@ cÚ‹xt
 mid
 , 0);
 
-1028 if(!
+1032 if(!
 rc
 ){
 
-1029 
+1033 
 ž
 ->
 ¡©e
@@ -85221,15 +85243,15 @@ rc
 mosq_ms_wa™_fÜ_pub»l
 ;
 
-1031  
+1035  
 rc
 ;
 
-1035 
+1039 
 mosq_ms_»£nd_pubcomp
 :
 
-1036 
+1040 
 rc
  = 
 	`£nd__pubcomp
@@ -85239,11 +85261,11 @@ cÚ‹xt
 mid
 );
 
-1037 if(!
+1041 if(!
 rc
 ){
 
-1038 
+1042 
 ž
 ->
 ¡©e
@@ -85251,51 +85273,51 @@ rc
 mosq_ms_wa™_fÜ_pub»l
 ;
 
-1040  
+1044  
 rc
 ;
 
-1044 
+1048 
 mosq_ms_šv®id
 :
 
-1045 
+1049 
 mosq_ms_publish_qos0
 :
 
-1046 
+1050 
 mosq_ms_publish_qos1
 :
 
-1047 
+1051 
 mosq_ms_publish_qos2
 :
 
-1048 
+1052 
 mosq_ms_»£nd_pub»l
 :
 
-1049 
+1053 
 mosq_ms_wa™_fÜ_puback
 :
 
-1050 
+1054 
 mosq_ms_wa™_fÜ_pub»c
 :
 
-1051 
+1055 
 mosq_ms_wa™_fÜ_pub»l
 :
 
-1052 
+1056 
 mosq_ms_wa™_fÜ_pubcomp
 :
 
-1053 
+1057 
 mosq_ms_queued
 :
 
-1058 
+1062 
 	`DL_FOREACH_SAFE
 (
 cÚ‹xt
@@ -85309,11 +85331,11 @@ msgs_out
 tmp
 ){
 
-1059 
+1063 
 msg_couÁ
 ++;
 
-1060 if(
+1064 if(
 ž
 ->
 ¡Üe
@@ -85321,11 +85343,11 @@ msg_couÁ
 mes§ge_expœy_time
 ){
 
-1061 if(
+1065 if(
 now
  == 0){
 
-1062 
+1066 
 now
  = 
 	`time
@@ -85333,7 +85355,7 @@ now
 NULL
 );
 
-1064 if(
+1068 if(
 now
  > 
 ž
@@ -85343,7 +85365,7 @@ now
 mes§ge_expœy_time
 ){
 
-1066 
+1070 
 	`db__mes§ge_»move
 (
 db
@@ -85355,7 +85377,7 @@ msgs_out
 ž
 );
 
-1069 
+1073 
 expœy_š‹rv®
  = 
 ž
@@ -85367,17 +85389,17 @@ mes§ge_expœy_time
 now
 ;
 
-1072 
+1076 
 expœy_š‹rv®
  = 0;
 
-1074 
+1078 
 mid
  = 
 ž
 ->mid;
 
-1075 
+1079 
 »Œ›s
  = 
 ž
@@ -85385,13 +85407,13 @@ mid
 dup
 ;
 
-1076 
+1080 
 »š
  = 
 ž
 ->retain;
 
-1077 
+1081 
 tÝic
  = 
 ž
@@ -85399,13 +85421,13 @@ tÝic
 ¡Üe
 ->topic;
 
-1078 
+1082 
 qos
  = 
 ž
 ->qos;
 
-1079 
+1083 
 ·ylßdËn
  = 
 ž
@@ -85413,7 +85435,7 @@ qos
 ¡Üe
 ->payloadlen;
 
-1080 
+1084 
 ·ylßd
  = 
 	`UHPA_ACCESS_PAYLOAD
@@ -85423,7 +85445,7 @@ qos
 ¡Üe
 );
 
-1081 
+1085 
 cmsg_´Ýs
  = 
 ž
@@ -85431,7 +85453,7 @@ cmsg_´Ýs
 ´Ý”t›s
 ;
 
-1082 
+1086 
 ¡Üe_´Ýs
  = 
 ž
@@ -85441,17 +85463,17 @@ cmsg_´Ýs
 ´Ý”t›s
 ;
 
-1084 
+1088 
 ž
 ->
 ¡©e
 ){
 
-1085 
+1089 
 mosq_ms_publish_qos0
 :
 
-1086 
+1090 
 rc
  = 
 	`£nd__publish
@@ -85479,7 +85501,7 @@ cmsg_´Ýs
 expœy_š‹rv®
 );
 
-1087 if(
+1091 if(
 rc
  =ð
 MOSQ_ERR_SUCCESS
@@ -85487,7 +85509,7 @@ MOSQ_ERR_SUCCESS
 MOSQ_ERR_OVERSIZE_PACKET
 ){
 
-1088 
+1092 
 	`db__mes§ge_»move
 (
 db
@@ -85499,15 +85521,15 @@ msgs_out
 ž
 );
 
-1090  
+1094  
 rc
 ;
 
-1094 
+1098 
 mosq_ms_publish_qos1
 :
 
-1095 
+1099 
 rc
  = 
 	`£nd__publish
@@ -85535,13 +85557,13 @@ cmsg_´Ýs
 expœy_š‹rv®
 );
 
-1096 if(
+1100 if(
 rc
  =ð
 MOSQ_ERR_SUCCESS
 ){
 
-1097 
+1101 
 ž
 ->
 time¡amp
@@ -85549,13 +85571,13 @@ time¡amp
 	`mosqu™to_time
 ();
 
-1098 
+1102 
 ž
 ->
 dup
  = 1;
 
-1099 
+1103 
 ž
 ->
 ¡©e
@@ -85563,13 +85585,13 @@ dup
 mosq_ms_wa™_fÜ_puback
 ;
 
-1100 }if(
+1104 }if(
 rc
  =ð
 MOSQ_ERR_OVERSIZE_PACKET
 ){
 
-1101 
+1105 
 	`db__mes§ge_»move
 (
 db
@@ -85581,15 +85603,15 @@ msgs_out
 ž
 );
 
-1103  
+1107  
 rc
 ;
 
-1107 
+1111 
 mosq_ms_publish_qos2
 :
 
-1108 
+1112 
 rc
  = 
 	`£nd__publish
@@ -85617,13 +85639,13 @@ cmsg_´Ýs
 expœy_š‹rv®
 );
 
-1109 if(
+1113 if(
 rc
  =ð
 MOSQ_ERR_SUCCESS
 ){
 
-1110 
+1114 
 ž
 ->
 time¡amp
@@ -85631,13 +85653,13 @@ time¡amp
 	`mosqu™to_time
 ();
 
-1111 
+1115 
 ž
 ->
 dup
  = 1;
 
-1112 
+1116 
 ž
 ->
 ¡©e
@@ -85645,13 +85667,13 @@ dup
 mosq_ms_wa™_fÜ_pub»c
 ;
 
-1113 }if(
+1117 }if(
 rc
  =ð
 MOSQ_ERR_OVERSIZE_PACKET
 ){
 
-1114 
+1118 
 	`db__mes§ge_»move
 (
 db
@@ -85663,15 +85685,15 @@ msgs_out
 ž
 );
 
-1116  
+1120  
 rc
 ;
 
-1120 
+1124 
 mosq_ms_»£nd_pub»l
 :
 
-1121 
+1125 
 rc
  = 
 	`£nd__pub»l
@@ -85681,11 +85703,11 @@ cÚ‹xt
 mid
 );
 
-1122 if(!
+1126 if(!
 rc
 ){
 
-1123 
+1127 
 ž
 ->
 ¡©e
@@ -85693,43 +85715,43 @@ rc
 mosq_ms_wa™_fÜ_pubcomp
 ;
 
-1125  
+1129  
 rc
 ;
 
-1129 
+1133 
 mosq_ms_šv®id
 :
 
-1130 
+1134 
 mosq_ms_£nd_pub»c
 :
 
-1131 
+1135 
 mosq_ms_»£nd_pubcomp
 :
 
-1132 
+1136 
 mosq_ms_wa™_fÜ_puback
 :
 
-1133 
+1137 
 mosq_ms_wa™_fÜ_pub»c
 :
 
-1134 
+1138 
 mosq_ms_wa™_fÜ_pub»l
 :
 
-1135 
+1139 
 mosq_ms_wa™_fÜ_pubcomp
 :
 
-1136 
+1140 
 mosq_ms_queued
 :
 
-1141 
+1145 
 	`DL_FOREACH_SAFE
 (
 cÚ‹xt
@@ -85743,7 +85765,7 @@ queued
 tmp
 ){
 
-1142 if(
+1146 if(
 cÚ‹xt
 ->
 msgs_out
@@ -85755,17 +85777,17 @@ msgs_š
 šæight_quÙa
  == 0){
 
-1146 
+1150 
 msg_couÁ
 ++;
 
-1148 if(
+1152 if(
 ž
 ->
 qos
  == 2){
 
-1149 
+1153 
 ž
 ->
 ¡©e
@@ -85773,7 +85795,7 @@ qos
 mosq_ms_£nd_pub»c
 ;
 
-1150 
+1154 
 	`db__mes§ge_dequeue_fœ¡
 (
 cÚ‹xt
@@ -85781,7 +85803,7 @@ cÚ‹xt
 msgs_š
 );
 
-1151 
+1155 
 rc
  = 
 	`£nd__pub»c
@@ -85793,11 +85815,11 @@ cÚ‹xt
 mid
 , 0);
 
-1152 if(!
+1156 if(!
 rc
 ){
 
-1153 
+1157 
 ž
 ->
 ¡©e
@@ -85805,11 +85827,11 @@ rc
 mosq_ms_wa™_fÜ_pub»l
 ;
 
-1155  
+1159  
 rc
 ;
 
-1160 
+1164 
 	`DL_FOREACH_SAFE
 (
 cÚ‹xt
@@ -85823,7 +85845,7 @@ queued
 tmp
 ){
 
-1161 if(
+1165 if(
 cÚ‹xt
 ->
 msgs_out
@@ -85833,17 +85855,17 @@ msgs_out
 šæight_quÙa
  == 0){
 
-1165 
+1169 
 msg_couÁ
 ++;
 
-1167 
+1171 
 ž
 ->
 qos
 ){
 
-1169 
+1173 
 ž
 ->
 ¡©e
@@ -85851,7 +85873,7 @@ qos
 mosq_ms_publish_qos0
 ;
 
-1172 
+1176 
 ž
 ->
 ¡©e
@@ -85859,7 +85881,7 @@ mosq_ms_publish_qos0
 mosq_ms_publish_qos1
 ;
 
-1175 
+1179 
 ž
 ->
 ¡©e
@@ -85867,7 +85889,7 @@ mosq_ms_publish_qos1
 mosq_ms_publish_qos2
 ;
 
-1178 
+1182 
 	`db__mes§ge_dequeue_fœ¡
 (
 cÚ‹xt
@@ -85875,15 +85897,15 @@ cÚ‹xt
 msgs_out
 );
 
-1181  
+1185  
 MOSQ_ERR_SUCCESS
 ;
 
-1182 
+1186 
 	}
 }
 
-1184 
+1188 
 	$db__lim™s_£t
 (
 šæight_by‹s
@@ -85893,25 +85915,25 @@ queued
 queued_by‹s
 )
 
-1186 
+1190 
 max_šæight_by‹s
  = 
 šæight_by‹s
 ;
 
-1187 
+1191 
 max_queued
  = 
 queued
 ;
 
-1188 
+1192 
 max_queued_by‹s
  = 
 queued_by‹s
 ;
 
-1189 
+1193 
 	}
 }
 
@@ -105697,16 +105719,6 @@ MOSQ_ERR_SUCCESS
 	~"utž_mosq.h
 "
 
-34 
-	~<sys/time.h
->
-
-35 
-timev®
- 
-	g¬riv®_time
-;
-
 37 
 	$hªdË__publish
 (
@@ -111093,17 +111105,17 @@ MOSQ_ERR_UNKNOWN
 run
 ){
 
-206 
+207 
 	`cÚ‹xt__ä“_disu£d
 (
 db
 );
 
-207 #ifdeà
+208 #ifdeà
 WITH_SYS_TREE
 
 
-208 if(
+209 if(
 db
 ->
 cÚfig
@@ -111111,7 +111123,7 @@ cÚfig
 sys_š‹rv®
  > 0){
 
-209 
+210 
 	`sys_Œ“__upd©e
 (
 db
@@ -111123,11 +111135,11 @@ sys_š‹rv®
 ¡¬t_time
 );
 
-213 #iâdeà
+214 #iâdeà
 WITH_EPOLL
 
 
-214 
+215 
 	`mem£t
 (
 pÞlfds
@@ -111137,17 +111149,17 @@ pÞlfd
 pÞlfd_max
 );
 
-216 
+217 
 pÞlfd_šdex
  = 0;
 
-217 
+218 
 i
 =0; i<
 li¡’sock_couÁ
 ; i++){
 
-218 
+219 
 pÞlfds
 [
 pÞlfd_šdex
@@ -111159,7 +111171,7 @@ li¡’sock
 i
 ];
 
-219 
+220 
 pÞlfds
 [
 pÞlfd_šdex
@@ -111169,7 +111181,7 @@ ev’ts
 POLLIN
 ;
 
-220 
+221 
 pÞlfds
 [
 pÞlfd_šdex
@@ -111177,19 +111189,19 @@ pÞlfd_šdex
 »v’ts
  = 0;
 
-221 
+222 
 pÞlfd_šdex
 ++;
 
-225 #ifdeà
+226 #ifdeà
 WITH_BRIDGE
 
 
-226 
+227 
 time_couÁ
  = 0;
 
-227 
+228 
 i
 =0; i<
 db
@@ -111197,7 +111209,7 @@ db
 bridge_couÁ
 ; i++){
 
-228 if(!
+229 if(!
 db
 ->
 bridges
@@ -111205,7 +111217,7 @@ bridges
 i
 ]) ;
 
-230 
+231 
 cÚ‹xt
  = 
 db
@@ -111215,7 +111227,7 @@ bridges
 i
 ];
 
-232 if(
+233 if(
 cÚ‹xt
 ->
 sock
@@ -111223,25 +111235,25 @@ sock
 INVALID_SOCKET
 ){
 
-233 if(
+234 if(
 time_couÁ
  > 0){
 
-234 
+235 
 time_couÁ
 --;
 
-236 
+237 
 time_couÁ
  = 1000;
 
-237 
+238 
 now
  = 
 	`mosqu™to_time
 ();
 
-240 if(!
+241 if(!
 cÚ‹xt
 ->
 bridge
@@ -111249,7 +111261,7 @@ bridge
 »¡¬t_t
 ){
 
-241 
+242 
 cÚ‹xt
 ->
 bridge
@@ -111261,7 +111273,7 @@ now
 »¡¬t_timeout
 ;
 
-242 
+243 
 cÚ‹xt
 ->
 bridge
@@ -111269,7 +111281,7 @@ bridge
 cur_add»ss
 ++;
 
-243 if(
+244 if(
 cÚ‹xt
 ->
 bridge
@@ -111279,7 +111291,7 @@ cur_add»ss
 add»ss_couÁ
 ){
 
-244 
+245 
 cÚ‹xt
 ->
 bridge
@@ -111287,7 +111299,7 @@ bridge
 cur_add»ss
  = 0;
 
-247 if((
+248 if((
 cÚ‹xt
 ->
 bridge
@@ -111299,7 +111311,7 @@ b¡_Ïzy
 Ïzy_»cÚÃù
 )
 
-248 || (
+249 || (
 cÚ‹xt
 ->
 bridge
@@ -111313,7 +111325,7 @@ now
 »¡¬t_t
 )){
 
-250 #ià
+251 #ià
 	`defšed
 (
 __GLIBC__
@@ -111321,13 +111333,13 @@ __GLIBC__
 WITH_ADNS
 )
 
-251 if(
+252 if(
 cÚ‹xt
 ->
 adns
 ){
 
-253 
+254 
 rc
  = 
 	`gai_”rÜ
@@ -111337,17 +111349,17 @@ cÚ‹xt
 adns
 );
 
-254 if(
+255 if(
 rc
  =ð
 EAI_INPROGRESS
 ){
 
-256 }if(
+257 }if(
 rc
  == 0){
 
-257 
+258 
 rc
  = 
 	`bridge__cÚÃù_¡•2
@@ -111357,17 +111369,17 @@ db
 cÚ‹xt
 );
 
-258 if(
+259 if(
 rc
  =ð
 MOSQ_ERR_SUCCESS
 ){
 
-259 #ifdeà
+260 #ifdeà
 WITH_EPOLL
 
 
-260 
+261 
 ev
 .
 d©a
@@ -111379,7 +111391,7 @@ cÚ‹xt
 sock
 ;
 
-261 
+262 
 ev
 .
 ev’ts
@@ -111387,13 +111399,13 @@ ev’ts
 EPOLLIN
 ;
 
-262 if(
+263 if(
 cÚ‹xt
 ->
 cu¼’t_out_·ck‘
 ){
 
-263 
+264 
 ev
 .
 ev’ts
@@ -111401,7 +111413,7 @@ ev’ts
 EPOLLOUT
 ;
 
-265 if(
+266 if(
 	`•Þl_ùl
 (
 db
@@ -111417,7 +111429,7 @@ sock
 ev
 ) == -1) {
 
-266 if((
+267 if((
 ”ºo
  !ð
 EEXIST
@@ -111437,7 +111449,7 @@ sock
 ev
 ) == -1)) {
 
-267 
+268 
 	`log__´štf
 (
 NULL
@@ -111449,7 +111461,7 @@ MOSQ_LOG_DEBUG
 ”ºo
 ));
 
-270 
+271 
 cÚ‹xt
 ->
 ev’ts
@@ -111457,7 +111469,7 @@ ev’ts
 ev
 .events;
 
-273 
+274 
 pÞlfds
 [
 pÞlfd_šdex
@@ -111469,7 +111481,7 @@ cÚ‹xt
 sock
 ;
 
-274 
+275 
 pÞlfds
 [
 pÞlfd_šdex
@@ -111479,7 +111491,7 @@ ev’ts
 POLLIN
 ;
 
-275 
+276 
 pÞlfds
 [
 pÞlfd_šdex
@@ -111487,13 +111499,13 @@ pÞlfd_šdex
 »v’ts
  = 0;
 
-276 if(
+277 if(
 cÚ‹xt
 ->
 cu¼’t_out_·ck‘
 ){
 
-277 
+278 
 pÞlfds
 [
 pÞlfd_šdex
@@ -111503,23 +111515,23 @@ ev’ts
 POLLOUT
 ;
 
-279 
+280 
 cÚ‹xt
 ->
 pÞlfd_šdex
  =…ollfd_index;
 
-280 
+281 
 pÞlfd_šdex
 ++;
 
-282 }if(
+283 }if(
 rc
  =ð
 MOSQ_ERR_CONN_PENDING
 ){
 
-283 
+284 
 cÚ‹xt
 ->
 bridge
@@ -111527,7 +111539,7 @@ bridge
 »¡¬t_t
  = 0;
 
-285 
+286 
 cÚ‹xt
 ->
 bridge
@@ -111535,7 +111547,7 @@ bridge
 cur_add»ss
 ++;
 
-286 if(
+287 if(
 cÚ‹xt
 ->
 bridge
@@ -111545,7 +111557,7 @@ cur_add»ss
 add»ss_couÁ
 ){
 
-287 
+288 
 cÚ‹xt
 ->
 bridge
@@ -111553,7 +111565,7 @@ bridge
 cur_add»ss
  = 0;
 
-289 
+290 
 cÚ‹xt
 ->
 bridge
@@ -111561,7 +111573,7 @@ bridge
 »¡¬t_t
  = 0;
 
-293 if(
+294 if(
 cÚ‹xt
 ->
 adns
@@ -111569,7 +111581,7 @@ adns
 ¬_»suÉ
 ){
 
-294 
+295 
 	`ä“addršfo
 (
 cÚ‹xt
@@ -111579,7 +111591,7 @@ adns
 ¬_»suÉ
 );
 
-296 
+297 
 	`mosqu™to__ä“
 (
 cÚ‹xt
@@ -111587,7 +111599,7 @@ cÚ‹xt
 adns
 );
 
-297 
+298 
 cÚ‹xt
 ->
 adns
@@ -111595,7 +111607,7 @@ adns
 NULL
 ;
 
-298 
+299 
 cÚ‹xt
 ->
 bridge
@@ -111603,17 +111615,17 @@ bridge
 »¡¬t_t
  = 0;
 
-301 #ifdeà
+302 #ifdeà
 WITH_EPOLL
 
 
-303 
+304 
 cÚ‹xt
 ->
 ev’ts
  = 0;
 
-305 
+306 
 rc
  = 
 	`bridge__cÚÃù_¡•1
@@ -111623,11 +111635,11 @@ db
 cÚ‹xt
 );
 
-306 if(
+307 if(
 rc
 ){
 
-307 
+308 
 cÚ‹xt
 ->
 bridge
@@ -111635,7 +111647,7 @@ bridge
 cur_add»ss
 ++;
 
-308 if(
+309 if(
 cÚ‹xt
 ->
 bridge
@@ -111645,7 +111657,7 @@ cur_add»ss
 add»ss_couÁ
 ){
 
-309 
+310 
 cÚ‹xt
 ->
 bridge
@@ -111653,7 +111665,7 @@ bridge
 cur_add»ss
  = 0;
 
-313 
+314 
 cÚ‹xt
 ->
 bridge
@@ -111661,7 +111673,7 @@ bridge
 »¡¬t_t
  = 1;
 
-318 
+319 
 rc
  = 
 	`bridge__cÚÃù
@@ -111671,7 +111683,7 @@ db
 cÚ‹xt
 );
 
-319 
+320 
 cÚ‹xt
 ->
 bridge
@@ -111679,13 +111691,13 @@ bridge
 »¡¬t_t
  = 0;
 
-320 if(
+321 if(
 rc
  =ð
 MOSQ_ERR_SUCCESS
 ){
 
-321 if(
+322 if(
 cÚ‹xt
 ->
 bridge
@@ -111697,7 +111709,7 @@ round_robš
 cur_add»ss
  != 0){
 
-322 
+323 
 cÚ‹xt
 ->
 bridge
@@ -111707,11 +111719,11 @@ bridge
 now
  + 5;
 
-324 #ifdeà
+325 #ifdeà
 WITH_EPOLL
 
 
-325 
+326 
 ev
 .
 d©a
@@ -111723,7 +111735,7 @@ cÚ‹xt
 sock
 ;
 
-326 
+327 
 ev
 .
 ev’ts
@@ -111731,13 +111743,13 @@ ev’ts
 EPOLLIN
 ;
 
-327 if(
+328 if(
 cÚ‹xt
 ->
 cu¼’t_out_·ck‘
 ){
 
-328 
+329 
 ev
 .
 ev’ts
@@ -111745,7 +111757,7 @@ ev’ts
 EPOLLOUT
 ;
 
-330 if(
+331 if(
 	`•Þl_ùl
 (
 db
@@ -111761,7 +111773,7 @@ sock
 ev
 ) == -1) {
 
-331 if((
+332 if((
 ”ºo
  !ð
 EEXIST
@@ -111781,7 +111793,7 @@ sock
 ev
 ) == -1)) {
 
-332 
+333 
 	`log__´štf
 (
 NULL
@@ -111793,7 +111805,7 @@ MOSQ_LOG_DEBUG
 ”ºo
 ));
 
-335 
+336 
 cÚ‹xt
 ->
 ev’ts
@@ -111801,7 +111813,7 @@ ev’ts
 ev
 .events;
 
-338 
+339 
 pÞlfds
 [
 pÞlfd_šdex
@@ -111813,7 +111825,7 @@ cÚ‹xt
 sock
 ;
 
-339 
+340 
 pÞlfds
 [
 pÞlfd_šdex
@@ -111823,7 +111835,7 @@ ev’ts
 POLLIN
 ;
 
-340 
+341 
 pÞlfds
 [
 pÞlfd_šdex
@@ -111831,13 +111843,13 @@ pÞlfd_šdex
 »v’ts
  = 0;
 
-341 if(
+342 if(
 cÚ‹xt
 ->
 cu¼’t_out_·ck‘
 ){
 
-342 
+343 
 pÞlfds
 [
 pÞlfd_šdex
@@ -111847,17 +111859,17 @@ ev’ts
 POLLOUT
 ;
 
-344 
+345 
 cÚ‹xt
 ->
 pÞlfd_šdex
  =…ollfd_index;
 
-345 
+346 
 pÞlfd_šdex
 ++;
 
-348 
+349 
 cÚ‹xt
 ->
 bridge
@@ -111865,7 +111877,7 @@ bridge
 cur_add»ss
 ++;
 
-349 if(
+350 if(
 cÚ‹xt
 ->
 bridge
@@ -111875,7 +111887,7 @@ cur_add»ss
 add»ss_couÁ
 ){
 
-350 
+351 
 cÚ‹xt
 ->
 bridge
@@ -111883,11 +111895,11 @@ bridge
 cur_add»ss
  = 0;
 
-361 
+362 
 time_couÁ
  = 0;
 
-362 
+363 
 	`HASH_ITER
 (
 hh_sock
@@ -111901,31 +111913,31 @@ cÚ‹xt
 ùxt_tmp
 ){
 
-363 if(
+364 if(
 time_couÁ
  > 0){
 
-364 
+365 
 time_couÁ
 --;
 
-366 
+367 
 time_couÁ
  = 1000;
 
-367 
+368 
 now
  = 
 	`mosqu™to_time
 ();
 
-369 
+370 
 cÚ‹xt
 ->
 pÞlfd_šdex
  = -1;
 
-371 if(
+372 if(
 cÚ‹xt
 ->
 sock
@@ -111933,17 +111945,17 @@ sock
 INVALID_SOCKET
 ){
 
-372 #ifdeà
+373 #ifdeà
 WITH_BRIDGE
 
 
-373 if(
+374 if(
 cÚ‹xt
 ->
 bridge
 ){
 
-374 
+375 
 	`mosqu™to__check_k“·live
 (
 db
@@ -111951,7 +111963,7 @@ db
 cÚ‹xt
 );
 
-375 if(
+376 if(
 cÚ‹xt
 ->
 bridge
@@ -111961,7 +111973,7 @@ round_robš
 çl£
 
 
-376 && 
+377 && 
 cÚ‹xt
 ->
 bridge
@@ -111969,7 +111981,7 @@ bridge
 cur_add»ss
  != 0
 
-377 && 
+378 && 
 cÚ‹xt
 ->
 bridge
@@ -111977,7 +111989,7 @@ bridge
 ´im¬y_»Œy
 
 
-378 && 
+379 && 
 now
  > 
 cÚ‹xt
@@ -111987,7 +111999,7 @@ bridge
 ´im¬y_»Œy
 ){
 
-380 if(
+381 if(
 cÚ‹xt
 ->
 bridge
@@ -111997,7 +112009,7 @@ bridge
 INVALID_SOCKET
 ){
 
-381 
+382 
 rc
  = 
 	`Ãt__Œy_cÚÃù
@@ -112011,7 +112023,7 @@ add»s£s
 add»ss
 ,
 
-382 
+383 
 cÚ‹xt
 ->
 bridge
@@ -112021,7 +112033,7 @@ add»s£s
 pÜt
 ,
 
-383 &
+384 &
 cÚ‹xt
 ->
 bridge
@@ -112033,11 +112045,11 @@ NULL
 çl£
 );
 
-385 if(
+386 if(
 rc
  == 0){
 
-386 
+387 
 	`COMPAT_CLOSE
 (
 cÚ‹xt
@@ -112047,7 +112059,7 @@ bridge
 ´im¬y_»Œy_sock
 );
 
-387 
+388 
 cÚ‹xt
 ->
 bridge
@@ -112057,7 +112069,7 @@ bridge
 INVALID_SOCKET
 ;
 
-388 
+389 
 cÚ‹xt
 ->
 bridge
@@ -112065,7 +112077,7 @@ bridge
 ´im¬y_»Œy
  = 0;
 
-389 
+390 
 	`Ãt__sock‘_þo£
 (
 db
@@ -112073,7 +112085,7 @@ db
 cÚ‹xt
 );
 
-390 
+391 
 cÚ‹xt
 ->
 bridge
@@ -112081,11 +112093,11 @@ bridge
 cur_add»ss
  = 0;
 
-393 
+394 
 Ën
  = ();
 
-394 if(!
+395 if(!
 	`g‘sockÝt
 (
 cÚ‹xt
@@ -112103,11 +112115,11 @@ SO_ERROR
 Ën
 )){
 
-395 if(
+396 if(
 ”r
  == 0){
 
-396 
+397 
 	`COMPAT_CLOSE
 (
 cÚ‹xt
@@ -112117,7 +112129,7 @@ bridge
 ´im¬y_»Œy_sock
 );
 
-397 
+398 
 cÚ‹xt
 ->
 bridge
@@ -112127,7 +112139,7 @@ bridge
 INVALID_SOCKET
 ;
 
-398 
+399 
 cÚ‹xt
 ->
 bridge
@@ -112135,7 +112147,7 @@ bridge
 ´im¬y_»Œy
  = 0;
 
-399 
+400 
 	`Ãt__sock‘_þo£
 (
 db
@@ -112143,7 +112155,7 @@ db
 cÚ‹xt
 );
 
-400 
+401 
 cÚ‹xt
 ->
 bridge
@@ -112153,7 +112165,7 @@ cur_add»ss
 add»ss_couÁ
 -1;
 
-402 
+403 
 	`COMPAT_CLOSE
 (
 cÚ‹xt
@@ -112162,28 +112174,28 @@ bridge
 ->
 ´im¬y_»Œy_sock
 );
-
-403 
-cÚ‹xt
-->
-bridge
-->
-´im¬y_»Œy_sock
- = 
-INVALID_SOCKET
-;
 
 404 
 cÚ‹xt
 ->
 bridge
 ->
+´im¬y_»Œy_sock
+ = 
+INVALID_SOCKET
+;
+
+405 
+cÚ‹xt
+->
+bridge
+->
 ´im¬y_»Œy
  = 
 now
 +5;
 
-407 
+408 
 	`COMPAT_CLOSE
 (
 cÚ‹xt
@@ -112193,7 +112205,7 @@ bridge
 ´im¬y_»Œy_sock
 );
 
-408 
+409 
 cÚ‹xt
 ->
 bridge
@@ -112203,7 +112215,7 @@ bridge
 INVALID_SOCKET
 ;
 
-409 
+410 
 cÚ‹xt
 ->
 bridge
@@ -112213,19 +112225,19 @@ bridge
 now
 +5;
 
-417 if(!(
+418 if(!(
 cÚ‹xt
 ->
 k“·live
 )
 
-418 || 
+419 || 
 cÚ‹xt
 ->
 bridge
 
 
-419 || 
+420 || 
 now
  - 
 cÚ‹xt
@@ -112237,7 +112249,7 @@ time_t
 k“·live
 )*3/2){
 
-421 if(
+422 if(
 	`db__mes§ge_wr™e
 (
 db
@@ -112247,11 +112259,11 @@ cÚ‹xt
 MOSQ_ERR_SUCCESS
 ){
 
-422 #ifdeà
+423 #ifdeà
 WITH_EPOLL
 
 
-423 if(
+424 if(
 cÚ‹xt
 ->
 cu¼’t_out_·ck‘
@@ -112263,7 +112275,7 @@ mosq_cs_cÚÃù_³ndšg
 ws_wªt_wr™e
 ){
 
-424 if(!(
+425 if(!(
 cÚ‹xt
 ->
 ev’ts
@@ -112271,7 +112283,7 @@ ev’ts
 EPOLLOUT
 )) {
 
-425 
+426 
 ev
 .
 d©a
@@ -112283,7 +112295,7 @@ cÚ‹xt
 sock
 ;
 
-426 
+427 
 ev
 .
 ev’ts
@@ -112293,7 +112305,7 @@ EPOLLIN
 EPOLLOUT
 ;
 
-427 if(
+428 if(
 	`•Þl_ùl
 (
 db
@@ -112309,7 +112321,7 @@ sock
 ev
 ) == -1) {
 
-428 if((
+429 if((
 ”ºo
  !ð
 EEXIST
@@ -112329,7 +112341,7 @@ sock
 ev
 ) == -1)) {
 
-429 
+430 
 	`log__´štf
 (
 NULL
@@ -112341,7 +112353,7 @@ MOSQ_LOG_DEBUG
 ”ºo
 ));
 
-432 
+433 
 cÚ‹xt
 ->
 ev’ts
@@ -112351,7 +112363,7 @@ EPOLLIN
 EPOLLOUT
 ;
 
-434 
+435 
 cÚ‹xt
 ->
 ws_wªt_wr™e
@@ -112359,7 +112371,7 @@ ws_wªt_wr™e
 çl£
 ;
 
-437 if(
+438 if(
 cÚ‹xt
 ->
 ev’ts
@@ -112367,7 +112379,7 @@ ev’ts
 EPOLLOUT
 ) {
 
-438 
+439 
 ev
 .
 d©a
@@ -112379,7 +112391,7 @@ cÚ‹xt
 sock
 ;
 
-439 
+440 
 ev
 .
 ev’ts
@@ -112387,7 +112399,7 @@ ev’ts
 EPOLLIN
 ;
 
-440 if(
+441 if(
 	`•Þl_ùl
 (
 db
@@ -112403,7 +112415,7 @@ sock
 ev
 ) == -1) {
 
-441 if((
+442 if((
 ”ºo
  !ð
 EEXIST
@@ -112423,7 +112435,7 @@ sock
 ev
 ) == -1)) {
 
-442 
+443 
 	`log__´štf
 (
 NULL
@@ -112435,7 +112447,7 @@ MOSQ_LOG_DEBUG
 ”ºo
 ));
 
-445 
+446 
 cÚ‹xt
 ->
 ev’ts
@@ -112443,7 +112455,7 @@ ev’ts
 EPOLLIN
 ;
 
-449 
+450 
 pÞlfds
 [
 pÞlfd_šdex
@@ -112455,7 +112467,7 @@ cÚ‹xt
 sock
 ;
 
-450 
+451 
 pÞlfds
 [
 pÞlfd_šdex
@@ -112465,7 +112477,7 @@ ev’ts
 POLLIN
 ;
 
-451 
+452 
 pÞlfds
 [
 pÞlfd_šdex
@@ -112473,7 +112485,7 @@ pÞlfd_šdex
 »v’ts
  = 0;
 
-452 if(
+453 if(
 cÚ‹xt
 ->
 cu¼’t_out_·ck‘
@@ -112485,7 +112497,7 @@ mosq_cs_cÚÃù_³ndšg
 ws_wªt_wr™e
 ){
 
-453 
+454 
 pÞlfds
 [
 pÞlfd_šdex
@@ -112495,7 +112507,7 @@ ev’ts
 POLLOUT
 ;
 
-454 
+455 
 cÚ‹xt
 ->
 ws_wªt_wr™e
@@ -112503,17 +112515,17 @@ ws_wªt_wr™e
 çl£
 ;
 
-456 
+457 
 cÚ‹xt
 ->
 pÞlfd_šdex
  =…ollfd_index;
 
-457 
+458 
 pÞlfd_šdex
 ++;
 
-460 
+461 
 	`do_discÚÃù
 (
 db
@@ -112523,7 +112535,7 @@ cÚ‹xt
 MOSQ_ERR_CONN_LOST
 );
 
-464 
+465 
 	`do_discÚÃù
 (
 db
@@ -112533,11 +112545,11 @@ cÚ‹xt
 MOSQ_ERR_KEEPALIVE
 );
 
-470 #iâdeà
+471 #iâdeà
 WIN32
 
 
-471 
+472 
 	`sig´ocmask
 (
 SIG_SETMASK
@@ -112547,11 +112559,11 @@ sigblock
 Üigsig
 );
 
-472 #ifdeà
+473 #ifdeà
 WITH_EPOLL
 
 
-473 
+475 
 fdcouÁ
  = 
 	`•Þl_wa™
@@ -112565,7 +112577,7 @@ ev’ts
 MAX_EVENTS
 , 100);
 
-475 
+478 
 fdcouÁ
  = 
 	`pÞl
@@ -112575,7 +112587,7 @@ pÞlfds
 pÞlfd_šdex
 , 100);
 
-477 
+480 
 	`sig´ocmask
 (
 SIG_SETMASK
@@ -112585,7 +112597,7 @@ SIG_SETMASK
 NULL
 );
 
-479 
+482 
 fdcouÁ
  = 
 	`WSAPÞl
@@ -112595,21 +112607,21 @@ pÞlfds
 pÞlfd_šdex
 , 100);
 
-481 #ifdeà
+484 #ifdeà
 WITH_EPOLL
 
 
-482 
+485 
 fdcouÁ
 ){
 
-484 if(
+487 if(
 ”ºo
  !ð
 EINTR
 ){
 
-485 
+488 
 	`log__´štf
 (
 NULL
@@ -112621,19 +112633,19 @@ MOSQ_LOG_ERR
 ”ºo
 ));
 
-491 
+496 
 i
 =0; i<
 fdcouÁ
 ; i++){
 
-492 
+497 
 j
 =0; j<
 li¡’sock_couÁ
 ; j++){
 
-493 ià(
+498 ià(
 ev’ts
 [
 i
@@ -112647,7 +112659,7 @@ li¡’sock
 j
 ]) {
 
-494 ià(
+499 ià(
 ev’ts
 [
 i
@@ -112657,7 +112669,7 @@ EPOLLIN
 EPOLLPRI
 )){
 
-495 (
+500 (
 ev
 .
 d©a
@@ -112673,7 +112685,7 @@ li¡’sock
 j
 ])) != -1){
 
-496 
+502 
 ev
 .
 ev’ts
@@ -112681,7 +112693,7 @@ ev’ts
 EPOLLIN
 ;
 
-497 ià(
+503 ià(
 	`•Þl_ùl
 (
 db
@@ -112697,7 +112709,7 @@ d©a
 fd
 , &ev) == -1) {
 
-498 
+504 
 	`log__´štf
 (
 NULL
@@ -112709,13 +112721,13 @@ MOSQ_LOG_ERR
 ”ºo
 ));
 
-500 
+506 
 cÚ‹xt
  = 
 NULL
 ;
 
-501 
+507 
 	`HASH_FIND
 (
 hh_sock
@@ -112735,11 +112747,11 @@ mosq_sock_t
 cÚ‹xt
 );
 
-502 if(
+508 if(
 cÚ‹xt
 ){
 
-503 
+509 
 cÚ‹xt
 ->
 ev’ts
@@ -112747,7 +112759,7 @@ ev’ts
 EPOLLIN
 ;
 
-505 
+511 
 	`log__´štf
 (
 NULL
@@ -112755,13 +112767,13 @@ NULL
 MOSQ_LOG_ERR
 , "Error inƒpoll‡ccepting:‚o context");
 
-512 ià(
+518 ià(
 j
  =ð
 li¡’sock_couÁ
 ) {
 
-513 
+520 
 	`loÝ_hªdË_»ads_wr™es
 (
 db
@@ -112775,15 +112787,15 @@ d©a
 fd
 ,ƒvents[i].events);
 
-518 if(
+526 if(
 fdcouÁ
  == -1){
 
-519 #ifdeà
+527 #ifdeà
 WIN32
 
 
-520 if(
+528 if(
 pÞlfd_šdex
  =ð0 && 
 	`WSAG‘La¡E¼Ü
@@ -112791,11 +112803,11 @@ pÞlfd_šdex
 WSAEINVAL
 ){
 
-525 
+533 
 	`SË•
 (10);
 
-529 
+537 
 	`log__´štf
 (
 NULL
@@ -112807,7 +112819,7 @@ MOSQ_LOG_ERR
 ”ºo
 ));
 
-532 
+540 
 	`loÝ_hªdË_»ads_wr™es
 (
 db
@@ -112815,13 +112827,13 @@ db
 pÞlfds
 );
 
-534 
+542 
 i
 =0; i<
 li¡’sock_couÁ
 ; i++){
 
-535 if(
+543 if(
 pÞlfds
 [
 i
@@ -112833,7 +112845,7 @@ POLLIN
 POLLPRI
 )){
 
-536 
+544 
 	`Ãt__sock‘_acû±
 (
 db
@@ -112843,7 +112855,7 @@ li¡’sock
 i
 ]) != -1){
 
-542 
+550 
 now
  = 
 	`time
@@ -112851,7 +112863,7 @@ now
 NULL
 );
 
-543 
+551 
 	`£ssiÚ_expœy__check
 (
 db
@@ -112859,7 +112871,7 @@ db
 now
 );
 
-544 
+552 
 	`wžl_d–ay__check
 (
 db
@@ -112867,11 +112879,11 @@ db
 now
 );
 
-545 #ifdeà
+553 #ifdeà
 WITH_PERSISTENCE
 
 
-546 if(
+554 if(
 db
 ->
 cÚfig
@@ -112881,7 +112893,7 @@ cÚfig
 auto§ve_š‹rv®
 ){
 
-547 if(
+555 if(
 db
 ->
 cÚfig
@@ -112889,7 +112901,7 @@ cÚfig
 auto§ve_Ú_chªges
 ){
 
-548 if(
+556 if(
 db
 ->
 ³rsi¡’û_chªges
@@ -112899,7 +112911,7 @@ cÚfig
 auto§ve_š‹rv®
 ){
 
-549 
+557 
 	`³rsi¡__backup
 (
 db
@@ -112907,13 +112919,13 @@ db
 çl£
 );
 
-550 
+558 
 db
 ->
 ³rsi¡’û_chªges
  = 0;
 
-553 if(
+561 if(
 Ï¡_backup
  + 
 db
@@ -112925,7 +112937,7 @@ auto§ve_š‹rv®
 	`mosqu™to_time
 ()){
 
-554 
+562 
 	`³rsi¡__backup
 (
 db
@@ -112933,21 +112945,21 @@ db
 çl£
 );
 
-555 
+563 
 Ï¡_backup
  = 
 	`mosqu™to_time
 ();
 
-561 #ifdeà
+569 #ifdeà
 WITH_PERSISTENCE
 
 
-562 if(
+570 if(
 æag_db_backup
 ){
 
-563 
+571 
 	`³rsi¡__backup
 (
 db
@@ -112955,17 +112967,17 @@ db
 çl£
 );
 
-564 
+572 
 æag_db_backup
  = 
 çl£
 ;
 
-567 if(
+575 if(
 æag_»lßd
 ){
 
-568 
+576 
 	`log__´štf
 (
 NULL
@@ -112973,7 +112985,7 @@ NULL
 MOSQ_LOG_INFO
 , "Reloading config.");
 
-569 
+577 
 	`cÚfig__»ad
 (
 db
@@ -112983,7 +112995,7 @@ cÚfig
 Œue
 );
 
-570 
+578 
 	`mosqu™to_£cur™y_þ—nup
 (
 db
@@ -112991,7 +113003,7 @@ db
 Œue
 );
 
-571 
+579 
 	`mosqu™to_£cur™y_š™
 (
 db
@@ -112999,13 +113011,13 @@ db
 Œue
 );
 
-572 
+580 
 	`mosqu™to_£cur™y_­¶y
 (
 db
 );
 
-573 
+581 
 	`log__þo£
 (
 db
@@ -113013,7 +113025,7 @@ db
 cÚfig
 );
 
-574 
+582 
 	`log__š™
 (
 db
@@ -113021,27 +113033,35 @@ db
 cÚfig
 );
 
-575 
+583 
 æag_»lßd
  = 
 çl£
 ;
 
-577 if(
+585 if(
 æag_Œ“_´št
 ){
 
-582 
+589 
+	`sub__Œ“_´št
+(
+db
+->
+subs
+, 0);
+
+590 
 æag_Œ“_´št
  = 
 çl£
 ;
 
-584 #ifdeà
+592 #ifdeà
 WITH_WEBSOCKETS
 
 
-585 
+593 
 i
 =0; i<
 db
@@ -113051,7 +113071,7 @@ cÚfig
 li¡’”_couÁ
 ; i++){
 
-590 if(
+598 if(
 db
 ->
 cÚfig
@@ -113063,11 +113083,11 @@ i
 ws_cÚ‹xt
 ){
 
-591 #ià
+599 #ià
 LWS_LIBRARY_VERSION_NUMBER
  > 3002000
 
-592 
+600 
 	`libwebsock‘_£rviû
 (
 db
@@ -113081,11 +113101,11 @@ i
 ws_cÚ‹xt
 , -1);
 
-593 #–ià
+601 #–ià
 LWS_LIBRARY_VERSION_NUMBER
  == 3002000
 
-594 
+602 
 	`lws_sul_scheduË
 (
 db
@@ -113103,7 +113123,7 @@ sul
 lws__sul_ÿÎback
 , 10);
 
-595 
+603 
 	`libwebsock‘_£rviû
 (
 db
@@ -113117,7 +113137,7 @@ i
 ws_cÚ‹xt
 , 0);
 
-597 
+605 
 	`libwebsock‘_£rviû
 (
 db
@@ -113131,7 +113151,7 @@ i
 ws_cÚ‹xt
 , 0);
 
-602 if(
+610 if(
 db
 ->
 cÚfig
@@ -113139,17 +113159,17 @@ cÚfig
 have_websock‘s_li¡’”
 ){
 
-603 
+611 
 	`‹mp__expœe_websock‘s_þ›Ás
 (
 db
 );
 
-608 #ifdeà
+616 #ifdeà
 WITH_EPOLL
 
 
-609 (è
+617 (è
 	`þo£
 (
 db
@@ -113157,27 +113177,27 @@ db
 •Þlfd
 );
 
-610 
+618 
 db
 ->
 •Þlfd
  = 0;
 
-612 
+620 
 	`mosqu™to__ä“
 (
 pÞlfds
 );
 
-614  
+622  
 MOSQ_ERR_SUCCESS
 ;
 
-615 
+623 
 	}
 }
 
-617 
+625 
 	$do_discÚÃù
 (
 mosqu™to_db
@@ -113191,25 +113211,25 @@ cÚ‹xt
 »asÚ
 )
 
-619 *
+627 *
 id
 ;
 
-620 #ifdeà
+628 #ifdeà
 WITH_EPOLL
 
 
-621 
+629 
 •Þl_ev’t
  
 ev
 ;
 
-623 #ifdeà
+631 #ifdeà
 WITH_WEBSOCKETS
 
 
-624 
+632 
 boÞ
  
 is_du¶iÿ‹
@@ -113217,7 +113237,7 @@ is_du¶iÿ‹
 çl£
 ;
 
-627 if(
+635 if(
 cÚ‹xt
 ->
 ¡©e
@@ -113225,17 +113245,17 @@ cÚ‹xt
 mosq_cs_discÚÃùed
 ){
 
-630 #ifdeà
+638 #ifdeà
 WITH_WEBSOCKETS
 
 
-631 if(
+639 if(
 cÚ‹xt
 ->
 wsi
 ){
 
-632 if(
+640 if(
 cÚ‹xt
 ->
 ¡©e
@@ -113243,13 +113263,13 @@ cÚ‹xt
 mosq_cs_du¶iÿ‹
 ){
 
-633 
+641 
 is_du¶iÿ‹
  = 
 Œue
 ;
 
-636 if(
+644 if(
 cÚ‹xt
 ->
 ¡©e
@@ -113259,7 +113279,7 @@ mosq_cs_discÚÃùšg
 mosq_cs_discÚÃù_w™h_wžl
 ){
 
-637 
+645 
 	`mosqu™to__£t_¡©e
 (
 cÚ‹xt
@@ -113267,13 +113287,13 @@ cÚ‹xt
 mosq_cs_discÚÃù_ws
 );
 
-639 if(
+647 if(
 cÚ‹xt
 ->
 wsi
 ){
 
-640 
+648 
 	`libwebsock‘_ÿÎback_Ú_wr™abË
 (
 cÚ‹xt
@@ -113283,7 +113303,7 @@ ws_cÚ‹xt
 wsi
 );
 
-642 if(
+650 if(
 cÚ‹xt
 ->
 sock
@@ -113291,7 +113311,7 @@ sock
 INVALID_SOCKET
 ){
 
-643 
+651 
 	`HASH_DELETE
 (
 hh_sock
@@ -113303,11 +113323,11 @@ cÚ‹xts_by_sock
 cÚ‹xt
 );
 
-644 #ifdeà
+652 #ifdeà
 WITH_EPOLL
 
 
-645 ià(
+653 ià(
 	`•Þl_ùl
 (
 db
@@ -113323,7 +113343,7 @@ sock
 ev
 ) == -1) {
 
-646 
+654 
 	`log__´štf
 (
 NULL
@@ -113335,7 +113355,7 @@ MOSQ_LOG_DEBUG
 ”ºo
 ));
 
-649 
+657 
 cÚ‹xt
 ->
 sock
@@ -113343,17 +113363,17 @@ sock
 INVALID_SOCKET
 ;
 
-650 
+658 
 cÚ‹xt
 ->
 pÞlfd_šdex
  = -1;
 
-652 if(
+660 if(
 is_du¶iÿ‹
 ){
 
-659 
+667 
 	`cÚ‹xt__»move_äom_by_id
 (
 db
@@ -113361,7 +113381,7 @@ db
 cÚ‹xt
 );
 
-664 if(
+672 if(
 db
 ->
 cÚfig
@@ -113371,23 +113391,23 @@ cÚÃùiÚ_mes§ges
 Œue
 ){
 
-665 if(
+673 if(
 cÚ‹xt
 ->
 id
 ){
 
-666 
+674 
 id
  = 
 cÚ‹xt
 ->id;
 
-668 
+676 
 id
  = "<unknown>";
 
-670 if(
+678 if(
 cÚ‹xt
 ->
 ¡©e
@@ -113397,19 +113417,19 @@ mosq_cs_discÚÃùšg
 mosq_cs_discÚÃù_w™h_wžl
 ){
 
-671 
+679 
 »asÚ
 ){
 
-672 
+680 
 MOSQ_ERR_SUCCESS
 :
 
-674 
+682 
 MOSQ_ERR_PROTOCOL
 :
 
-675 
+683 
 	`log__´štf
 (
 NULL
@@ -113419,11 +113439,11 @@ MOSQ_LOG_NOTICE
 id
 );
 
-677 
+685 
 MOSQ_ERR_CONN_LOST
 :
 
-678 
+686 
 	`log__´štf
 (
 NULL
@@ -113433,11 +113453,11 @@ MOSQ_LOG_NOTICE
 id
 );
 
-680 
+688 
 MOSQ_ERR_AUTH
 :
 
-681 
+689 
 	`log__´štf
 (
 NULL
@@ -113447,11 +113467,11 @@ MOSQ_LOG_NOTICE
 id
 );
 
-683 
+691 
 MOSQ_ERR_KEEPALIVE
 :
 
-684 
+692 
 	`log__´štf
 (
 NULL
@@ -113461,7 +113481,7 @@ MOSQ_LOG_NOTICE
 id
 );
 
-687 
+695 
 	`log__´štf
 (
 NULL
@@ -113471,7 +113491,7 @@ MOSQ_LOG_NOTICE
 id
 );
 
-691 
+699 
 	`log__´štf
 (
 NULL
@@ -113481,11 +113501,11 @@ MOSQ_LOG_NOTICE
 id
 );
 
-694 #ifdeà
+702 #ifdeà
 WITH_EPOLL
 
 
-695 ià(
+703 ià(
 cÚ‹xt
 ->
 sock
@@ -113503,7 +113523,7 @@ EPOLL_CTL_DEL
 ev
 ) == -1) {
 
-696 if(
+704 if(
 db
 ->
 cÚfig
@@ -113513,7 +113533,7 @@ cÚÃùiÚ_mes§ges
 Œue
 ){
 
-697 
+705 
 	`log__´štf
 (
 NULL
@@ -113525,7 +113545,7 @@ MOSQ_LOG_DEBUG
 ”ºo
 ));
 
-701 
+709 
 	`cÚ‹xt__discÚÃù
 (
 db
@@ -113533,15 +113553,15 @@ db
 cÚ‹xt
 );
 
-703 
+711 
 	}
 }
 
-706 #ifdeà
+714 #ifdeà
 WITH_EPOLL
 
 
-707 
+715 
 	$loÝ_hªdË_»ads_wr™es
 (
 mosqu™to_db
@@ -113557,7 +113577,7 @@ ušt32_t
 ev’ts
 )
 
-709 
+717 
 	$loÝ_hªdË_»ads_wr™es
 (
 mosqu™to_db
@@ -113569,51 +113589,51 @@ pÞlfd
 pÞlfds
 )
 
-712 
+720 
 mosqu™to
  *
 cÚ‹xt
 ;
 
-713 #iâdeà
+721 #iâdeà
 WITH_EPOLL
 
 
-714 
+722 
 mosqu™to
  *
 ùxt_tmp
 ;
 
-716 
+724 
 ”r
 ;
 
-717 
+725 
 sockËn_t
  
 Ën
 ;
 
-718 
+726 
 rc
 ;
 
-720 #ifdeà
+728 #ifdeà
 WITH_EPOLL
 
 
-721 
+729 
 i
 ;
 
-722 
+730 
 cÚ‹xt
  = 
 NULL
 ;
 
-723 
+731 
 	`HASH_FIND
 (
 hh_sock
@@ -113629,15 +113649,15 @@ mosq_sock_t
 cÚ‹xt
 );
 
-724 if(!
+732 if(!
 cÚ‹xt
 ) {
 
-727 
+735 
 i
 =0;i<1;i++) {
 
-729 
+737 
 	`HASH_ITER
 (
 hh_sock
@@ -113651,13 +113671,13 @@ cÚ‹xt
 ùxt_tmp
 ){
 
-730 if(
+738 if(
 cÚ‹xt
 ->
 pÞlfd_šdex
  < 0){
 
-734 
+742 
 	`as£¹
 (
 pÞlfds
@@ -113671,27 +113691,27 @@ fd
 sock
 );
 
-737 #ifdeà
+745 #ifdeà
 WITH_WEBSOCKETS
 
 
-738 if(
+746 if(
 cÚ‹xt
 ->
 wsi
 ){
 
-739 
+747 
 lws_pÞlfd
  
 w¥Þl
 ;
 
-740 #ifdeà
+748 #ifdeà
 WITH_EPOLL
 
 
-741 
+749 
 w¥Þl
 .
 fd
@@ -113701,7 +113721,7 @@ cÚ‹xt
 sock
 ;
 
-742 
+750 
 w¥Þl
 .
 ev’ts
@@ -113709,7 +113729,7 @@ ev’ts
 cÚ‹xt
 ->events;
 
-743 
+751 
 w¥Þl
 .
 »v’ts
@@ -113717,7 +113737,7 @@ w¥Þl
 ev’ts
 ;
 
-745 
+753 
 w¥Þl
 .
 fd
@@ -113729,7 +113749,7 @@ cÚ‹xt
 pÞlfd_šdex
 ].fd;
 
-746 
+754 
 w¥Þl
 .
 ev’ts
@@ -113741,7 +113761,7 @@ cÚ‹xt
 pÞlfd_šdex
 ].events;
 
-747 
+755 
 w¥Þl
 .
 »v’ts
@@ -113753,11 +113773,11 @@ cÚ‹xt
 pÞlfd_šdex
 ].revents;
 
-749 #ifdeà
+757 #ifdeà
 LWS_LIBRARY_VERSION_NUMBER
 
 
-750 
+758 
 	`lws_£rviû_fd
 (
 	`lws_g‘_cÚ‹xt
@@ -113769,7 +113789,7 @@ wsi
 w¥Þl
 );
 
-752 
+760 
 	`lws_£rviû_fd
 (
 cÚ‹xt
@@ -113779,47 +113799,9 @@ ws_cÚ‹xt
 w¥Þl
 );
 
-758 #ifdeà
+766 #ifdeà
 WITH_TLS
 
-
-759 #ifdeà
-WITH_EPOLL
-
-
-760 if(
-ev’ts
- & 
-EPOLLOUT
- ||
-
-762 if(
-pÞlfds
-[
-cÚ‹xt
-->
-pÞlfd_šdex
-].
-»v’ts
- & 
-POLLOUT
- ||
-
-764 
-cÚ‹xt
-->
-wªt_wr™e
- ||
-
-765 (
-cÚ‹xt
-->
-s¦
- && cÚ‹xt->
-¡©e
- =ð
-mosq_cs_Ãw
-)){
 
 767 #ifdeà
 WITH_EPOLL
@@ -113829,7 +113811,7 @@ WITH_EPOLL
 ev’ts
  & 
 EPOLLOUT
-){
+ ||
 
 770 if(
 pÞlfds
@@ -113841,9 +113823,47 @@ pÞlfd_šdex
 »v’ts
  & 
 POLLOUT
+ ||
+
+772 
+cÚ‹xt
+->
+wªt_wr™e
+ ||
+
+773 (
+cÚ‹xt
+->
+s¦
+ && cÚ‹xt->
+¡©e
+ =ð
+mosq_cs_Ãw
+)){
+
+775 #ifdeà
+WITH_EPOLL
+
+
+776 if(
+ev’ts
+ & 
+EPOLLOUT
 ){
 
-773 if(
+778 if(
+pÞlfds
+[
+cÚ‹xt
+->
+pÞlfd_šdex
+].
+»v’ts
+ & 
+POLLOUT
+){
+
+781 if(
 cÚ‹xt
 ->
 ¡©e
@@ -113851,11 +113871,11 @@ cÚ‹xt
 mosq_cs_cÚÃù_³ndšg
 ){
 
-774 
+782 
 Ën
  = ();
 
-775 if(!
+783 if(!
 	`g‘sockÝt
 (
 cÚ‹xt
@@ -113871,11 +113891,11 @@ SO_ERROR
 Ën
 )){
 
-776 if(
+784 if(
 ”r
  == 0){
 
-777 
+785 
 	`mosqu™to__£t_¡©e
 (
 cÚ‹xt
@@ -113883,7 +113903,7 @@ cÚ‹xt
 mosq_cs_Ãw
 );
 
-778 #ià
+786 #ià
 	`defšed
 (
 WITH_ADNS
@@ -113891,13 +113911,13 @@ WITH_ADNS
 WITH_BRIDGE
 )
 
-779 if(
+787 if(
 cÚ‹xt
 ->
 bridge
 ){
 
-780 
+788 
 	`bridge__cÚÃù_¡•3
 (
 db
@@ -113905,7 +113925,7 @@ db
 cÚ‹xt
 );
 
-786 
+794 
 	`do_discÚÃù
 (
 db
@@ -113915,7 +113935,7 @@ cÚ‹xt
 MOSQ_ERR_CONN_LOST
 );
 
-790 
+798 
 rc
  = 
 	`·ck‘__wr™e
@@ -113923,11 +113943,11 @@ rc
 cÚ‹xt
 );
 
-791 if(
+799 if(
 rc
 ){
 
-792 
+800 
 	`do_discÚÃù
 (
 db
@@ -113937,17 +113957,17 @@ cÚ‹xt
 rc
 );
 
-798 #ifdeà
+806 #ifdeà
 WITH_EPOLL
 
 
-799 
+807 
 cÚ‹xt
  = 
 NULL
 ;
 
-800 
+808 
 	`HASH_FIND
 (
 hh_sock
@@ -113963,15 +113983,15 @@ mosq_sock_t
 cÚ‹xt
 );
 
-801 if(!
+809 if(!
 cÚ‹xt
 ) {
 
-804 
+812 
 i
 =0;i<1;i++) {
 
-806 
+814 
 	`HASH_ITER
 (
 hh_sock
@@ -113985,37 +114005,37 @@ cÚ‹xt
 ùxt_tmp
 ){
 
-807 if(
+815 if(
 cÚ‹xt
 ->
 pÞlfd_šdex
  < 0){
 
-811 #ifdeà
+819 #ifdeà
 WITH_WEBSOCKETS
 
 
-812 if(
+820 if(
 cÚ‹xt
 ->
 wsi
 ){
 
-818 #ifdeà
+826 #ifdeà
 WITH_TLS
 
 
-819 #ifdeà
+827 #ifdeà
 WITH_EPOLL
 
 
-820 if(
+828 if(
 ev’ts
  & 
 EPOLLIN
  ||
 
-822 if(
+830 if(
 pÞlfds
 [
 cÚ‹xt
@@ -114027,7 +114047,7 @@ pÞlfd_šdex
 POLLIN
  ||
 
-824 (
+832 (
 cÚ‹xt
 ->
 s¦
@@ -114037,17 +114057,17 @@ s¦
 mosq_cs_Ãw
 )){
 
-826 #ifdeà
+834 #ifdeà
 WITH_EPOLL
 
 
-827 if(
+835 if(
 ev’ts
  & 
 EPOLLIN
 ){
 
-829 if(
+837 if(
 pÞlfds
 [
 cÚ‹xt
@@ -114059,7 +114079,7 @@ pÞlfd_šdex
 POLLIN
 ){
 
-833 
+842 
 rc
  = 
 	`·ck‘__»ad
@@ -114069,11 +114089,11 @@ db
 cÚ‹xt
 );
 
-834 if(
+843 if(
 rc
 ){
 
-835 
+844 
 	`do_discÚÃù
 (
 db
@@ -114083,17 +114103,17 @@ cÚ‹xt
 rc
 );
 
-838 }
+847 }
 	`SSL_DATA_PENDING
 (
 cÚ‹xt
 ));
 
-840 #ifdeà
+849 #ifdeà
 WITH_EPOLL
 
 
-841 if(
+850 if(
 ev’ts
  & (
 EPOLLERR
@@ -114101,7 +114121,7 @@ EPOLLERR
 EPOLLHUP
 )){
 
-843 if(
+852 if(
 cÚ‹xt
 ->
 pÞlfd_šdex
@@ -114117,7 +114137,7 @@ POLLNVAL
 POLLHUP
 )){
 
-845 
+854 
 	`do_discÚÃù
 (
 db
@@ -114127,7 +114147,7 @@ cÚ‹xt
 MOSQ_ERR_CONN_LOST
 );
 
-850 
+859 
 	}
 }
 
@@ -114274,78 +114294,86 @@ boÞ
 65 
 boÞ
  
-	gN_´št
+	gæag_§m¶e
  = 
 çl£
 ;
 
-66 
+66 
+boÞ
+ 
+	g´št_d–ay
+ = 
+çl£
+;
+
+67 
 	grun
 ;
 
-67 #ifdeà
+68 #ifdeà
 WITH_WRAP
 
 
-68 
+69 
 	~<sy¦og.h
 >
 
-69 
+70 
 	g®low_£v”™y
  = 
 LOG_INFO
 ;
 
-70 
+71 
 	gd’y_£v”™y
  = 
 LOG_INFO
 ;
 
-73 
+74 
 hªdË_sigšt
 (
 sigÇl
 );
 
-74 
+75 
 hªdË_sigu¤1
 (
 sigÇl
 );
 
-75 
+76 
 hªdË_sigu¤2
 (
 sigÇl
 );
 
-76 #ifdeà
+77 #ifdeà
 SIGHUP
 
 
-77 
+78 
 hªdË_sighup
 (
 sigÇl
 );
 
-80 
+81 
 mosqu™to_db
  *
 	$mosqu™to__g‘_db
 ()
 
-82  &
+83  &
 št_db
 ;
 
-83 
+84 
 	}
 }
 
-93 
+94 
 	$drÝ_´ivžeges
 (
 mosqu™to__cÚfig
@@ -114357,7 +114385,7 @@ boÞ
 ‹mpÜ¬y
 )
 
-95 #ià!
+96 #ià!
 	`defšed
 (
 __CYGWIN__
@@ -114365,41 +114393,41 @@ __CYGWIN__
 WIN32
 )
 
-96 
+97 
 ·sswd
  *
 pwd
 ;
 
-97 *
+98 *
 ”r
 ;
 
-98 
+99 
 rc
 ;
 
-100 cÚ¡ *
+101 cÚ¡ *
 ¢­
  = 
 	`g‘’v
 ("SNAP_NAME");
 
-101 if(
+102 if(
 ¢­
  && !
 	`¡rcmp
 (snap, "mosquitto")){
 
-103  
+104  
 MOSQ_ERR_SUCCESS
 ;
 
-106 if(
+107 if(
 	`g‘euid
 () == 0){
 
-107 if(
+108 if(
 cÚfig
 ->
 u£r
@@ -114407,7 +114435,7 @@ u£r
 	`¡rcmp
 (config->user, "root")){
 
-108 
+109 
 pwd
  = 
 	`g‘pwÇm
@@ -114417,11 +114445,11 @@ cÚfig
 u£r
 );
 
-109 if(!
+110 if(!
 pwd
 ){
 
-110 
+111 
 	`log__´štf
 (
 NULL
@@ -114433,7 +114461,7 @@ cÚfig
 u£r
 );
 
-113 if(
+114 if(
 	`š™groups
 (
 cÚfig
@@ -114445,7 +114473,7 @@ pwd
 pw_gid
 ) == -1){
 
-114 
+115 
 ”r
  = 
 	`¡»¼Ü
@@ -114453,7 +114481,7 @@ pw_gid
 ”ºo
 );
 
-115 
+116 
 	`log__´štf
 (
 NULL
@@ -114463,11 +114491,11 @@ MOSQ_LOG_ERR
 ”r
 );
 
-118 if(
+119 if(
 ‹mpÜ¬y
 ){
 
-119 
+120 
 rc
  = 
 	`£‹gid
@@ -114477,7 +114505,7 @@ pwd
 pw_gid
 );
 
-121 
+122 
 rc
  = 
 	`£tgid
@@ -114487,11 +114515,11 @@ pwd
 pw_gid
 );
 
-123 if(
+124 if(
 rc
  == -1){
 
-124 
+125 
 ”r
  = 
 	`¡»¼Ü
@@ -114499,7 +114527,7 @@ rc
 ”ºo
 );
 
-125 
+126 
 	`log__´štf
 (
 NULL
@@ -114509,11 +114537,11 @@ MOSQ_LOG_ERR
 ”r
 );
 
-128 if(
+129 if(
 ‹mpÜ¬y
 ){
 
-129 
+130 
 rc
  = 
 	`£‹uid
@@ -114523,7 +114551,7 @@ pwd
 pw_uid
 );
 
-131 
+132 
 rc
  = 
 	`£tuid
@@ -114533,11 +114561,11 @@ pwd
 pw_uid
 );
 
-133 if(
+134 if(
 rc
  == -1){
 
-134 
+135 
 ”r
  = 
 	`¡»¼Ü
@@ -114545,7 +114573,7 @@ rc
 ”ºo
 );
 
-135 
+136 
 	`log__´štf
 (
 NULL
@@ -114555,13 +114583,13 @@ MOSQ_LOG_ERR
 ”r
 );
 
-139 if(
+140 if(
 	`g‘euid
 (è=ð0 || 
 	`g‘egid
 () == 0){
 
-140 
+141 
 	`log__´štf
 (
 NULL
@@ -114569,19 +114597,19 @@ NULL
 MOSQ_LOG_WARNING
 , "Warning: Mosquitto should‚ot be„un‡s„oot/administrator.");
 
-144  
+145  
 MOSQ_ERR_SUCCESS
 ;
 
-145 
+146 
 	}
 }
 
-147 
+148 
 	$»¡Üe_´ivžeges
 ()
 
-149 #ià!
+150 #ià!
 	`defšed
 (
 __CYGWIN__
@@ -114589,29 +114617,29 @@ __CYGWIN__
 WIN32
 )
 
-150 *
+151 *
 ”r
 ;
 
-151 
+152 
 rc
 ;
 
-153 if(
+154 if(
 	`g‘uid
 () == 0){
 
-154 
+155 
 rc
  = 
 	`£‹gid
 (0);
 
-155 if(
+156 if(
 rc
  == -1){
 
-156 
+157 
 ”r
  = 
 	`¡»¼Ü
@@ -114619,7 +114647,7 @@ rc
 ”ºo
 );
 
-157 
+158 
 	`log__´štf
 (
 NULL
@@ -114629,17 +114657,17 @@ MOSQ_LOG_ERR
 ”r
 );
 
-160 
+161 
 rc
  = 
 	`£‹uid
 (0);
 
-161 if(
+162 if(
 rc
  == -1){
 
-162 
+163 
 ”r
  = 
 	`¡»¼Ü
@@ -114647,7 +114675,7 @@ rc
 ”ºo
 );
 
-163 
+164 
 	`log__´štf
 (
 NULL
@@ -114657,43 +114685,43 @@ MOSQ_LOG_ERR
 ”r
 );
 
-168  
+169  
 MOSQ_ERR_SUCCESS
 ;
 
-169 
+170 
 	}
 }
 
-172 
+173 
 	$mosqu™to__d«mÚi£
 ()
 
-174 #iâdeà
+175 #iâdeà
 WIN32
 
 
-175 *
+176 *
 ”r
 ;
 
-176 
+177 
 pid_t
  
 pid
 ;
 
-178 
+179 
 pid
  = 
 	`fÜk
 ();
 
-179 if(
+180 if(
 pid
  < 0){
 
-180 
+181 
 ”r
  = 
 	`¡»¼Ü
@@ -114701,7 +114729,7 @@ pid
 ”ºo
 );
 
-181 
+182 
 	`log__´štf
 (
 NULL
@@ -114711,23 +114739,23 @@ MOSQ_LOG_ERR
 ”r
 );
 
-182 
+183 
 	`ex™
 (1);
 
-184 if(
+185 if(
 pid
  > 0){
 
-185 
+186 
 	`ex™
 (0);
 
-187 if(
+188 if(
 	`£tsid
 () < 0){
 
-188 
+189 
 ”r
  = 
 	`¡»¼Ü
@@ -114735,7 +114763,7 @@ pid
 ”ºo
 );
 
-189 
+190 
 	`log__´štf
 (
 NULL
@@ -114745,11 +114773,11 @@ MOSQ_LOG_ERR
 ”r
 );
 
-190 
+191 
 	`ex™
 (1);
 
-193 
+194 
 	`as£¹
 (
 	`äeÝ’
@@ -114757,7 +114785,7 @@ MOSQ_LOG_ERR
 ¡dš
 ));
 
-194 
+195 
 	`as£¹
 (
 	`äeÝ’
@@ -114765,7 +114793,7 @@ MOSQ_LOG_ERR
 ¡dout
 ));
 
-195 
+196 
 	`as£¹
 (
 	`äeÝ’
@@ -114773,7 +114801,7 @@ MOSQ_LOG_ERR
 ¡d”r
 ));
 
-197 
+198 
 	`log__´štf
 (
 NULL
@@ -114781,11 +114809,11 @@ NULL
 MOSQ_LOG_WARNING
 , "Warning: Can't start in daemon mode in Windows.");
 
-199 
+200 
 	}
 }
 
-202 
+203 
 	$maš
 (
 ¬gc
@@ -114793,7 +114821,7 @@ MOSQ_LOG_WARNING
 ¬gv
 [])
 
-217 
+218 
 mosq_sock_t
  *
 li¡’sock
@@ -114801,53 +114829,53 @@ li¡’sock
 NULL
 ;
 
-218 
+219 
 li¡’sock_couÁ
  = 0;
 
-219 
+220 
 li¡’sock_šdex
  = 0;
 
-220 
+221 
 mosqu™to__cÚfig
  
 cÚfig
 ;
 
-221 
+222 
 i
 , 
 j
 ;
 
-222 
+223 
 FILE
  *
 pid
 ;
 
-223 
+224 
 rc
 ;
 
-224 #ifdeà
+225 #ifdeà
 WIN32
 
 
-225 
+226 
 SYSTEMTIME
  
 ¡
 ;
 
-227 
+228 
 timev®
  
 tv
 ;
 
-229 
+230 
 mosqu™to
  *
 ùxt
@@ -114855,7 +114883,7 @@ mosqu™to
 ùxt_tmp
 ;
 
-231 #ià
+232 #ià
 	`defšed
 (
 WIN32
@@ -114863,51 +114891,51 @@ WIN32
 __CYGWIN__
 )
 
-232 if(
+233 if(
 ¬gc
  == 2){
 
-233 if(!
+234 if(!
 	`¡rcmp
 (
 ¬gv
 [1], "run")){
 
-234 
+235 
 	`£rviû_run
 ();
 
-236 }if(!
+237 }if(!
 	`¡rcmp
 (
 ¬gv
 [1], "install")){
 
-237 
+238 
 	`£rviû_š¡®l
 ();
 
-239 }if(!
+240 }if(!
 	`¡rcmp
 (
 ¬gv
 [1], "uninstall")){
 
-240 
+241 
 	`£rviû_unš¡®l
 ();
 
-247 #ifdeà
+248 #ifdeà
 WIN32
 
 
-248 
+249 
 	`G‘Sy¡emTime
 (&
 ¡
 );
 
-249 
+250 
 	`¤ªd
 (
 ¡
@@ -114917,7 +114945,7 @@ wSecÚd
 wMžli£cÚds
 );
 
-251 
+252 
 	`g‘timeofday
 (&
 tv
@@ -114925,7 +114953,7 @@ tv
 NULL
 );
 
-252 
+253 
 	`¤ªd
 (
 tv
@@ -114935,15 +114963,15 @@ tv_£c
 tv_u£c
 );
 
-255 #ifdeà
+256 #ifdeà
 WIN32
 
 
-256 
+257 
 	`_£tmax¡dio
 (2048);
 
-259 
+260 
 	`mem£t
 (&
 št_db
@@ -114951,11 +114979,11 @@ WIN32
 mosqu™to_db
 ));
 
-261 
+262 
 	`Ãt__brok”_š™
 ();
 
-263 
+264 
 	`cÚfig__š™
 (&
 št_db
@@ -114963,7 +114991,7 @@ mosqu™to_db
 cÚfig
 );
 
-264 
+265 
 rc
  = 
 	`cÚfig__·r£_¬gs
@@ -114977,29 +115005,29 @@ cÚfig
 ¬gv
 );
 
-265 if(
+266 if(
 rc
  !ð
 MOSQ_ERR_SUCCESS
 ) „c;
 
-266 
+267 
 št_db
 .
 cÚfig
  = &config;
 
-268 if(
+269 if(
 cÚfig
 .
 d«mÚ
 ){
 
-269 
+270 
 	`mosqu™to__d«mÚi£
 ();
 
-272 if(
+273 if(
 cÚfig
 .
 d«mÚ
@@ -115007,7 +115035,7 @@ d«mÚ
 pid_fže
 ){
 
-273 
+274 
 pid
  = 
 	`mosqu™to__fÝ’
@@ -115019,11 +115047,11 @@ pid_fže
 çl£
 );
 
-274 if(
+275 if(
 pid
 ){
 
-275 
+276 
 	`årštf
 (
 pid
@@ -115031,13 +115059,13 @@ pid
 	`g‘pid
 ());
 
-276 
+277 
 	`fþo£
 (
 pid
 );
 
-278 
+279 
 	`log__´štf
 (
 NULL
@@ -115045,7 +115073,7 @@ NULL
 MOSQ_LOG_ERR
 , "Error: Unableo write…id file.");
 
-283 
+284 
 rc
  = 
 	`db__Ý’
@@ -115055,13 +115083,13 @@ cÚfig
 št_db
 );
 
-284 if(
+285 if(
 rc
  !ð
 MOSQ_ERR_SUCCESS
 ){
 
-285 
+286 
 	`log__´štf
 (
 NULL
@@ -115069,25 +115097,25 @@ NULL
 MOSQ_LOG_ERR
 , "Error: Couldn't open database.");
 
-286  
+287  
 rc
 ;
 
-291 if(
+292 if(
 	`log__š™
 (&
 cÚfig
 )){
 
-292 
+293 
 rc
  = 1;
 
-293  
+294  
 rc
 ;
 
-295 
+296 
 	`log__´štf
 (
 NULL
@@ -115097,13 +115125,13 @@ MOSQ_LOG_INFO
 VERSION
 );
 
-296 if(
+297 if(
 št_db
 .
 cÚfig_fže
 ){
 
-297 
+298 
 	`log__´štf
 (
 NULL
@@ -115115,7 +115143,7 @@ MOSQ_LOG_INFO
 cÚfig_fže
 );
 
-299 
+300 
 	`log__´štf
 (
 NULL
@@ -115123,7 +115151,7 @@ NULL
 MOSQ_LOG_INFO
 , "Using default config.");
 
-302 
+303 
 rc
  = 
 	`mosqu™to_£cur™y_moduË_š™
@@ -115131,11 +115159,11 @@ rc
 št_db
 );
 
-303 if(
+304 if(
 rc
 ) „c;
 
-304 
+305 
 rc
  = 
 	`mosqu™to_£cur™y_š™
@@ -115145,11 +115173,11 @@ rc
 çl£
 );
 
-305 if(
+306 if(
 rc
 ) „c;
 
-309 
+310 
 	`HASH_ITER
 (
 hh_id
@@ -115163,7 +115191,7 @@ cÚ‹xts_by_id
 ùxt_tmp
 ){
 
-310 if(
+311 if(
 ùxt
  && !ùxt->
 þ—n_¡¬t
@@ -115171,7 +115199,7 @@ cÚ‹xts_by_id
 u£ºame
 ){
 
-311 
+312 
 rc
  = 
 	`aþ__fšd_aþs
@@ -115181,11 +115209,11 @@ rc
 ùxt
 );
 
-312 if(
+313 if(
 rc
 ){
 
-313 
+314 
 	`log__´štf
 (
 NULL
@@ -115193,27 +115221,27 @@ NULL
 MOSQ_LOG_WARNING
 , "Failedo‡ssociate…ersisted user %s with ACLs, "
 
-314 "lik–y dutØchªged…Üt whžusšg‡…”_li¡’”_£‰šg cÚfigu¿tiÚ.", 
+315 "lik–y dutØchªged…Üt whžusšg‡…”_li¡’”_£‰šg cÚfigu¿tiÚ.", 
 ùxt
 ->
 u£ºame
 );
 
-319 #ifdeà
+320 #ifdeà
 WITH_SYS_TREE
 
 
-320 
+321 
 	`sys_Œ“__š™
 (&
 št_db
 );
 
-323 
+324 
 li¡’sock_šdex
  = 0;
 
-324 
+325 
 i
 =0; i<
 cÚfig
@@ -115221,7 +115249,7 @@ cÚfig
 li¡’”_couÁ
 ; i++){
 
-325 if(
+326 if(
 cÚfig
 .
 li¡’”s
@@ -115233,7 +115261,7 @@ i
 mp_mq‰
 ){
 
-326 if(
+327 if(
 	`Ãt__sock‘_li¡’
 (&
 cÚfig
@@ -115243,19 +115271,19 @@ li¡’”s
 i
 ])){
 
-327 
+328 
 	`db__þo£
 (&
 št_db
 );
 
-328 if(
+329 if(
 cÚfig
 .
 pid_fže
 ){
 
-329 
+330 
 	`»move
 (
 cÚfig
@@ -115263,7 +115291,7 @@ cÚfig
 pid_fže
 );
 
-333 
+334 
 li¡’sock_couÁ
  +ð
 cÚfig
@@ -115275,7 +115303,7 @@ i
 sock_couÁ
 ;
 
-334 
+335 
 li¡’sock
  = 
 	`mosqu™to__»®loc
@@ -115285,23 +115313,23 @@ mosq_sock_t
 li¡’sock_couÁ
 );
 
-335 if(!
+336 if(!
 li¡’sock
 ){
 
-336 
+337 
 	`db__þo£
 (&
 št_db
 );
 
-337 if(
+338 if(
 cÚfig
 .
 pid_fže
 ){
 
-338 
+339 
 	`»move
 (
 cÚfig
@@ -115309,7 +115337,7 @@ cÚfig
 pid_fže
 );
 
-342 
+343 
 j
 =0; j<
 cÚfig
@@ -115321,7 +115349,7 @@ i
 sock_couÁ
 ; j++){
 
-343 if(
+344 if(
 cÚfig
 .
 li¡’”s
@@ -115335,19 +115363,19 @@ j
 INVALID_SOCKET
 ){
 
-344 
+345 
 	`db__þo£
 (&
 št_db
 );
 
-345 if(
+346 if(
 cÚfig
 .
 pid_fže
 ){
 
-346 
+347 
 	`»move
 (
 cÚfig
@@ -115355,7 +115383,7 @@ cÚfig
 pid_fže
 );
 
-350 
+351 
 li¡’sock
 [
 li¡’sock_šdex
@@ -115371,11 +115399,11 @@ socks
 j
 ];
 
-351 
+352 
 li¡’sock_šdex
 ++;
 
-353 }if(
+354 }if(
 cÚfig
 .
 li¡’”s
@@ -115387,11 +115415,11 @@ i
 mp_websock‘s
 ){
 
-354 #ifdeà
+355 #ifdeà
 WITH_WEBSOCKETS
 
 
-355 
+356 
 cÚfig
 .
 li¡’”s
@@ -115403,7 +115431,7 @@ ws_cÚ‹xt
 	`mosq_websock‘s_š™
 (&config.listeners[i], &config);
 
-356 if(!
+357 if(!
 cÚfig
 .
 li¡’”s
@@ -115413,7 +115441,7 @@ i
 ws_cÚ‹xt
 ){
 
-357 
+358 
 	`log__´štf
 (
 NULL
@@ -115429,7 +115457,7 @@ i
 pÜt
 );
 
-364 
+365 
 rc
  = 
 	`drÝ_´ivžeges
@@ -115439,13 +115467,13 @@ cÚfig
 çl£
 );
 
-365 if(
+366 if(
 rc
  !ð
 MOSQ_ERR_SUCCESS
 ) „c;
 
-367 
+368 
 	`sigÇl
 (
 SIGINT
@@ -115453,7 +115481,7 @@ SIGINT
 hªdË_sigšt
 );
 
-368 
+369 
 	`sigÇl
 (
 SIGTERM
@@ -115461,11 +115489,11 @@ SIGTERM
 hªdË_sigšt
 );
 
-369 #ifdeà
+370 #ifdeà
 SIGHUP
 
 
-370 
+371 
 	`sigÇl
 (
 SIGHUP
@@ -115473,11 +115501,11 @@ SIGHUP
 hªdË_sighup
 );
 
-372 #iâdeà
+373 #iâdeà
 WIN32
 
 
-373 
+374 
 	`sigÇl
 (
 SIGUSR1
@@ -115485,7 +115513,7 @@ SIGUSR1
 hªdË_sigu¤1
 );
 
-374 
+375 
 	`sigÇl
 (
 SIGUSR2
@@ -115493,7 +115521,7 @@ SIGUSR2
 hªdË_sigu¤2
 );
 
-375 
+376 
 	`sigÇl
 (
 SIGPIPE
@@ -115501,11 +115529,11 @@ SIGPIPE
 SIG_IGN
 );
 
-377 #ifdeà
+378 #ifdeà
 WIN32
 
 
-378 
+379 
 	`C»©eTh»ad
 (
 NULL
@@ -115513,11 +115541,11 @@ NULL
 SigTh»adProc
 , NULL, 0, NULL);
 
-381 #ifdeà
+382 #ifdeà
 WITH_BRIDGE
 
 
-382 
+383 
 i
 =0; i<
 cÚfig
@@ -115525,7 +115553,7 @@ cÚfig
 bridge_couÁ
 ; i++){
 
-383 if(
+384 if(
 	`bridge__Ãw
 (&
 št_db
@@ -115537,7 +115565,7 @@ bridges
 i
 ]))){
 
-384 
+385 
 	`log__´štf
 (
 NULL
@@ -115545,7 +115573,7 @@ NULL
 MOSQ_LOG_WARNING
 , "Warning: Unableo connecto bridge %s.",
 
-385 
+386 
 cÚfig
 .
 bridges
@@ -115555,7 +115583,7 @@ i
 Çme
 );
 
-390 
+391 
 	`log__´štf
 (
 NULL
@@ -115565,19 +115593,19 @@ MOSQ_LOG_INFO
 VERSION
 );
 
-391 #ifdeà
+392 #ifdeà
 WITH_SYSTEMD
 
 
-392 
+393 
 	`sd_nÙify
 (0, "READY=1");
 
-395 
+396 
 run
  = 1;
 
-396 
+397 
 rc
  = 
 	`mosqu™to_maš_loÝ
@@ -115589,7 +115617,7 @@ li¡’sock
 li¡’sock_couÁ
 );
 
-398 
+399 
 	`log__´štf
 (
 NULL
@@ -115599,11 +115627,11 @@ MOSQ_LOG_INFO
 VERSION
 );
 
-400 #ifdeà
+401 #ifdeà
 WITH_WEBSOCKETS
 
 
-401 
+402 
 i
 =0; i<
 št_db
@@ -115613,7 +115641,7 @@ cÚfig
 li¡’”_couÁ
 ; i++){
 
-402 if(
+403 if(
 št_db
 .
 cÚfig
@@ -115625,7 +115653,7 @@ i
 ws_cÚ‹xt
 ){
 
-403 
+404 
 	`libwebsock‘_cÚ‹xt_de¡roy
 (
 št_db
@@ -115639,7 +115667,7 @@ i
 ws_cÚ‹xt
 );
 
-405 
+406 
 	`mosqu™to__ä“
 (
 št_db
@@ -115653,7 +115681,7 @@ i
 ws_´ÙocÞ
 );
 
-412 
+413 
 	`HASH_ITER
 (
 hh_id
@@ -115667,7 +115695,7 @@ cÚ‹xts_by_id
 ùxt_tmp
 ){
 
-413 
+414 
 	`cÚ‹xt__£nd_wžl
 (&
 št_db
@@ -115675,23 +115703,23 @@ cÚ‹xts_by_id
 ùxt
 );
 
-415 
+416 
 	`wžl_d–ay__£nd_®l
 (&
 št_db
 );
 
-417 #ifdeà
+418 #ifdeà
 WITH_PERSISTENCE
 
 
-418 if(
+419 if(
 cÚfig
 .
 ³rsi¡’û
 ){
 
-419 
+420 
 	`³rsi¡__backup
 (&
 št_db
@@ -115699,13 +115727,13 @@ cÚfig
 Œue
 );
 
-422 
+423 
 	`£ssiÚ_expœy__»move_®l
 (&
 št_db
 );
 
-424 
+425 
 	`HASH_ITER
 (
 hh_id
@@ -115719,17 +115747,17 @@ cÚ‹xts_by_id
 ùxt_tmp
 ){
 
-425 #ifdeà
+426 #ifdeà
 WITH_WEBSOCKETS
 
 
-426 if(!
+427 if(!
 ùxt
 ->
 wsi
 ){
 
-427 
+428 
 	`cÚ‹xt__þ—nup
 (&
 št_db
@@ -115739,7 +115767,7 @@ wsi
 Œue
 );
 
-430 
+431 
 	`cÚ‹xt__þ—nup
 (&
 št_db
@@ -115749,7 +115777,7 @@ wsi
 Œue
 );
 
-433 
+434 
 	`HASH_ITER
 (
 hh_sock
@@ -115763,7 +115791,7 @@ cÚ‹xts_by_sock
 ùxt_tmp
 ){
 
-434 
+435 
 	`cÚ‹xt__þ—nup
 (&
 št_db
@@ -115773,11 +115801,11 @@ cÚ‹xts_by_sock
 Œue
 );
 
-436 #ifdeà
+437 #ifdeà
 WITH_BRIDGE
 
 
-437 
+438 
 i
 =0; i<
 št_db
@@ -115785,7 +115813,7 @@ i
 bridge_couÁ
 ; i++){
 
-438 if(
+439 if(
 št_db
 .
 bridges
@@ -115793,7 +115821,7 @@ bridges
 i
 ]){
 
-439 
+440 
 	`cÚ‹xt__þ—nup
 (&
 št_db
@@ -115805,7 +115833,7 @@ i
 Œue
 );
 
-442 
+443 
 	`mosqu™to__ä“
 (
 št_db
@@ -115813,25 +115841,25 @@ i
 bridges
 );
 
-444 
+445 
 	`cÚ‹xt__ä“_disu£d
 (&
 št_db
 );
 
-446 
+447 
 	`db__þo£
 (&
 št_db
 );
 
-448 
+449 
 i
 =0; i<
 li¡’sock_couÁ
 ; i++){
 
-449 if(
+450 if(
 li¡’sock
 [
 i
@@ -115839,11 +115867,11 @@ i
 INVALID_SOCKET
 ){
 
-450 #iâdeà
+451 #iâdeà
 WIN32
 
 
-451 
+452 
 	`þo£
 (
 li¡’sock
@@ -115851,7 +115879,7 @@ li¡’sock
 i
 ]);
 
-453 
+454 
 	`þo£sock‘
 (
 li¡’sock
@@ -115859,25 +115887,25 @@ li¡’sock
 i
 ]);
 
-457 
+458 
 	`mosqu™to__ä“
 (
 li¡’sock
 );
 
-459 
+460 
 	`mosqu™to_£cur™y_moduË_þ—nup
 (&
 št_db
 );
 
-461 if(
+462 if(
 cÚfig
 .
 pid_fže
 ){
 
-462 
+463 
 	`»move
 (
 cÚfig
@@ -115885,13 +115913,13 @@ cÚfig
 pid_fže
 );
 
-465 
+466 
 	`log__þo£
 (&
 cÚfig
 );
 
-466 
+467 
 	`cÚfig__þ—nup
 (
 št_db
@@ -115899,23 +115927,23 @@ cÚfig
 cÚfig
 );
 
-467 
+468 
 	`Ãt__brok”_þ—nup
 ();
 
-469  
+470  
 rc
 ;
 
-470 
+471 
 	}
 }
 
-472 #ifdeà
+473 #ifdeà
 WIN32
 
 
-473 
+474 
 WINAPI
  
 	$WšMaš
@@ -115933,39 +115961,39 @@ LPSTR
 nCmdShow
 )
 
-475 **
+476 **
 ¬gv
 ;
 
-476 
+477 
 ¬gc
  = 1;
 
-477 *
+478 *
 tok’
 ;
 
-478 *
+479 *
 §v•Œ
  = 
 NULL
 ;
 
-479 
+480 
 rc
 ;
 
-481 
+482 
 ¬gv
  = 
 	`mosqu™to__m®loc
 ((*)*1);
 
-482 
+483 
 ¬gv
 [0] = "mosquitto";
 
-483 
+484 
 tok’
  = 
 	`¡¹ok_r
@@ -115975,15 +116003,15 @@ tok’
 §v•Œ
 );
 
-484 
+485 
 tok’
 ){
 
-485 
+486 
 ¬gc
 ++;
 
-486 
+487 
 ¬gv
  = 
 	`mosqu™to__»®loc
@@ -115991,21 +116019,21 @@ tok’
 ¬gc
 );
 
-487 if(!
+488 if(!
 ¬gv
 ){
 
-488 
+489 
 	`årštf
 (
 ¡d”r
 , "Error: Out of memory.\n");
 
-489  
+490  
 MOSQ_ERR_NOMEM
 ;
 
-491 
+492 
 ¬gv
 [
 ¬gc
@@ -116013,7 +116041,7 @@ MOSQ_ERR_NOMEM
 tok’
 ;
 
-492 
+493 
 tok’
  = 
 	`¡¹ok_r
@@ -116023,7 +116051,7 @@ NULL
 §v•Œ
 );
 
-494 
+495 
 rc
  = 
 	`maš
@@ -116033,17 +116061,17 @@ rc
 ¬gv
 );
 
-495 
+496 
 	`mosqu™to__ä“
 (
 ¬gv
 );
 
-496  
+497  
 rc
 ;
 
-497 
+498 
 	}
 }
 
@@ -136383,36 +136411,24 @@ commªd
 CMD_PINGREQ
 :
 
-39  
+40  
 	`hªdË__pšg»q
 (
 cÚ‹xt
 );
 
-40 
+41 
 CMD_PINGRESP
 :
 
-41  
+43  
 	`hªdË__pšg»¥
 (
 cÚ‹xt
 );
 
-42 
-CMD_PUBACK
-:
-
-43  
-	`hªdË__pubackcomp
-(
-db
-, 
-cÚ‹xt
-, "PUBACK");
-
 44 
-CMD_PUBCOMP
+CMD_PUBACK
 :
 
 45  
@@ -136421,13 +136437,25 @@ CMD_PUBCOMP
 db
 , 
 cÚ‹xt
-, "PUBCOMP");
+, "PUBACK");
 
 46 
-CMD_PUBLISH
+CMD_PUBCOMP
 :
 
 47  
+	`hªdË__pubackcomp
+(
+db
+, 
+cÚ‹xt
+, "PUBCOMP");
+
+48 
+CMD_PUBLISH
+:
+
+50  
 	`hªdË__publish
 (
 db
@@ -136435,11 +136463,11 @@ db
 cÚ‹xt
 );
 
-48 
+51 
 CMD_PUBREC
 :
 
-49  
+52  
 	`hªdË__pub»c
 (
 db
@@ -136447,11 +136475,11 @@ db
 cÚ‹xt
 );
 
-50 
+53 
 CMD_PUBREL
 :
 
-51  
+54  
 	`hªdË__pub»l
 (
 db
@@ -136459,11 +136487,11 @@ db
 cÚ‹xt
 );
 
-52 
+55 
 CMD_CONNECT
 :
 
-53  
+57  
 	`hªdË__cÚÃù
 (
 db
@@ -136471,11 +136499,11 @@ db
 cÚ‹xt
 );
 
-54 
+58 
 CMD_DISCONNECT
 :
 
-55  
+60  
 	`hªdË__discÚÃù
 (
 db
@@ -136483,11 +136511,11 @@ db
 cÚ‹xt
 );
 
-56 
+61 
 CMD_SUBSCRIBE
 :
 
-57  
+63  
 	`hªdË__subsüibe
 (
 db
@@ -136495,11 +136523,11 @@ db
 cÚ‹xt
 );
 
-58 
+64 
 CMD_UNSUBSCRIBE
 :
 
-59  
+66  
 	`hªdË__unsubsüibe
 (
 db
@@ -136507,15 +136535,15 @@ db
 cÚ‹xt
 );
 
-60 #ifdeà
+67 #ifdeà
 WITH_BRIDGE
 
 
-61 
+68 
 CMD_CONNACK
 :
 
-62  
+69  
 	`hªdË__cÚÇck
 (
 db
@@ -136523,31 +136551,31 @@ db
 cÚ‹xt
 );
 
-63 
+70 
 CMD_SUBACK
 :
 
-64  
+71  
 	`hªdË__suback
 (
 cÚ‹xt
 );
 
-65 
+72 
 CMD_UNSUBACK
 :
 
-66  
+73  
 	`hªdË__unsuback
 (
 cÚ‹xt
 );
 
-68 
+75 
 CMD_AUTH
 :
 
-69  
+76  
 	`hªdË__auth
 (
 db
@@ -136555,11 +136583,11 @@ db
 cÚ‹xt
 );
 
-72  
+79  
 MOSQ_ERR_PROTOCOL
 ;
 
-74 
+81 
 	}
 }
 
@@ -148498,118 +148526,134 @@ boÞ
 61 
 boÞ
  
-N_´št
+æag_§m¶e
 ;
 
-62 
+62 
+boÞ
+ 
+´št_d–ay
+;
+
+63 
 run
 ;
 
-64 #ifdeà
+65 #ifdeà
 SIGHUP
 
 
-66 
+67 
 	$hªdË_sighup
 (
 sigÇl
 )
 
-68 
+69 
 	`UNUSED
 (
 sigÇl
 );
 
-70 
+71 
 æag_»lßd
  = 
 Œue
 ;
 
-71 
+72 
 	}
 }
 
-75 
+76 
 	$hªdË_sigšt
 (
 sigÇl
 )
 
-77 
+78 
 	`UNUSED
 (
 sigÇl
 );
 
-79 
+80 
 run
  = 0;
 
-80 
+81 
 	}
 }
 
-83 
+84 
 	$hªdË_sigu¤1
 (
 sigÇl
 )
 
-85 
+86 
 	`UNUSED
 (
 sigÇl
 );
 
-87 #ifdeà
+88 #ifdeà
 WITH_PERSISTENCE
 
 
-88 
+89 
 æag_db_backup
  = 
 Œue
 ;
 
-90 
+91 
 	}
 }
 
-93 
+94 
 	$hªdË_sigu¤2
 (
 sigÇl
 )
 
-95 
+96 
 	`UNUSED
 (
 sigÇl
 );
 
-97 
-æag_Œ“_´št
- = 
-Œue
-;
-
-98 
-N_´št
- = 
-Œue
-;
+98 ià(
+æag_§m¶e
+){
 
 99 
+æag_§m¶e
+ = 
+çl£
+;
+
+102 
+æag_§m¶e
+ = 
+Œue
+;
+
+104 
+´št_d–ay
+ = 
+çl£
+;
+
+107 
 	}
 }
 
-114 #ifdeà
+122 #ifdeà
 WIN32
 
 
-115 
+123 
 DWORD
  
 WINAPI
@@ -148619,7 +148663,7 @@ WINAPI
 d©a
 )
 
-117 
+125 
 TCHAR
  
 evt_Çme
@@ -148627,19 +148671,19 @@ evt_Çme
 MAX_PATH
 ];
 
-118 
+126 
 HANDLE
  
 evt
 [3];
 
-119 
+127 
 pid
  = 
 	`G‘Cu¼’tProûssId
 ();
 
-121 
+129 
 	`¥rštf_s
 (
 evt_Çme
@@ -148649,7 +148693,7 @@ MAX_PATH
 pid
 );
 
-122 
+130 
 evt
 [0] = 
 	`C»©eEv’t
@@ -148663,7 +148707,7 @@ FALSE
 evt_Çme
 );
 
-123 
+131 
 	`¥rštf_s
 (
 evt_Çme
@@ -148673,7 +148717,7 @@ MAX_PATH
 pid
 );
 
-124 
+132 
 evt
 [1] = 
 	`C»©eEv’t
@@ -148685,7 +148729,7 @@ FALSE
 evt_Çme
 );
 
-125 
+133 
 	`¥rštf_s
 (
 evt_Çme
@@ -148695,7 +148739,7 @@ MAX_PATH
 pid
 );
 
-126 
+134 
 evt
 [2] = 
 	`C»©eEv’t
@@ -148707,11 +148751,11 @@ FALSE
 evt_Çme
 );
 
-128 
+136 
 Œue
 ) {
 
-129 
+137 
 wr
  = 
 	`Wa™FÜMuÉËObjeùs
@@ -148725,57 +148769,57 @@ FALSE
 INFINITE
 );
 
-130 
+138 
 wr
 ) {
 
-131 
+139 
 WAIT_OBJECT_0
  + 0:
 
-132 
+140 
 	`hªdË_sigšt
 (
 SIGINT
 );
 
-134 
+142 
 WAIT_OBJECT_0
  + 1:
 
-135 
+143 
 æag_»lßd
  = 
 Œue
 ;
 
-137 
+145 
 WAIT_OBJECT_0
  + 2:
 
-138 
+146 
 	`hªdË_sigu¤1
 (0);
 
-143 
+151 
 	`Clo£HªdË
 (
 evt
 [0]);
 
-144 
+152 
 	`Clo£HªdË
 (
 evt
 [1]);
 
-145 
+153 
 	`Clo£HªdË
 (
 evt
 [2]);
 
-147 
+155 
 	}
 }
 

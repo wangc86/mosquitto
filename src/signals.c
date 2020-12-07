@@ -59,6 +59,7 @@ extern bool flag_db_backup;
 #endif
 extern bool flag_tree_print;
 extern bool flag_sample;
+extern bool print_delay;
 extern int run;
 
 #ifdef SIGHUP
@@ -100,6 +101,7 @@ void handle_sigusr2(int signal)
         else{
             flag_sample = true;
         }
+        print_delay = false; // db__message_insert() will enable it
         // Chao: we disable the following since we changed the use of SIGUSR2
 	//flag_tree_print = true;
 }

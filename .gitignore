@@ -25,6 +25,8 @@ client/testing.c
 
 cov-int/
 
+csc0056-hw4/result
+
 dist/
 
 docker/local/mosq.tar.gz
