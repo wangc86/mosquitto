@@ -76,7 +76,7 @@ The `-F` option tells our subscriber to show a formatted output. Use %t to show 
 
 The following is an example screenshot:
 
-![test_example](/home/cw/fromMyGithub/mosquitto/csc0056-hw5/test_example.png)
+![test_example](./test_example.png)
 
 ### 3.2 Measuring the end-to-end latency (20 points)
 
@@ -106,7 +106,7 @@ You will find that this average end-to-end latency is much larger than what we'v
 
 (**5 points**)  Use `ping` to measure the average network round-trip time to the broker. Take a screenshot showing the recording of at least 10 packets, and record your result of the average round-trip time (rtt). The following is an example, where the average round-trip time (rtt) is shown at the bottom:
 
-![ping_example](/home/cw/fromMyGithub/mosquitto/csc0056-hw5/ping_example.png)
+![ping_example](./ping_example.png)
 
 (**5 points**)  Give one reason why there is such a huge discrepancy between the round-trip time and the end-to-end latency. 
 
