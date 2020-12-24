@@ -50,7 +50,7 @@ Again, we will use Mosquitto as our cloud/edge computing platform. This time, we
 
 ### 3.1 Testing with the public Mosquitto broker (20 points)
 
-IMPORTANT: It is possible that the man pages of Mosquitto on your host is out-dated, and therefore the `man` commands mentioned below may not give all information you need. Two solutions:
+IMPORTANT: It is possible that the man pages of Mosquitto on your host is outdated, and therefore the `man` commands may not give all the needed information. Two solutions:
 
 1. Upgrade your distribution-versioned package mosquitto-clients: `sudo apt upgrade mosquitto-clients`. This will bring you the latest version available to your Linux distribution.
 2. Consult the online manual, which includes all information your need to complete this part of the homework: [https://mosquitto.org/documentation/](https://mosquitto.org/documentation/)
