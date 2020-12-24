@@ -50,11 +50,16 @@ Again, we will use Mosquitto as our cloud/edge computing platform. This time, we
 
 ### 3.1 Testing with the public Mosquitto broker (20 points)
 
+IMPORTANT: It is possible that the man pages of Mosquitto on your host is out-dated, and therefore the `man` commands mentioned below may not give all information you need. Two solutions:
+
+1. Upgrade your distribution-versioned package mosquitto-clients: `sudo apt upgrade mosquitto-clients`. This will bring you the latest version available to your Linux distribution.
+2. Consult the online manual, which includes all information your need to complete this part of the homework: [https://mosquitto.org/documentation/](https://mosquitto.org/documentation/)
+
 The mentioned Mosquitto broker is publicly available, which means *everyone* on earth can use it to send/receive messages of a certain topic, and *everyone* may see how other people are currently using this broker. For example, you may type the following to subscribe to all topics publicly available on the broker:
 
 `$ mosquitto_sub -h test.mosquitto.org -t "#" -v`
 
-This essentially shows you all the messages currently available from this broker (So, make sure you never send any sensitive information to this broker!). You may type `man mqtt` to learn more about the usage of wildcard \#.
+This essentially shows you all the messages currently available from this broker (So, make sure you never send any sensitive information to this broker!). You may type `man mqtt` to learn more about the usage of wildcard \#. 
 
 Now we're going to use this public Mosquitto broker to exchange messages between our publisher and subscriber running on our host. What we're doing is essentially a form of cloud computing, where the Mosquitto broker is a cloud server.
 
@@ -98,9 +103,17 @@ Now, we may again redirect the output of our subscriber to a file:
 
 `$ ../client/mosquitto_sub -h test.mosquitto.org -t "yourTopic" -F "%t %p @s @N" > out.txt `
 
- and then find the average end-to-end latency. `parse.sh` is a helper script for this purpose.
+ and then find the average end-to-end latency. `parse.sh` is a helper script for this purpose. The content of `parse.sh` is explained as below:
 
-(**5 points**)  Upload your `out.txt` and show the average end-to-end latency in your experiment. 
+```bash
+1 #!/bin/bash
+2 awk '{if ($5-$3>0) printf "%ld.%ld\n", ($4-$2), ($5-$3); else printf "%ld.%ld\n", ($4-$2-1), (1000000000-$3+$5)}' out.txt > latency.out
+3 awk 'BEGIN {sum=0} {sum+=$1} END {print sum/NR}' latency.out
+```
+
+The first line tells the system that what follows is a bash script. The second and the third lines are typical awk commands. The second line computes the correct latency information, from file `out.txt` and to file `latency.out`. The third line computes the average of the numbers in file `latency.out` and print to stdout the result, which is essentially the average latency.
+
+(**5 points**)  Upload **your** `out.txt` (**i.e., not the default one; it should be the one you got after you run your mosquitto_sub using the subscriber command given above.**) and show the average end-to-end latency in your experiment. 
 
 You will find that this average end-to-end latency is much larger than what we've seen in the previous homework assignments. One conjecture is that the network delay for traffic to/from the cloud is very long. To investigate this, we may use `ping` to measure the average network round-trip time between your host and the host running the public Mosquitto broker. Type `ping` to learn more. 
 
