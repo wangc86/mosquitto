@@ -73,7 +73,9 @@ WITH_WEBSOCKETS:=no
 WITH_EC:=yes
 
 # Build man page documentation by default.
-WITH_DOCS:=yes
+#WITH_DOCS:=yes
+# CW: In this course we do not need this; you can look up the latest documentation online
+WITH_DOCS:=no
 
 # Build with client support for SOCK5 proxy.
 WITH_SOCKS:=yes
