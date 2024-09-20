@@ -10,4 +10,4 @@
 
 MOS=/home/cw/courses/csc0056/mosquitto
 cd /
-find $MOS/include $MOS/src $MOS/lib $MOS/deps $MOS/client -name '*.[ch]' -print > $HOME/cscope/mosquitto.files
+find $MOS/include $MOS/src $MOS/lib $MOS/deps $MOS/client -name '*.[ch]' -print > $HOME/cscope/cscope.files
