@@ -7,7 +7,7 @@ SHARED_DEP:=../lib/libmosquitto.so.${SOVERSION}
 endif
 
 ifeq ($(WITH_SHARED_LIBRARIES),yes)
-ALL_DEPS:= mosquitto_pub mosquitto_sub mosquitto_rr
+ALL_DEPS:= mosquitto_pub mosquitto_sub mosquitto_rr timed_pub timed_sub
 else
 ifeq ($(WITH_STATIC_LIBRARIES),yes)
 ALL_DEPS:= static_pub static_sub static_rr
@@ -35,16 +35,28 @@ mosquitto_pub : pub_client.o pub_shared.o client_shared.o client_props.o
 mosquitto_sub : sub_client.o sub_client_output.o client_shared.o client_props.o
 	${CROSS_COMPILE}${CC} $(CLIENT_LDFLAGS) $^ -o $@ $(CLIENT_LDADD)
 
+timed_pub : pub_timestamped.o pub_shared.o client_shared.o client_props.o
+	${CROSS_COMPILE}${CC} $(CLIENT_LDFLAGS) $^ -o $@ $(CLIENT_LDADD)
+
+timed_sub : sub_timestamped.o sub_client_output.o client_shared.o client_props.o
+	${CROSS_COMPILE}${CC} $(CLIENT_LDFLAGS) $^ -o $@ $(CLIENT_LDADD)
+
 mosquitto_rr : rr_client.o client_shared.o client_props.o pub_shared.o sub_client_output.o
 	${CROSS_COMPILE}${CC} $(CLIENT_LDFLAGS) $^ -o $@ $(CLIENT_LDADD)
 
 pub_client.o : pub_client.c ${SHARED_DEP}
 	${CROSS_COMPILE}${CC} $(CLIENT_CPPFLAGS) $(CLIENT_CFLAGS) -c $< -o $@
 
+pub_timestamped.o : pub_timestamped.c ${SHARED_DEP}
+	${CROSS_COMPILE}${CC} $(CLIENT_CPPFLAGS) $(CLIENT_CFLAGS) -c $< -o $@
+
 pub_shared.o : pub_shared.c ${SHARED_DEP}
 	${CROSS_COMPILE}${CC} $(CLIENT_CPPFLAGS) $(CLIENT_CFLAGS) -c $< -o $@
 
 sub_client.o : sub_client.c ${SHARED_DEP}
+	${CROSS_COMPILE}${CC} $(CLIENT_CPPFLAGS) $(CLIENT_CFLAGS) -c $< -o $@
+
+sub_timestamped.o : sub_timestamped.c ${SHARED_DEP}
 	${CROSS_COMPILE}${CC} $(CLIENT_CPPFLAGS) $(CLIENT_CFLAGS) -c $< -o $@
 
 sub_client_output.o : sub_client_output.c sub_client_output.h ${SHARED_DEP}

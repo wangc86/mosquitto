@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # This script will generate a list of source file names that we will use for code tracing.
-# Some irrelevent directories are skipped, so that our search will not return irrelevent results.
+# Some irrelevant directories are skipped, so that our search will not return irrelevant results.
 
 # Before running this script, change the MOS to the-path-to-your-mosquitto-folder
 # and create folder $HOME/cscope
